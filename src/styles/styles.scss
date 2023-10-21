@@ -76,34 +76,38 @@
 
 	.card {
 		&#profile-card {
-			background-image: url(../images/profile.jpg);
-			background-color: rgba(120, 204, 109, 0.1);
-			background-position: center center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			height: 50%;
+			height: 100dvh;
+			text-align: center;
+			position: relative;
+			.profile-image {
+				background-image: url(../images/profile.jpg);
+				background-color: rgba(120, 204, 109, 0.1);
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 50%;
 
-			&:before,
-			&:after {
-				content: "";
-				position: absolute;
-				bottom: -34%;
-				width: 100%;
-				background: $text-white;
-				height: 70%;
-			}
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: -34%;
+					width: 100%;
+					background: $text-white;
+					height: 70%;
+					overflow: hidden;
+				}
 
-			&:before {
-				left: -25%;
-				-webkit-transform: rotate(12deg);
-			}
+				&:before {
+					left: -25%;
+					-webkit-transform: rotate(12deg);
+				}
 
-			&:after {
-				content: "";
-				position: absolute;
-				left: auto;
-				right: -25%;
-				-webkit-transform: rotate(-8deg);
+				&:after {
+					left: auto;
+					right: -25%;
+					-webkit-transform: rotate(-8deg);
+				}
 			}
 		}
 	}

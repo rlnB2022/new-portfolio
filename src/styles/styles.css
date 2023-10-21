@@ -73,6 +73,11 @@
   color: #f59e0b;
 }
 .container .card#profile-card {
+  height: 100dvh;
+  text-align: center;
+  position: relative;
+}
+.container .card#profile-card .profile-image {
   background-image: url(../images/profile.jpg);
   background-color: rgba(120, 204, 109, 0.1);
   background-position: center center;
@@ -80,21 +85,20 @@
   background-repeat: no-repeat;
   height: 50%;
 }
-.container .card#profile-card:before, .container .card#profile-card:after {
+.container .card#profile-card .profile-image:before, .container .card#profile-card .profile-image:after {
   content: "";
   position: absolute;
   bottom: -34%;
   width: 100%;
   background: #fff;
   height: 70%;
+  overflow: hidden;
 }
-.container .card#profile-card:before {
+.container .card#profile-card .profile-image:before {
   left: -25%;
   -webkit-transform: rotate(12deg);
 }
-.container .card#profile-card:after {
-  content: "";
-  position: absolute;
+.container .card#profile-card .profile-image:after {
   left: auto;
   right: -25%;
   -webkit-transform: rotate(-8deg);
