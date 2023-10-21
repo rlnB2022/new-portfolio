@@ -1,10 +1,12 @@
-const typingTextElem = document.querySelector(".typing-anim");
+const typingTextElemTop = document.querySelector(".typing-anim-top");
+const typingTextElemBottom = document.querySelector(".typing-anim-bottom");
 
 const typingWords = [
 	"Front End Web Developer",
 	"React Software Engineer",
 	"Freelancer",
 	"Air Force Veteran",
+	"Ready to work. Hire me!",
 ];
 
 /**
@@ -14,7 +16,7 @@ const typingWords = [
  * @param { Number } delay - in milliseconds
  * @returns
  */
-async function typeSentence(sentence, elem, delay = 50) {
+async function typeSentence(sentence, elem, delay = 20) {
 	/* Break apart the sentence passed in */
 	const letters = sentence.split("");
 	let i = 0;
@@ -28,30 +30,39 @@ async function typeSentence(sentence, elem, delay = 50) {
 }
 
 /**
- * 
+ * Waits for a given number of milliseconds, then returns a resolved promise
  * @param { Number } ms - time to wait before continuing
- * @returns 
+ * @returns
  */
 function waitForMs(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function deleteSentence(eleRef) {
-	const sentence = eleRef.innerHTML;
+/**
+ * Remove a letter from the sentence, one by one until the last letter is removed
+ * @param { HTMLElement } elem - element to apply animation to
+ */
+async function deleteSentence(elem) {
+	const sentence = elem.innerHTML;
 	const letters = sentence.split("");
 	let i = 0;
 	while (letters.length > 0) {
-		await waitForMs(50);
+		await waitForMs(20);
 		letters.pop();
-		eleRef.innerHTML = letters.join("");
+		elem.innerHTML = letters.join("");
 	}
 }
 
-async function carousel(words, elem) {
+/**
+ *
+ * @param { Array } words - array of words (typingWords array above)
+ * @param { HTMLElement } elem - Element to apply typing to
+ */
+async function typingCarousel(words, elem) {
 	let i = 0;
 	while (true) {
 		await typeSentence(words[i], elem);
-		await waitForMs(1500);
+		await waitForMs(2000);
 		await deleteSentence(elem);
 		await waitForMs(500);
 		i++;
@@ -61,4 +72,6 @@ async function carousel(words, elem) {
 	}
 }
 
-carousel(typingWords, typingTextElem);
+/* Start typing! */
+typingCarousel(typingWords, typingTextElemTop);
+typingCarousel(typingWords, typingTextElemBottom);
