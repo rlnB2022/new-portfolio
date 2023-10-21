@@ -1,0 +1,110 @@
+@use "reset";
+@use "colors" as *; // doing it this way removes the namespace, so I can load variables without it
+
+.container {
+	height: 100dvh;
+
+	header {
+		.mobile-header {
+			display: block;
+			padding: 10px 62px 10px 18px;
+			.title {
+				font-size: 15px;
+				color: $text-black;
+				font-weight: 500;
+			}
+			.sub-title {
+				font-size: 12px;
+				color: $text-orange;
+				height: 14px;
+				line-height: 14px;
+			}
+		}
+		.menu {
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+			-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+			ul {
+				display: flex;
+				list-style-type: none;
+				background-color: $text-white;
+				text-align: center;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+				li {
+					min-width: 20%;
+					flex: 1;
+					padding: 1rem 0.75rem;
+
+					// only include box-shadow for 2nd through 5th nav items
+					@for $i from 1 through 4 {
+						&:nth-child(#{$i}) {
+							box-shadow: 1px 0 2px rgb(0, 0, 0, 0.05);
+						}
+					}
+
+					a {
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-size: 0.75rem;
+						font-weight: 500;
+
+						&:link {
+							color: $text-black;
+						}
+
+						i {
+							font-size: 1.1rem;
+						}
+
+						.link-name {
+							font-size: 11px;
+						}
+					}
+
+					&.active {
+						a {
+							color: $text-orange;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.card {
+		&#profile-card {
+			background-image: url(../images/profile.jpg);
+			background-color: rgba(120, 204, 109, 0.1);
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 50%;
+
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -34%;
+				width: 100%;
+				background: $text-white;
+				height: 70%;
+			}
+
+			&:before {
+				left: -25%;
+				-webkit-transform: rotate(12deg);
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				left: auto;
+				right: -25%;
+				-webkit-transform: rotate(-8deg);
+			}
+		}
+	}
+}
