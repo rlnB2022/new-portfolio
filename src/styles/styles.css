@@ -73,22 +73,24 @@
   color: #f59e0b;
 }
 .container .card#profile-card {
-  height: 100dvh;
+  height: calc(100dvh - 126px);
   text-align: center;
   position: relative;
 }
 .container .card#profile-card .profile-image {
-  background-image: url(../images/profile.jpg);
+  background-image: url("https://placehold.co/960x640");
   background-color: rgba(120, 204, 109, 0.1);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 50%;
+  height: 55%;
+  overflow: hidden;
+  position: relative;
 }
 .container .card#profile-card .profile-image:before, .container .card#profile-card .profile-image:after {
   content: "";
   position: absolute;
-  bottom: -34%;
+  bottom: -63%;
   width: 100%;
   background: #fff;
   height: 70%;
@@ -102,4 +104,14 @@
   left: auto;
   right: -25%;
   -webkit-transform: rotate(-8deg);
+}
+.container .card#profile-card .title {
+  font-size: 2.15rem;
+  margin-top: 10px;
+}
+.container .card#profile-card .sub-title {
+  font-size: 1rem;
+  color: #f59e0b;
+  height: 1rem;
+  line-height: 1rem;
 }
