@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -168,6 +172,7 @@ ul {
 }
 .container .card#about-card h2 {
   position: relative;
+  padding-bottom: 40px;
 }
 .container .card#about-card h2:after {
   content: "";
@@ -178,4 +183,8 @@ ul {
   height: 40px;
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.01) 100%);
   border-radius: 30px;
+}
+.container .card#about-card p {
+  line-height: 1.75em;
+  margin-bottom: 1rem;
 }

@@ -166,6 +166,7 @@
 			padding: 1.85rem;
 			h2 {
 				position: relative;
+				padding-bottom: 40px;
 				&:after {
 					content: "";
 					position: absolute;
@@ -180,6 +181,11 @@
 					);
 					border-radius: 30px;
 				}
+			}
+
+			p {
+				line-height: 1.75em;
+				margin-bottom: 1rem;
 			}
 		}
 	}
