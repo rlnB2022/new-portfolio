@@ -110,8 +110,15 @@ body {
 .container .card#profile-card {
   height: calc(100dvh - 126px);
   text-align: center;
+  position: relative;
+  min-height: 560px;
+  max-height: 620px;
 }
 .container .card#profile-card .profile-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-image: url("https://placehold.co/960x640");
   background-color: rgba(120, 204, 109, 0.1);
   background-position: center center;
@@ -151,9 +158,17 @@ body {
 }
 .container .card#profile-card .socials {
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container .card#profile-card .socials a {
-  font-size: 1.25rem;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container .card#profile-card .socials a:nth-child(2) {
   margin-left: 5px;
@@ -263,6 +278,7 @@ body {
 }
 .container .card#resume-card .content-subtitle h3 {
   margin-left: 0.5rem;
+  font-size: 17px;
 }
 .container .card#resume-card .resume-items .resume-item {
   padding: 30px 0;
