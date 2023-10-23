@@ -76,7 +76,8 @@ body {
 						padding: 1rem 0.75rem;
 						display: block;
 
-						&:link {
+						&:link,
+						&:visited {
 							color: $text-black;
 						}
 
@@ -129,13 +130,13 @@ body {
 
 				&:before {
 					left: -25%;
-					-webkit-transform: rotate(12deg);
+					transform: rotate(12deg);
 				}
 
 				&:after {
 					left: auto;
 					right: -25%;
-					-webkit-transform: rotate(-12deg);
+					transform: rotate(-12deg);
 				}
 			}
 
@@ -184,7 +185,8 @@ body {
 		}
 
 		&#about-card,
-		&#resume-card {
+		&#resume-card,
+		&#projects-card {
 			padding: 1.85rem;
 			margin-bottom: 20px;
 			margin-top: 15px;
@@ -287,7 +289,7 @@ body {
 						border-radius: 4px;
 
 						&.inactive {
-							color: rgb(204, 204, 204);
+							color: $text-light-grey;
 							border: 1px solid rgb(238, 238, 238);
 						}
 					}
@@ -298,7 +300,7 @@ body {
 					.resume-company {
 						font-size: 0.85rem;
 						font-weight: 400;
-						color: rgb(153, 153, 153);
+						color: $text-medium-grey;
 						margin-bottom: 0.75rem;
 					}
 					p {
@@ -337,6 +339,22 @@ body {
 								line-height: 1.75em;
 							}
 						}
+					}
+				}
+			}
+		}
+
+		&#projects-card {
+			.filter-menu {
+				display: flex;
+				li {
+					&.active {
+						color: $text-orange;
+					}
+					a {
+						padding: 0.5rem;
+						display: block;
+						color: inherit;
 					}
 				}
 			}

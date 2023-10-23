@@ -75,3 +75,33 @@ async function typingCarousel(words, elem) {
 /* Start typing! */
 typingCarousel(typingWords, typingTextElemTop);
 typingCarousel(typingWords, typingTextElemBottom);
+
+/* ************************************************************************** */
+/**
+ * Remove currently selected nav link color
+ * @param { Object } event
+ * @param { Number } index
+ */
+const removeNavLinkColor = (event, index) => {
+	const activeNavListItem = document.querySelector("header .menu ul li.active");
+
+	if (activeNavListItem) {
+		activeNavListItem.classList.remove("active");
+	}
+};
+
+/**
+ * Attach handleNavChange eventListener to nav links
+ */
+const addNavListEventListeners = () => {
+	const navListItems = document.querySelectorAll("header .menu ul li");
+
+	navListItems.forEach((a, index) => {
+		a.addEventListener("click", (event, idx) => {
+			removeNavLinkColor(event, idx);
+			navListItems[index].classList.add("active");
+		});
+	});
+};
+
+addNavListEventListeners();
