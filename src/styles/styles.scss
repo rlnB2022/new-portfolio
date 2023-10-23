@@ -210,6 +210,12 @@ body {
 						margin-bottom: 3rem;
 					}
 				}
+				.about-left {
+					strong {
+						color: $text-medium-grey;
+						font-weight: 600;
+					}
+				}
 
 				.about-right {
 					.about-details {
@@ -355,6 +361,37 @@ body {
 						padding: 0.5rem;
 						display: block;
 						color: inherit;
+					}
+				}
+			}
+			.project-container {
+				margin-top: 1.85rem;
+				ul {
+					display: flex;
+					li {
+						a {
+							img {
+								width: 100%;
+								height: auto;
+								transform: scale(1);
+								max-width: 100%;
+							}
+						}
+						h3,
+						p {
+							text-align: center;
+						}
+
+						h3 {
+							color: $text-dark-grey;
+							font-size: 1.1rem;
+							font-weight: 600;
+							transition: all 0.3s ease-in-out;
+						}
+
+						p {
+							color: $text-medium-light-grey;
+						}
 					}
 				}
 			}

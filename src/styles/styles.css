@@ -208,6 +208,10 @@ body {
 .container .card#about-card .content-about-about p:last-child, .container .card#resume-card .content-about-about p:last-child, .container .card#projects-card .content-about-about p:last-child {
   margin-bottom: 3rem;
 }
+.container .card#about-card .content-about-about .about-left strong, .container .card#resume-card .content-about-about .about-left strong, .container .card#projects-card .content-about-about .about-left strong {
+  color: #646464;
+  font-weight: 600;
+}
 .container .card#about-card .content-about-about .about-right .about-details, .container .card#resume-card .content-about-about .about-right .about-details, .container .card#projects-card .content-about-about .about-right .about-details {
   display: flex;
   justify-content: space-between;
@@ -273,7 +277,7 @@ body {
   border-radius: 4px;
 }
 .container .card#resume-card .resume-items .resume-item .resume-date.inactive {
-  color: #ccc;
+  color: #cccccc;
   border: 1px solid rgb(238, 238, 238);
 }
 .container .card#resume-card .resume-items .resume-item .resume-job-title {
@@ -283,7 +287,7 @@ body {
 .container .card#resume-card .resume-items .resume-item .resume-company {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #999999;
+  color: #646464;
   margin-bottom: 0.75rem;
 }
 .container .card#resume-card .resume-items .resume-item p {
@@ -325,4 +329,29 @@ body {
   padding: 0.5rem;
   display: block;
   color: inherit;
+}
+.container .card#projects-card .project-container {
+  margin-top: 1.85rem;
+}
+.container .card#projects-card .project-container ul {
+  display: flex;
+}
+.container .card#projects-card .project-container ul li a img {
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+  max-width: 100%;
+}
+.container .card#projects-card .project-container ul li h3,
+.container .card#projects-card .project-container ul li p {
+  text-align: center;
+}
+.container .card#projects-card .project-container ul li h3 {
+  color: #323232;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.container .card#projects-card .project-container ul li p {
+  color: #999999;
 }
