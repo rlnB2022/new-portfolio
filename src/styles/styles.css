@@ -242,3 +242,26 @@ body {
 .container .card#about-card .content-about-skills ul li p {
   line-height: 1.75em;
 }
+.container .card#about-card .content-about-facts {
+  margin-top: 10px;
+}
+.container .card#about-card .content-about-facts ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.container .card#about-card .content-about-facts ul li {
+  padding: 0.5rem;
+  text-align: center;
+}
+.container .card#about-card .content-about-facts ul li i {
+  font-size: 2rem;
+  color: #f59e0b;
+  padding: 1rem;
+}
+.container .card#about-card .content-about-facts ul li h3 {
+  font-size: 1rem;
+}
+.container .card#about-card .content-about-facts ul li p.small-text {
+  font-size: 12px;
+  color: #f59e0b;
+}
