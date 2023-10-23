@@ -171,12 +171,16 @@ ul {
 .container .card#about-card {
   padding: 1.85rem;
   margin-bottom: 40px;
+  margin-top: 15px;
 }
 .container .card#about-card h2 {
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
-.container .card#about-card h2:after {
+.container .card#about-card h2.content-title {
+  font-size: 1.25rem;
+}
+.container .card#about-card h2.content-title:after {
   content: "";
   position: absolute;
   left: -12px;
@@ -186,22 +190,45 @@ ul {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.01) 100%);
   border-radius: 30px;
 }
-.container .card#about-card p {
+.container .card#about-card .content-about-about {
+  margin-bottom: 3rem;
+}
+.container .card#about-card .content-about-about p {
   line-height: 1.75em;
   margin-bottom: 1rem;
 }
-.container .card#about-card p:last-child {
+.container .card#about-card .content-about-about p:last-child {
   margin-bottom: 3rem;
 }
-.container .card#about-card .about-right .about-details {
+.container .card#about-card .content-about-about .about-right .about-details {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
-.container .card#about-card .about-right .about-details .bg-highlighted {
+.container .card#about-card .content-about-about .about-right .about-details:nth-child(2) {
+  margin: 1.5rem 0;
+}
+.container .card#about-card .content-about-about .about-right .about-details .bg-highlighted {
   padding: 0 0.5rem;
   background-color: #f59e0b;
   color: #fff;
   font-weight: 400;
   border-radius: 2px;
+}
+.container .card#about-card .content-about-skills ul li {
+  text-align: center;
+  padding: 30px;
+}
+.container .card#about-card .content-about-skills ul li i {
+  background-color: #f59e0b;
+  padding: 0.9rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #fff;
+}
+.container .card#about-card .content-about-skills ul li h3 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #323232;
+  padding: 0.25rem 0;
 }

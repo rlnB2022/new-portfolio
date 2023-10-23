@@ -1,6 +1,21 @@
 @use "reset";
 @use "colors" as *; // doing it this way removes the namespace, so I can load variables without it
 
+@mixin blob {
+	content: "";
+	position: absolute;
+	left: -12px;
+	top: -2px;
+	width: 60px;
+	height: 40px;
+	background: linear-gradient(
+		135deg,
+		rgba(245, 158, 11, 0.15) 0%,
+		rgba(245, 158, 11, 0.01) 100%
+	);
+	border-radius: 30px;
+}
+
 .container {
 	// height: 100dvh;
 	padding-top: 126px;
@@ -166,45 +181,67 @@
 		&#about-card {
 			padding: 1.85rem;
 			margin-bottom: 40px;
+			margin-top: 15px;
 			h2 {
 				position: relative;
-				padding-bottom: 40px;
-				&:after {
-					content: "";
-					position: absolute;
-					left: -12px;
-					top: -2px;
-					width: 60px;
-					height: 40px;
-					background: linear-gradient(
-						135deg,
-						rgba(245, 158, 11, 0.15) 0%,
-						rgba(245, 158, 11, 0.01) 100%
-					);
-					border-radius: 30px;
+				padding-bottom: 30px;
+				&.content-title {
+					font-size: 1.25rem;
+					&:after {
+						@include blob;
+					}
 				}
 			}
-
-			p {
-				line-height: 1.75em;
-				margin-bottom: 1rem;
-				&:last-child {
-					margin-bottom: 3rem;
-				}
-			}
-
-			.about-right {
-				.about-details {
-					display: flex;
-					justify-content: space-between;
+			.content-about-about {
+				margin-bottom: 3rem;
+				p {
+					line-height: 1.75em;
 					margin-bottom: 1rem;
+					&:last-child {
+						margin-bottom: 3rem;
+					}
+				}
 
-					.bg-highlighted {
-						padding: 0 0.5rem;
-						background-color: $text-orange;
-						color: $text-white;
-						font-weight: 400;
-						border-radius: 2px;
+				.about-right {
+					.about-details {
+						display: flex;
+						justify-content: space-between;
+						font-size: 0.9rem;
+
+						&:nth-child(2) {
+							margin: 1.5rem 0;
+						}
+
+						.bg-highlighted {
+							padding: 0 0.5rem;
+							background-color: $text-orange;
+							color: $text-white;
+							font-weight: 400;
+							border-radius: 2px;
+						}
+					}
+				}
+			}
+			.content-about-skills {
+				ul {
+					li {
+						text-align: center;
+						padding: 30px;
+						i {
+							background-color: $text-orange;
+							padding: 0.9rem;
+							border-radius: 50%;
+							font-size: 2rem;
+							color: $text-white;
+						}
+						h3 {
+							font-weight: 500;
+							font-size: 1.1rem;
+							color: $text-black;
+							padding: 0.25rem 0;
+						}
+						p {
+						}
 					}
 				}
 			}
