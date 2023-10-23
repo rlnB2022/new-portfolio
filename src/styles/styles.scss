@@ -183,10 +183,12 @@ body {
 			}
 		}
 
-		&#about-card {
+		&#about-card,
+		&#resume-card {
 			padding: 1.85rem;
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 			margin-top: 15px;
+			scroll-margin-top: 126px;
 			h2 {
 				position: relative;
 				padding-bottom: 30px;
@@ -227,30 +229,6 @@ body {
 					}
 				}
 			}
-			.content-about-skills {
-				ul {
-					li {
-						text-align: center;
-						padding: 30px;
-						i {
-							background-color: $text-orange;
-							padding: 0.9rem;
-							border-radius: 50%;
-							font-size: 2rem;
-							color: $text-white;
-						}
-						h3 {
-							font-weight: 500;
-							font-size: 1.1rem;
-							color: $text-black;
-							padding: 0.5rem 0 0.25rem;
-						}
-						p {
-							line-height: 1.75em;
-						}
-					}
-				}
-			}
 			.content-about-facts {
 				margin-top: 10px;
 				ul {
@@ -275,6 +253,88 @@ body {
 							&.small-text {
 								font-size: 12px;
 								color: $text-orange;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&#resume-card {
+			margin-top: 15px;
+			.content-subtitle {
+				display: flex;
+				align-items: center;
+				i {
+					color: $text-orange;
+					font-size: 1.85rem;
+				}
+
+				h3 {
+					margin-left: 0.5rem;
+				}
+			}
+			.resume-items {
+				.resume-item {
+					padding: 30px 0;
+					.resume-date {
+						display: inline-block;
+						border: 1px solid $text-orange;
+						padding: 0 0.25rem;
+						margin-bottom: 0.75rem;
+						color: $text-orange;
+						font-size: 0.75rem;
+						border-radius: 4px;
+
+						&.inactive {
+							color: rgb(204, 204, 204);
+							border: 1px solid rgb(238, 238, 238);
+						}
+					}
+					.resume-job-title {
+						font-weight: 500;
+						font-size: 1.1rem;
+					}
+					.resume-company {
+						font-size: 0.85rem;
+						font-weight: 400;
+						color: rgb(153, 153, 153);
+						margin-bottom: 0.75rem;
+					}
+					p {
+						line-height: 1.75rem;
+					}
+				}
+			}
+			.resume-left {
+				.content-resume-experience {
+					.content-title {
+						padding-bottom: 1.85rem;
+					}
+				}
+			}
+			.resume-skills {
+				margin-top: 15px;
+				.content-resume-skills {
+					ul {
+						li {
+							text-align: center;
+							padding: 30px;
+							i {
+								background-color: $text-orange;
+								padding: 0.9rem;
+								border-radius: 50%;
+								font-size: 2rem;
+								color: $text-white;
+							}
+							h3 {
+								font-weight: 500;
+								font-size: 1.1rem;
+								color: $text-black;
+								padding: 0.5rem 0 0.25rem;
+							}
+							p {
+								line-height: 1.75em;
 							}
 						}
 					}

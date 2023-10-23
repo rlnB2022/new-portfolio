@@ -175,19 +175,20 @@ body {
   display: block;
   flex: 1;
 }
-.container .card#about-card {
+.container .card#about-card, .container .card#resume-card {
   padding: 1.85rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-top: 15px;
+  scroll-margin-top: 126px;
 }
-.container .card#about-card h2 {
+.container .card#about-card h2, .container .card#resume-card h2 {
   position: relative;
   padding-bottom: 30px;
 }
-.container .card#about-card h2.content-title {
+.container .card#about-card h2.content-title, .container .card#resume-card h2.content-title {
   font-size: 1.25rem;
 }
-.container .card#about-card h2.content-title:after {
+.container .card#about-card h2.content-title:after, .container .card#resume-card h2.content-title:after {
   content: "";
   position: absolute;
   left: -12px;
@@ -197,71 +198,120 @@ body {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.01) 100%);
   border-radius: 30px;
 }
-.container .card#about-card .content-about-about {
+.container .card#about-card .content-about-about, .container .card#resume-card .content-about-about {
   margin-bottom: 3rem;
 }
-.container .card#about-card .content-about-about p {
+.container .card#about-card .content-about-about p, .container .card#resume-card .content-about-about p {
   line-height: 1.75em;
   margin-bottom: 1rem;
 }
-.container .card#about-card .content-about-about p:last-child {
+.container .card#about-card .content-about-about p:last-child, .container .card#resume-card .content-about-about p:last-child {
   margin-bottom: 3rem;
 }
-.container .card#about-card .content-about-about .about-right .about-details {
+.container .card#about-card .content-about-about .about-right .about-details, .container .card#resume-card .content-about-about .about-right .about-details {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
 }
-.container .card#about-card .content-about-about .about-right .about-details:nth-child(2) {
+.container .card#about-card .content-about-about .about-right .about-details:nth-child(2), .container .card#resume-card .content-about-about .about-right .about-details:nth-child(2) {
   margin: 1.5rem 0;
 }
-.container .card#about-card .content-about-about .about-right .about-details .bg-highlighted {
+.container .card#about-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#resume-card .content-about-about .about-right .about-details .bg-highlighted {
   padding: 0 0.5rem;
   background-color: #f59e0b;
   color: #fff;
   font-weight: 400;
   border-radius: 2px;
 }
-.container .card#about-card .content-about-skills ul li {
+.container .card#about-card .content-about-facts, .container .card#resume-card .content-about-facts {
+  margin-top: 10px;
+}
+.container .card#about-card .content-about-facts ul, .container .card#resume-card .content-about-facts ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.container .card#about-card .content-about-facts ul li, .container .card#resume-card .content-about-facts ul li {
+  padding: 0.5rem;
+  text-align: center;
+}
+.container .card#about-card .content-about-facts ul li i, .container .card#resume-card .content-about-facts ul li i {
+  font-size: 2rem;
+  color: #f59e0b;
+  padding: 1rem;
+}
+.container .card#about-card .content-about-facts ul li h3, .container .card#resume-card .content-about-facts ul li h3 {
+  font-size: 1rem;
+}
+.container .card#about-card .content-about-facts ul li p.small-text, .container .card#resume-card .content-about-facts ul li p.small-text {
+  font-size: 12px;
+  color: #f59e0b;
+}
+.container .card#resume-card {
+  margin-top: 15px;
+}
+.container .card#resume-card .content-subtitle {
+  display: flex;
+  align-items: center;
+}
+.container .card#resume-card .content-subtitle i {
+  color: #f59e0b;
+  font-size: 1.85rem;
+}
+.container .card#resume-card .content-subtitle h3 {
+  margin-left: 0.5rem;
+}
+.container .card#resume-card .resume-items .resume-item {
+  padding: 30px 0;
+}
+.container .card#resume-card .resume-items .resume-item .resume-date {
+  display: inline-block;
+  border: 1px solid #f59e0b;
+  padding: 0 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #f59e0b;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.container .card#resume-card .resume-items .resume-item .resume-date.inactive {
+  color: rgb(204, 204, 204);
+  border: 1px solid rgb(238, 238, 238);
+}
+.container .card#resume-card .resume-items .resume-item .resume-job-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.container .card#resume-card .resume-items .resume-item .resume-company {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgb(153, 153, 153);
+  margin-bottom: 0.75rem;
+}
+.container .card#resume-card .resume-items .resume-item p {
+  line-height: 1.75rem;
+}
+.container .card#resume-card .resume-left .content-resume-experience .content-title {
+  padding-bottom: 1.85rem;
+}
+.container .card#resume-card .resume-skills {
+  margin-top: 15px;
+}
+.container .card#resume-card .resume-skills .content-resume-skills ul li {
   text-align: center;
   padding: 30px;
 }
-.container .card#about-card .content-about-skills ul li i {
+.container .card#resume-card .resume-skills .content-resume-skills ul li i {
   background-color: #f59e0b;
   padding: 0.9rem;
   border-radius: 50%;
   font-size: 2rem;
   color: #fff;
 }
-.container .card#about-card .content-about-skills ul li h3 {
+.container .card#resume-card .resume-skills .content-resume-skills ul li h3 {
   font-weight: 500;
   font-size: 1.1rem;
   color: #323232;
   padding: 0.5rem 0 0.25rem;
 }
-.container .card#about-card .content-about-skills ul li p {
+.container .card#resume-card .resume-skills .content-resume-skills ul li p {
   line-height: 1.75em;
-}
-.container .card#about-card .content-about-facts {
-  margin-top: 10px;
-}
-.container .card#about-card .content-about-facts ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.container .card#about-card .content-about-facts ul li {
-  padding: 0.5rem;
-  text-align: center;
-}
-.container .card#about-card .content-about-facts ul li i {
-  font-size: 2rem;
-  color: #f59e0b;
-  padding: 1rem;
-}
-.container .card#about-card .content-about-facts ul li h3 {
-  font-size: 1rem;
-}
-.container .card#about-card .content-about-facts ul li p.small-text {
-  font-size: 12px;
-  color: #f59e0b;
 }
