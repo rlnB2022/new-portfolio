@@ -39,7 +39,6 @@
 				li {
 					min-width: 20%;
 					flex: 1;
-					padding: 1rem 0.75rem;
 
 					// only include box-shadow for 2nd through 5th nav items
 					@for $i from 1 through 4 {
@@ -55,6 +54,8 @@
 						text-transform: uppercase;
 						font-size: 0.75rem;
 						font-weight: 500;
+						padding: 1rem 0.75rem;
+						display: block;
 
 						&:link {
 							color: $text-black;
@@ -164,6 +165,7 @@
 
 		&#about-card {
 			padding: 1.85rem;
+			margin-bottom: 40px;
 			h2 {
 				position: relative;
 				padding-bottom: 40px;
@@ -186,6 +188,25 @@
 			p {
 				line-height: 1.75em;
 				margin-bottom: 1rem;
+				&:last-child {
+					margin-bottom: 3rem;
+				}
+			}
+
+			.about-right {
+				.about-details {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 1rem;
+
+					.bg-highlighted {
+						padding: 0 0.5rem;
+						background-color: $text-orange;
+						color: $text-white;
+						font-weight: 400;
+						border-radius: 2px;
+					}
+				}
 			}
 		}
 	}
