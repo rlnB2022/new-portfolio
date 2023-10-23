@@ -25,6 +25,10 @@ ul {
   color: #f59e0b;
 }
 
+body {
+  background-color: #f59e0b;
+}
+
 .container {
   padding-top: 126px;
 }
@@ -99,6 +103,9 @@ ul {
 }
 .container header .menu ul li.active a {
   color: #f59e0b;
+}
+.container .card {
+  background-color: #fff;
 }
 .container .card#profile-card {
   height: calc(100dvh - 126px);
@@ -230,5 +237,8 @@ ul {
   font-weight: 500;
   font-size: 1.1rem;
   color: #323232;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0 0.25rem;
+}
+.container .card#about-card .content-about-skills ul li p {
+  line-height: 1.75em;
 }

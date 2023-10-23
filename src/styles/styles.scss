@@ -16,6 +16,10 @@
 	border-radius: 30px;
 }
 
+body {
+	background-color: $text-orange;
+}
+
 .container {
 	// height: 100dvh;
 	padding-top: 126px;
@@ -96,6 +100,7 @@
 	}
 
 	.card {
+		background-color: $text-white;
 		&#profile-card {
 			height: calc(100dvh - 126px);
 			text-align: center;
@@ -238,9 +243,10 @@
 							font-weight: 500;
 							font-size: 1.1rem;
 							color: $text-black;
-							padding: 0.25rem 0;
+							padding: 0.5rem 0 0.25rem;
 						}
 						p {
+							line-height: 1.75em;
 						}
 					}
 				}
