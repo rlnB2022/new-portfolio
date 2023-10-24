@@ -192,7 +192,6 @@ body {
 }
 .container .card#about-card, .container .card#resume-card, .container .card#projects-card, .container .card#blog-card {
   padding: 1.85rem;
-  margin-bottom: 20px;
   margin-top: 15px;
   scroll-margin-top: 126px;
 }
@@ -370,9 +369,6 @@ body {
 }
 .container .card#projects-card .project-container ul li p {
   color: #999999;
-}
-.container .card#blog-card {
-  margin-top: 1.85rem;
 }
 .container .card#blog-card ul {
   display: flex;
