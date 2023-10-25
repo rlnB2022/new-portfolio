@@ -16,18 +16,18 @@
 	border-radius: 30px;
 }
 
-@mixin mDate {
+@mixin title-border {
 	display: inline-block;
-	border: 1px solid $text-orange;
+	border: 1px solid orange;
 	padding: 0 0.25rem;
 	margin-bottom: 0.75rem;
-	color: $text-orange;
+	color: orange;
 	font-size: 0.75rem;
 	border-radius: 4px;
 }
 
 body {
-	background-color: $text-orange;
+	background-color: $orange;
 }
 
 .container {
@@ -43,15 +43,15 @@ body {
 		.mobile-header {
 			display: block;
 			padding: 10px 62px 10px 18px;
-			background-color: $text-white;
+			background-color: $white;
 			.title {
 				font-size: 15px;
-				color: $text-black;
+				color: $black;
 				font-weight: 500;
 			}
 			.sub-title {
 				font-size: 12px;
-				color: $text-orange;
+				color: $orange;
 				height: 14px;
 				line-height: 14px;
 			}
@@ -61,7 +61,7 @@ body {
 			-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 			ul {
 				display: flex;
-				background-color: $text-white;
+				background-color: $white;
 				text-align: center;
 				box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 
@@ -88,7 +88,7 @@ body {
 
 						&:link,
 						&:visited {
-							color: $text-black;
+							color: $black;
 						}
 
 						i {
@@ -102,7 +102,7 @@ body {
 
 					&.active {
 						a {
-							color: $text-orange;
+							color: $orange;
 						}
 					}
 				}
@@ -111,7 +111,7 @@ body {
 	}
 
 	.card {
-		background-color: $text-white;
+		background-color: $white;
 		&#profile-card {
 			height: calc(100dvh - 126px);
 			text-align: center;
@@ -139,7 +139,7 @@ body {
 					position: absolute;
 					bottom: -63%;
 					width: 100%;
-					background: $text-white;
+					background: $white;
 					height: 70%;
 					overflow: hidden;
 				}
@@ -163,7 +163,7 @@ body {
 
 			.sub-title {
 				font-size: 1rem;
-				color: $text-orange;
+				color: $orange;
 				height: 1rem;
 				line-height: 1rem;
 			}
@@ -186,7 +186,7 @@ body {
 					}
 
 					i {
-						color: $text-black;
+						color: $black;
 					}
 				}
 			}
@@ -211,7 +211,8 @@ body {
 		&#about-card,
 		&#resume-card,
 		&#projects-card,
-		&#blog-card {
+		&#blog-card,
+		&#contact-card {
 			padding: 1.85rem;
 			// margin-bottom: 20px;
 			margin-top: 15px;
@@ -221,8 +222,17 @@ body {
 				padding-bottom: 30px;
 				&.content-title {
 					font-size: 1.25rem;
-					&:after {
+					&:before {
 						@include blob;
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						left: -20px;
+						right: -20px;
+						bottom: 0;
+						height: 1px;
+						background-color: #eee;
 					}
 				}
 			}
@@ -237,7 +247,7 @@ body {
 				}
 				.about-left {
 					strong {
-						color: $text-medium-grey;
+						color: $medium-grey;
 						font-weight: 600;
 					}
 				}
@@ -254,8 +264,8 @@ body {
 
 						.bg-highlighted {
 							padding: 0 0.5rem;
-							background-color: $text-orange;
-							color: $text-white;
+							background-color: $orange;
+							color: $white;
 							font-weight: 400;
 							border-radius: 2px;
 						}
@@ -274,7 +284,7 @@ body {
 
 						i {
 							font-size: 2rem;
-							color: $text-orange;
+							color: $orange;
 							padding: 1rem;
 						}
 
@@ -285,7 +295,7 @@ body {
 						p {
 							&.small-text {
 								font-size: 12px;
-								color: $text-orange;
+								color: $orange;
 							}
 						}
 					}
@@ -299,7 +309,7 @@ body {
 				display: flex;
 				align-items: center;
 				i {
-					color: $text-orange;
+					color: $orange;
 					font-size: 1.85rem;
 				}
 
@@ -312,10 +322,10 @@ body {
 				.resume-item {
 					padding: 30px 0;
 					.resume-date {
-						@include mDate;
+						@include title-border;
 
 						&.inactive {
-							color: $text-light-grey;
+							color: $light-grey;
 							border: 1px solid rgb(238, 238, 238);
 						}
 					}
@@ -326,7 +336,7 @@ body {
 					.resume-company {
 						font-size: 0.85rem;
 						font-weight: 400;
-						color: $text-medium-grey;
+						color: $medium-grey;
 						margin-bottom: 0.75rem;
 					}
 					p {
@@ -349,16 +359,16 @@ body {
 							text-align: center;
 							padding: 30px;
 							i {
-								background-color: $text-orange;
+								background-color: $orange;
 								padding: 0.9rem;
 								border-radius: 50%;
 								font-size: 2rem;
-								color: $text-white;
+								color: $white;
 							}
 							h3 {
 								font-weight: 500;
 								font-size: 1.1rem;
-								color: $text-black;
+								color: $black;
 								padding: 0.5rem 0 0.25rem;
 							}
 							p {
@@ -375,7 +385,7 @@ body {
 				display: flex;
 				li {
 					&.active {
-						color: $text-orange;
+						color: $orange;
 					}
 					a {
 						padding: 0.5rem;
@@ -403,14 +413,14 @@ body {
 						}
 
 						h3 {
-							color: $text-dark-grey;
+							color: $dark-grey;
 							font-size: 1.1rem;
 							font-weight: 600;
 							transition: all 0.3s ease-in-out;
 						}
 
 						p {
-							color: $text-medium-light-grey;
+							color: $medium-light-grey;
 						}
 					}
 				}
@@ -432,24 +442,74 @@ body {
 					}
 
 					.blog-date {
-						@include mDate;
+						@include title-border;
+						margin-top: 0.75rem;
 					}
 
 					h3 {
-						color: $text-dark-grey;
+						color: $dark-grey;
 						font-size: 1.1rem;
 						font-weight: 600;
 						transition: all 0.3s ease-in-out;
 					}
 
 					p {
-						color: $text-black;
+						color: $black;
+						margin-top: 0.5rem;
 
 						span {
 							a {
-								color: $text-orange;
+								color: $orange;
 							}
 						}
+					}
+				}
+			}
+			.blog-container {
+				margin-top: 1.85rem;
+				ul {
+					display: flex;
+					li {
+						a {
+							img {
+								width: 100%;
+								height: auto;
+								transform: scale(1);
+								max-width: 100%;
+							}
+						}
+						h3,
+						p {
+							text-align: center;
+						}
+
+						h3 {
+							color: $dark-grey;
+							font-size: 1.1rem;
+							font-weight: 600;
+							transition: all 0.3s ease-in-out;
+						}
+
+						p {
+							color: $medium-light-grey;
+						}
+					}
+				}
+			}
+		}
+
+		&#contact-card {
+			.contact-details {
+				display: flex;
+				flex-direction: column;
+				margin-top: 0.75rem;
+				.detail {
+					display: flex;
+					justify-content: space-between;
+					.contact-title {
+						@include title-border;
+						color: $white;
+						background-color: $orange;
 					}
 				}
 			}

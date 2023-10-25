@@ -16,7 +16,7 @@ a {
 	cursor: pointer;
 
 	&:link {
-		color: c.$text-black;
+		color: c.$black;
 	}
 }
 
@@ -25,5 +25,5 @@ ul {
 }
 
 .text-orange {
-	color: c.$text-orange;
+	color: c.$orange;
 }
