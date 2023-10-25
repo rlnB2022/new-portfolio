@@ -325,7 +325,7 @@ body {
 						@include title-border;
 
 						&.inactive {
-							color: $light-grey;
+							color: $lighter-grey;
 							border: 1px solid rgb(238, 238, 238);
 						}
 					}
@@ -499,6 +499,7 @@ body {
 		}
 
 		&#contact-card {
+			padding-bottom: 40px;
 			.contact-details {
 				display: flex;
 				flex-direction: column;
@@ -510,6 +511,44 @@ body {
 						@include title-border;
 						color: $white;
 						background-color: $orange;
+					}
+				}
+			}
+			.contact-form-container {
+				margin-top: 30px;
+				form {
+					&.contact-form {
+						display: flex;
+						flex-direction: column;
+					}
+
+					input {
+						width: 100%;
+						padding: 0 1rem;
+						display: block;
+						height: 50px;
+						color: $dark-grey;
+						outline: 0;
+						border: 2px solid #eee;
+						margin-bottom: 30px;
+					}
+
+					textarea {
+						height: 100px;
+						padding: 1rem;
+					}
+
+					button {
+						width: 100%;
+						padding: 1.5rem 2rem;
+						background: $light-grey;
+						border-radius: 5px;
+						border: none;
+						text-align: center;
+						font-size: 0.85rem;
+						color: $dark-grey;
+						font-weight: 600;
+						cursor: pointer;
 					}
 				}
 			}

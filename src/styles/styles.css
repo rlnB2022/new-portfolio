@@ -439,6 +439,9 @@ body {
 .container .card#blog-card .blog-container ul li p {
   color: #999999;
 }
+.container .card#contact-card {
+  padding-bottom: 40px;
+}
 .container .card#contact-card .contact-details {
   display: flex;
   flex-direction: column;
@@ -458,4 +461,37 @@ body {
   border-radius: 4px;
   color: #fff;
   background-color: #f59e0b;
+}
+.container .card#contact-card .contact-form-container {
+  margin-top: 30px;
+}
+.container .card#contact-card .contact-form-container form.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.container .card#contact-card .contact-form-container form input {
+  width: 100%;
+  padding: 0 1rem;
+  display: block;
+  height: 50px;
+  color: #323232;
+  outline: 0;
+  border: 2px solid #eee;
+  margin-bottom: 30px;
+}
+.container .card#contact-card .contact-form-container form textarea {
+  height: 100px;
+  padding: 1rem;
+}
+.container .card#contact-card .contact-form-container form button {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: #eee;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #323232;
+  font-weight: 600;
+  cursor: pointer;
 }
