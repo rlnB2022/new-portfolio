@@ -104,4 +104,35 @@ const addNavListEventListeners = () => {
 	});
 };
 
+/**
+ * Attach showProjectModal eventListener to project-links elements
+ */
+const addShowProjectModalListeners = () => {
+	const projectItems = document.querySelectorAll(".project-link");
+	const projectModal = document.getElementById("project-modal");
+	const projectModalDetails = document.getElementById("project-modal-details");
+	const body = document.body;
+
+	projectItems.forEach((projectItem) => {
+		projectItem.addEventListener("click", (event) => {
+			event.preventDefault();
+			body.style.overflow = "hidden";
+
+			projectModal.classList.add("show-project-modal");
+
+			// build the img element
+			const img = document.createElement("img");
+
+			// get the src
+			const src = projectItem.dataset.projectimgsrc;
+			img.src = `./images/${src}.jpg`;
+			img.style.width = "100%";
+			img.style.maxWidth = "400px";
+			img.style.height = "auto";
+			projectModalDetails.appendChild(img);
+		});
+	});
+};
+
 addNavListEventListeners();
+addShowProjectModalListeners();
