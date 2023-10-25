@@ -110,29 +110,77 @@ const addNavListEventListeners = () => {
 const addShowProjectModalListeners = () => {
 	const projectItems = document.querySelectorAll(".project-link");
 	const projectModal = document.getElementById("project-modal");
-	const projectModalDetails = document.getElementById("project-modal-details");
-	const body = document.body;
+	const projectModalContents = document.getElementById(
+		"project-modal-contents"
+	);
 
-	projectItems.forEach((projectItem) => {
+	const projects = [
+		{
+			id: "millionaire",
+			name: "Javascript Millionaire",
+			imgSrc: "javascript-millionaire",
+			projectHTML: "<div>Testing 1-2-3</div>",
+		},
+		{
+			id: "digidugout",
+			name: "DigiDugout",
+			imgSrc: "javascript-millionaire",
+			projectHTML: "<div>Testing 1-2-3</div>",
+		},
+		{
+			id: "twobarrels",
+			name: "Two Barrels, LLC",
+			imgSrc: "javascript-millionaire",
+			projectHTML: "<div>Testing 1-2-3</div>",
+		},
+	];
+
+	projectItems.forEach((projectItem, index) => {
 		projectItem.addEventListener("click", (event) => {
 			event.preventDefault();
-			body.style.overflow = "hidden";
 
-			projectModal.classList.add("show-project-modal");
+			document.body.style.overflow = "hidden";
 
-			// build the img element
+			projectModal.style.display = "block";
+			// when adding display: block, the modal displays immediately...adding a delay
+			// I know there's a better way to do this than to use setTimeout...
+			// @TODO look into it
+			setTimeout(() => {
+				projectModal.classList.add("show-project-modal");
+			}, 100);
+
+			projectModalContents.replaceChildren();
+			// // set the project name for the header
+			const projectNameElement = document.getElementById("project-name");
+
+			// // build the img element
 			const img = document.createElement("img");
 
-			// get the src
-			const src = projectItem.dataset.projectimgsrc;
+			// // set the src and other styles
+			const src = projects[index].imgSrc;
 			img.src = `./images/${src}.jpg`;
 			img.style.width = "100%";
 			img.style.maxWidth = "400px";
 			img.style.height = "auto";
-			projectModalDetails.appendChild(img);
+
+			projectModalContents.appendChild(img);
 		});
 	});
 };
+
+// attach the close modal listener
+const closeModalElem = document.getElementById("close-modal");
+closeModalElem.addEventListener("click", () => {
+	// get the modal parent element
+	const projectModal = document.getElementById("project-modal");
+	const removeTransition = () => {
+		projectModal.removeAttribute("style");
+		projectModal.removeEventListener("transitionend", removeTransition);
+	};
+	projectModal.addEventListener("transitionend", removeTransition);
+	projectModal.classList.remove("show-project-modal");
+	document.body.removeAttribute("style");
+});
 
 addNavListEventListeners();
 addShowProjectModalListeners();

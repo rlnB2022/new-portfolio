@@ -502,21 +502,27 @@ body {
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 9999;
+  transition: opacity 0.25s ease-in-out;
 }
 .container #project-modal.show-project-modal {
-  animation: animate-project-modal 0.25s ease-in-out forwards;
-  display: block;
+  opacity: 1;
 }
 .container #project-modal #project-modal-details {
   background-color: #fff;
   margin: 1rem;
+  height: calc(100% - 2rem);
+}
+.container #project-modal #project-modal-details .project-header {
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
 }
 .container #project-modal img {
-  text-align: center;
   display: block;
 }
 
-@keyframes animate-project-modal {
+@keyframes animate-in-project-modal {
   0% {
     opacity: 0;
   }
