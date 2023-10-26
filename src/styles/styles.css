@@ -356,9 +356,9 @@ body {
 }
 .container .card#projects-card .projects .project-container {
   margin-top: 1.85rem;
-  flex: 1;
-  transition: 0.25s ease-in-out;
-  transform-origin: top left;
+  max-height: 330px;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
 }
 .container .card#projects-card .projects .project-container.show-project {
   animation: show-project 0.25s ease-in-out forwards;
@@ -538,19 +538,25 @@ body {
 }
 @keyframes hide-project {
   0% {
-    transform: scale(1);
+    max-height: 330px;
+    visibility: visible;
+    opacity: 1;
   }
   100% {
-    transform: scale(0);
-    display: none;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 @keyframes show-project {
   0% {
-    transform: scale(0);
-    display: block;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
   }
   100% {
-    transform: scale(1);
+    max-height: 330px;
+    visibility: visible;
+    opacity: 1;
   }
 }

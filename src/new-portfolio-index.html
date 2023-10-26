@@ -47,13 +47,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="#blog">
+							<a href="#blog-card">
 								<div><i class="fa-solid fa-comment-dots"></i></div>
 								<div class="link-name">Blog</div>
 							</a>
 						</li>
 						<li>
-							<a href="#contact">
+							<a href="#contact-card">
 								<div><i class="fa-solid fa-at"></i></div>
 								<div class="link-name">Contact</div>
 							</a>
@@ -99,8 +99,8 @@
 						</p>
 						<p>
 							My main focus these days is building features, resolving tickets
-							and expanding my knowledge by learning back-end tech (recently,
-							looking deeper into Ruby on Rails!) In my free time, I've built
+							and expanding my knowledge by learning new tech (recently,
+							looking into Ruby on Rails!) In my free time, I've built
 							many fun projects from the crazy ideas that are going on in my
 							head.
 						</p>
@@ -262,55 +262,104 @@
 				</h2>
 
 				<ul class="filter-menu">
-					<li class="filter-item active"><a href="#">All</a></li>
-					<li class="filter-item"><a href="#">React</a></li>
-					<li class="filter-item"><a href="#">PHP</a></li>
+					<li class="filter-item"><a class="active" href="#" data-targetGroup="all">All</a></li>
+					<li class="filter-item"><a href="#" data-targetGroup="react">React</a></li>
+					<li class="filter-item"><a href="#" data-targetGroup="php">PHP</a></li>
 				</ul>
-				<div class="project-container">
-					<ul>
-						<li>
-							<a target="_blank" href="https://rlnb2022.github.io/Javascript-Millionaire/">
-								<img src="./images/javascript-millionaire.jpg" alt="">
-							</a>
-							<h3>Javascript Millionaire App</h3>
-							<p>React • Redux • Firebase</p>
-						</li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
+				<div class="projects">
+
+					<div class="project-container show-project" data-group="react">
+						<a href="#" class="project-link" data-projectID="0">
+						<!-- <a href="https://rlnb2022.github.io/Javascript-Millionaire/"> -->
+							<img src="./images/javascript-millionaire.jpg" alt="">
+						</a>
+						<h3>Javascript Millionaire App</h3>
+						<p>React • Redux • Firebase</p>
+					</div>
+					<div class="project-container show-project" data-group="php">
+						<a href="#" class="project-link" data-projectimgsrc="1">
+						<!-- <a target="_blank" href="https:www.digidugout.com"> -->
+							<img src="./images/digidugout.jpg" alt="">
+						</a>
+						<h3>DigiDugout Website</h3>
+						<p>PHP • Javascript • jQuery</p>
+					</div>
+					<div class="project-container show-project" data-group="react">
+						<a href="#" class="project-link" data-projectimgsrc="2">
+						<!-- <a target="_blank" href="https://rlnb2022.github.io/twobarrels/"> -->
+							<img src="./images/twobarrels.jpg" alt="">
+						</a>
+						<h3>Two Barrels Website</h3>
+						<p>React • React Redux • React Router</p>
+					</div>
 				</div>
-				<div class="project-container">
+			</div>
+			<div class="card" id="blog-card">
+				<h2 class="content-title">
+					<span class="text-orange">B</span>log
+				</h2>
+				<div class="blog-container">
 					<ul>
 						<li>
-							<a target="_blank" href="https:www.digidugout.com">
-								<img src="./images/digidugout.jpg" alt="">
+							<a target="_blank" href="">
+								<img src="./images/swings.JPG" alt="">
 							</a>
-							<h3>DigiDugout Website</h3>
-							<p>PHP • Javascript • jQuery</p>
+							<div class="blog-date">October 11, 2023</div>
+							<h3>Embracing passion through my childhood</h3>
+							<p>I remember back when I was a kid. My best friend 
+								and I would meet outside and find things to do. Often ...<span><a target="_blank" href="https://blog.rickbeyer.dev/2023/10/11/embracing-passion-through-my-childhood/"> Read more</a></span></p>
 						</li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div>
-				<div class="project-container">
-					<ul>
-						<li>
-							<a target="_blank" href="https://rlnb2022.github.io/twobarrels/">
-								<img src="./images/twobarrels.jpg" alt="">
-							</a>
-							<h3>Two Barrels Website</h3>
-							<p>React • React Redux • React Router</p>
-						</li>
-						<li></li>
-						<li></li>
-						<li></li>
 					</ul>
 				</div>
 			</div>
-			<div class="card" id="blog-card"></div>
-			<div class="card" id="contact-card"></div>
+			<div class="card" id="contact-card">
+				<h2 class="content-title">
+					<span class="text-orange">G</span>et in Touch
+				</h2>
+				<div class="contact-details">
+					<div class="detail contact-address">
+						<div class="contact-title">Address</div>
+						<div>Texas, USA</div>
+					</div>
+					<div class="detail contact-email">
+						<div class="contact-title">Email</div>
+						<div>beyer.richard73@gmail.com</div>
+					</div>
+				</div>
+				<div class="contact-form-container">
+					<h2 class="content-title">
+						<span class="text-orange">C</span>ontact Form
+					</h2>
+					<form class="contact-form-container" action="https://formsubmit.co/beyer.richard73@gmail.com" method="POST">
+						<input type="text" name="name" placeholder="Full Name" required>
+						<input type="email" name="email" placeholder="Email Address" required>
+						<input type="textarea" name="message" placeholder="Your message" required>
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_next" value="https://rickbeyer.dev/thankyou.html">
+						<input type="hidden" name="_subject" value="Portfolio email!">
+						 <button type="submit">SEND <i class="fa-solid fa-arrow-right"></i></button>
+					</form>
+				</div>
+			</div>
+			<div id="project-modal">
+				<div id="project-modal-details">
+					<div class="project-header">
+						<div id="close-modal">
+							<i class="fa-solid fa-xmark fa-2x"></i>
+						</div>
+					</div>
+					<div id="project-modal-contents">
+						<div class="project-img"></div>
+						<div class="project-name"></div>
+						<div class="project-description"></div>
+						<div class="modal-button-container">
+							<div class="modal-live-link"></div>
+							<div class="modal-github-link"></div>
+						</div>
+					</div>
+					<!-- script.js adds project elements when a project link is clicked -->
+				</div>
+			</div>
 		</div>
 		<script src="js/script.js" defer></script>
 	</body>
