@@ -198,6 +198,8 @@ filterItems.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		event.preventDefault();
 
+		const targetGroup = event.target.dataset.targetgroup;
+
 		// if filter item already is selected, return
 		if (event.target.classList.contains("active")) {
 			return;
@@ -210,20 +212,38 @@ filterItems.forEach((item) => {
 		// add active class to selected filter
 		event.target.classList.add("active");
 
-		// if all is selected, remove all hidden projects
-		// if (event.target.dataset.targetgroup === "all") {
-		// 	if (projectContainers) {
-		// 		projectContainers.forEach((container) => {
-		// 			if (container.style.animation)
-		// 				container.style.classList.remove("hide-project");
-		// 			container.style.classList.add("show-project");
-		// 		});
-		// 	}
+		// if all is selected, show all hidden projects
+		if (targetGroup === "all") {
+			if (projectContainers) {
+				projectContainers.forEach((container) => {
+					if (container.classList.contains("hide-project")) {
+						container.classList.remove("hide-project");
+						container.classList.add("show-project");
+					}
+				});
+			}
 
-		// 	return;
-		// }
+			return;
+		}
 
-		// apply the correct animation to each project container
+		// loop through each project
+		projectContainers.forEach((container) => {
+			if (
+				container.dataset.group === targetGroup &&
+				container.classList.contains("hide-project")
+			) {
+				container.classList.remove("hide-project");
+				container.classList.add("show-project");
+			} else if (
+				container.dataset.group !== targetGroup &&
+				container.classList.contains("show-project")
+			) {
+				container.classList.remove("show-project");
+				container.classList.add("hide-project");
+			}
+		});
+		// if already visible, do nothing
+		// if matches the filter, add show-project class
 	});
 });
 
