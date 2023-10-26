@@ -124,13 +124,13 @@ const addShowProjectModalListeners = () => {
 		{
 			id: "digidugout",
 			name: "DigiDugout",
-			imgSrc: "javascript-millionaire",
+			imgSrc: "digidugout",
 			projectHTML: "<div>Testing 1-2-3</div>",
 		},
 		{
 			id: "twobarrels",
 			name: "Two Barrels, LLC",
-			imgSrc: "javascript-millionaire",
+			imgSrc: "twobarrels",
 			projectHTML: "<div>Testing 1-2-3</div>",
 		},
 	];
@@ -138,6 +138,8 @@ const addShowProjectModalListeners = () => {
 	projectItems.forEach((projectItem, index) => {
 		projectItem.addEventListener("click", (event) => {
 			event.preventDefault();
+
+			console.log(projects[index].imgSrc);
 
 			document.body.style.overflow = "hidden";
 
@@ -173,11 +175,15 @@ const closeModalElem = document.getElementById("close-modal");
 closeModalElem.addEventListener("click", () => {
 	// get the modal parent element
 	const projectModal = document.getElementById("project-modal");
+
+	/* Setup removeTransition for projectModal */
 	const removeTransition = () => {
 		projectModal.removeAttribute("style");
 		projectModal.removeEventListener("transitionend", removeTransition);
 	};
+
 	projectModal.addEventListener("transitionend", removeTransition);
+
 	projectModal.classList.remove("show-project-modal");
 	document.body.removeAttribute("style");
 });
