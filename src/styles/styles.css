@@ -360,6 +360,12 @@ body {
   transition: 0.25s ease-in-out;
   transform-origin: top left;
 }
+.container .card#projects-card .projects .project-container.show-project {
+  animation: show-project 0.25s ease-in-out fowards;
+}
+.container .card#projects-card .projects .project-container.hide-project {
+  animation: hide-project 0.25s ease-in-out forwards;
+}
 .container .card#projects-card .projects .project-container a img {
   width: 100%;
   height: auto;

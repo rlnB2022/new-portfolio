@@ -401,6 +401,14 @@ body {
 					transition: 0.25s ease-in-out;
 					transform-origin: top left;
 
+					&.show-project {
+						animation: show-project 0.25s ease-in-out fowards;
+					}
+
+					&.hide-project {
+						animation: hide-project 0.25s ease-in-out forwards;
+					}
+
 					a {
 						img {
 							width: 100%;

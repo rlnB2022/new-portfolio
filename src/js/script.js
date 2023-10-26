@@ -191,6 +191,7 @@ closeModalElem.addEventListener("click", () => {
 /* Filter Projects */
 // assign event listeners to each filter item
 const filterItems = document.querySelectorAll(".filter-item");
+const filterAnchor = document.querySelectorAll(".filter-item a");
 const projectContainers = document.querySelectorAll(".project-container");
 
 filterItems.forEach((item) => {
@@ -202,21 +203,27 @@ filterItems.forEach((item) => {
 			return;
 		}
 
+		// remove active class from elements
+		filterAnchor.forEach((itemClass) => {
+			itemClass.classList.remove("active");
+		});
+		// add active class to selected filter
+		event.target.classList.add("active");
+
 		// if all is selected, remove all hidden projects
-		if (event.target.dataset.targetgroup === "all") {
-			if (projectContainers) {
-				projectContainers.forEach((container) => {
-					if (container.style.animation)
-						container.style.animation =
-							"show-project .25s ease-in-out forwards";
-				});
-			}
+		// if (event.target.dataset.targetgroup === "all") {
+		// 	if (projectContainers) {
+		// 		projectContainers.forEach((container) => {
+		// 			if (container.style.animation)
+		// 				container.style.classList.remove("hide-project");
+		// 			container.style.classList.add("show-project");
+		// 		});
+		// 	}
 
-			return;
-		}
+		// 	return;
+		// }
 
-		// hide all that don't match the targetgroup
-		projectContainers;
+		// apply the correct animation to each project container
 	});
 });
 
