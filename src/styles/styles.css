@@ -346,37 +346,37 @@ body {
 .container .card#projects-card .filter-menu {
   display: flex;
 }
-.container .card#projects-card .filter-menu li.active {
-  color: #f59e0b;
-}
 .container .card#projects-card .filter-menu li a {
   padding: 0.5rem;
   display: block;
   color: inherit;
 }
-.container .card#projects-card .project-container {
+.container .card#projects-card .filter-menu li a.active {
+  color: #f59e0b;
+}
+.container .card#projects-card .projects .project-container {
   margin-top: 1.85rem;
+  flex: 1;
+  transition: 0.25s ease-in-out;
+  transform-origin: top left;
 }
-.container .card#projects-card .project-container ul {
-  display: flex;
-}
-.container .card#projects-card .project-container ul li a img {
+.container .card#projects-card .projects .project-container a img {
   width: 100%;
   height: auto;
   transform: scale(1);
   max-width: 100%;
 }
-.container .card#projects-card .project-container ul li h3,
-.container .card#projects-card .project-container ul li p {
+.container .card#projects-card .projects .project-container h3,
+.container .card#projects-card .projects .project-container p {
   text-align: center;
 }
-.container .card#projects-card .project-container ul li h3 {
+.container .card#projects-card .projects .project-container h3 {
   color: #323232;
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
 }
-.container .card#projects-card .project-container ul li p {
+.container .card#projects-card .projects .project-container p {
   color: #999999;
 }
 .container .card#blog-card ul {
@@ -528,5 +528,23 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes hide-project {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    display: none;
+  }
+}
+@keyframes show-project {
+  0% {
+    transform: scale(0);
+    display: block;
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -262,54 +262,36 @@
 				</h2>
 
 				<ul class="filter-menu">
-					<li class="filter-item active"><a href="#">All</a></li>
-					<li class="filter-item"><a href="#">React</a></li>
-					<li class="filter-item"><a href="#">PHP</a></li>
+					<li class="filter-item"><a class="active" href="#" data-targetGroup="all">All</a></li>
+					<li class="filter-item"><a href="#" data-targetGroup="react">React</a></li>
+					<li class="filter-item"><a href="#" data-targetGroup="php">PHP</a></li>
 				</ul>
-				<div class="project-container">
-					<ul>
-						<li>
-							<a href="#" class="project-link" data-projectID="0">
-							<!-- <a href="https://rlnb2022.github.io/Javascript-Millionaire/"> -->
-								<img src="./images/javascript-millionaire.jpg" alt="">
-							</a>
-							<h3>Javascript Millionaire App</h3>
-							<p>React • Redux • Firebase</p>
-						</li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div>
-				<div class="project-container">
-					<ul>
-						<li>
-							<a href="#" class="project-link" data-projectimgsrc="1">
-							<!-- <a target="_blank" href="https:www.digidugout.com"> -->
-								<img src="./images/digidugout.jpg" alt="">
-							</a>
-							<h3>DigiDugout Website</h3>
-							<p>PHP • Javascript • jQuery</p>
-						</li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div>
-				<div class="project-container">
-					<ul>
-						<li>
-							<a href="#" class="project-link" data-projectimgsrc="2">
-							<!-- <a target="_blank" href="https://rlnb2022.github.io/twobarrels/"> -->
-								<img src="./images/twobarrels.jpg" alt="">
-							</a>
-							<h3>Two Barrels Website</h3>
-							<p>React • React Redux • React Router</p>
-						</li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
+				<div class="projects">
+
+					<div class="project-container" data-group="react">
+						<a href="#" class="project-link" data-projectID="0">
+						<!-- <a href="https://rlnb2022.github.io/Javascript-Millionaire/"> -->
+							<img src="./images/javascript-millionaire.jpg" alt="">
+						</a>
+						<h3>Javascript Millionaire App</h3>
+						<p>React • Redux • Firebase</p>
+					</div>
+					<div class="project-container" data-group="php">
+						<a href="#" class="project-link" data-projectimgsrc="1">
+						<!-- <a target="_blank" href="https:www.digidugout.com"> -->
+							<img src="./images/digidugout.jpg" alt="">
+						</a>
+						<h3>DigiDugout Website</h3>
+						<p>PHP • Javascript • jQuery</p>
+					</div>
+					<div class="project-container" data-group="react">
+						<a href="#" class="project-link" data-projectimgsrc="2">
+						<!-- <a target="_blank" href="https://rlnb2022.github.io/twobarrels/"> -->
+							<img src="./images/twobarrels.jpg" alt="">
+						</a>
+						<h3>Two Barrels Website</h3>
+						<p>React • React Redux • React Router</p>
+					</div>
 				</div>
 			</div>
 			<div class="card" id="blog-card">

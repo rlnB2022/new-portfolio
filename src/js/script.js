@@ -188,5 +188,37 @@ closeModalElem.addEventListener("click", () => {
 	document.body.removeAttribute("style");
 });
 
+/* Filter Projects */
+// assign event listeners to each filter item
+const filterItems = document.querySelectorAll(".filter-item");
+const projectContainers = document.querySelectorAll(".project-container");
+
+filterItems.forEach((item) => {
+	item.addEventListener("click", (event) => {
+		event.preventDefault();
+
+		// if filter item already is selected, return
+		if (event.target.classList.contains("active")) {
+			return;
+		}
+
+		// if all is selected, remove all hidden projects
+		if (event.target.dataset.targetgroup === "all") {
+			if (projectContainers) {
+				projectContainers.forEach((container) => {
+					if (container.style.animation)
+						container.style.animation =
+							"show-project .25s ease-in-out forwards";
+				});
+			}
+
+			return;
+		}
+
+		// hide all that don't match the targetgroup
+		projectContainers;
+	});
+});
+
 addNavListEventListeners();
 addShowProjectModalListeners();
