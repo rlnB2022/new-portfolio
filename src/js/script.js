@@ -118,6 +118,19 @@ const addShowProjectModalListeners = () => {
 
 	projectItems.forEach((projectItem, index) => {
 		projectItem.addEventListener("click", (event) => {
+			// destructure data from projects
+			const {
+				imgSrc,
+				name,
+				tech,
+				description,
+				techUsed,
+				problemsFaced,
+				whatILearned,
+				takeaways,
+				projecttHTML,
+			} = projects[index];
+
 			event.preventDefault();
 
 			document.body.style.overflow = "hidden";
@@ -131,22 +144,96 @@ const addShowProjectModalListeners = () => {
 			}, 100);
 
 			projectModalContents.replaceChildren();
-			// // set the project name for the header
-			const projectNameElement = document.getElementById("project-name");
 
-			// // build the img element
+			// build the img element
 			const img = document.createElement("img");
 
-			// // set the src and other styles
-			const src = projects[index].imgSrc;
+			// set the src and other styles
+			const src = imgSrc;
 			img.src = `./images/${src}.jpg`;
 			img.style.width = "100%";
 			img.style.maxWidth = "400px";
 			img.style.height = "auto";
+			img.style.marginBottom = "1rem";
 
 			projectModalContents.appendChild(img);
+
+			// get the name of the project
+			const h2 = document.createElement("h2");
+			const h2_span = document.createElement("span");
+
+			h2_span.classList.add("text-orange");
+			h2_span.textContent = name.charAt(0);
+			h2.appendChild(h2_span);
+			h2.appendChild(document.createTextNode(name.slice(1)));
+
+			projectModalContents.appendChild(h2);
+
+			// get the tech used
+			const h3 = document.createElement("h3");
+			h3.textContent = tech;
+
+			projectModalContents.appendChild(h3);
+
+			// add description
+			const projectDescriptionHeader = createNewProjectHeader(
+				"PROJECT DESCRIPTION"
+			);
+
+			const projectDescriptionElement =
+				createProjectDescriptionElement(description);
+
+			const projectTechUsedHeader = createNewProjectHeader("TECH USED");
+			const projectTechUsedElement = createTechUsedElements(techUsed);
+			// <div class='project-subtitle'><i class='fa-solid fa-diagram-project'></i><h3>
+			// const description = document.createElement("div");
+			// description.classList.add("project-subtitle");
+
+			// description.style.padding = "0 2.25rem";
+			// description.style.height = "100%";
+			// description.style.overflow = "auto";
+			// description.innerHTML = projectHTML;
+
+			projectModalContents.appendChild(projectDescriptionHeader);
+			projectModalContents.appendChild(projectDescriptionElement);
+			projectModalContents.appendChild(projectTechUsedHeader);
+			projectModalContents.appendChild(projectTechUsedElement);
 		});
 	});
+};
+
+const createProjectDescriptionElement = (desc) => {
+	const para = document.createElement("p");
+	para.textContent = desc;
+
+	return para;
+};
+
+const createTechUsedElements = (techUsed) => {
+	// techUsed is an array of strings
+	const ul = document.createElement("ul");
+	const ulItems = techUsed.map((tech) => {
+		const li = document.createElement("li");
+		li.textContent = tech;
+		ul.appendChild(li);
+	});
+	return ul;
+};
+
+const createNewProjectHeader = (headerName) => {
+	const subtitleElement = document.createElement("div");
+	subtitleElement.classList.add("project-subtitle");
+
+	const fontAwesomeElement = document.createElement("i");
+	fontAwesomeElement.classList.add("fa-solid", "fa-diagram-project");
+
+	const subtitleHeader = document.createElement("h3");
+	subtitleHeader.textContent = headerName;
+
+	subtitleElement.appendChild(fontAwesomeElement);
+	subtitleElement.appendChild(subtitleHeader);
+
+	return subtitleElement;
 };
 
 // attach the close modal listener

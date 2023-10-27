@@ -580,21 +580,6 @@ body {
 		z-index: 9999;
 		transition: opacity 0.25s ease-in-out;
 
-		#close-modal {
-			position: absolute;
-			top: 0;
-			right: 0;
-			height: 64px;
-			width: 64px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			i {
-				color: $dark-grey;
-			}
-		}
-
 		&.show-project-modal {
 			opacity: 1;
 		}
@@ -602,6 +587,86 @@ body {
 		#project-modal-details {
 			background-color: $white;
 			height: 100%;
+
+			#close-modal {
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 64px;
+				width: 64px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				i {
+					color: $dark-grey;
+				}
+			}
+
+			#project-modal-contents {
+				height: 100%;
+				text-align: center;
+
+				h2 {
+					margin-bottom: 0.4rem;
+					font-size: 1.5rem;
+					color: $dark-grey;
+					font-weight: 600;
+					position: relative;
+
+					&:before {
+						@include blob;
+						left: 3rem;
+					}
+				}
+
+				h3 {
+					color: $medium-light-grey;
+					font-size: 0.9rem;
+					padding-bottom: 1rem;
+					margin: 0 1rem;
+				}
+
+				p {
+					color: $medium-grey;
+					margin-top: 1rem;
+				}
+
+				.project-subtitle {
+					padding: 1rem 0;
+					font-size: 1.25rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-bottom: 1px solid #eee;
+
+					i {
+						color: $orange;
+						font-size: 1.85rem;
+					}
+
+					h3 {
+						font-size: 17px;
+						padding-bottom: 0;
+					}
+				}
+
+				.project-tech-used {
+					.project-list {
+						list-style-type: disc;
+						list-style-position: inside;
+						margin: 1rem 1rem 0;
+
+						li {
+							text-align: left;
+						}
+					}
+				}
+
+				i {
+					margin-right: 0.5rem;
+				}
+			}
 		}
 
 		img {

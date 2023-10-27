@@ -517,7 +517,14 @@ body {
   z-index: 9999;
   transition: opacity 0.25s ease-in-out;
 }
-.container #project-modal #close-modal {
+.container #project-modal.show-project-modal {
+  opacity: 1;
+}
+.container #project-modal #project-modal-details {
+  background-color: #fff;
+  height: 100%;
+}
+.container #project-modal #project-modal-details #close-modal {
   position: absolute;
   top: 0;
   right: 0;
@@ -527,15 +534,67 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container #project-modal #close-modal i {
+.container #project-modal #project-modal-details #close-modal i {
   color: #323232;
 }
-.container #project-modal.show-project-modal {
-  opacity: 1;
-}
-.container #project-modal #project-modal-details {
-  background-color: #fff;
+.container #project-modal #project-modal-details #project-modal-contents {
   height: 100%;
+  text-align: center;
+}
+.container #project-modal #project-modal-details #project-modal-contents h2 {
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+  color: #323232;
+  font-weight: 600;
+  position: relative;
+}
+.container #project-modal #project-modal-details #project-modal-contents h2:before {
+  content: "";
+  position: absolute;
+  left: -0.85rem;
+  top: -0.2rem;
+  width: 4rem;
+  height: 2.6rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.01) 100%);
+  border-radius: 2.75rem;
+  left: 3rem;
+}
+.container #project-modal #project-modal-details #project-modal-contents h3 {
+  color: #999999;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  margin: 0 1rem;
+}
+.container #project-modal #project-modal-details #project-modal-contents p {
+  color: #646464;
+  margin-top: 1rem;
+}
+.container #project-modal #project-modal-details #project-modal-contents .project-subtitle {
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.container #project-modal #project-modal-details #project-modal-contents .project-subtitle i {
+  color: #f59e0b;
+  font-size: 1.85rem;
+}
+.container #project-modal #project-modal-details #project-modal-contents .project-subtitle h3 {
+  font-size: 17px;
+  padding-bottom: 0;
+}
+.container #project-modal #project-modal-details #project-modal-contents .project-tech-used .project-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin: 1rem 1rem 0;
+}
+.container #project-modal #project-modal-details #project-modal-contents .project-tech-used .project-list li {
+  text-align: left;
+}
+.container #project-modal #project-modal-details #project-modal-contents i {
+  margin-right: 0.5rem;
 }
 .container #project-modal img {
   display: block;
