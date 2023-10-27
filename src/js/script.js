@@ -1,3 +1,5 @@
+import { projects } from "./project-data.js";
+
 const typingTextElemTop = document.querySelector(".typing-anim-top");
 const typingTextElemBottom = document.querySelector(".typing-anim-bottom");
 
@@ -114,32 +116,9 @@ const addShowProjectModalListeners = () => {
 		"project-modal-contents"
 	);
 
-	const projects = [
-		{
-			id: "millionaire",
-			name: "Javascript Millionaire",
-			imgSrc: "javascript-millionaire",
-			projectHTML: "<div>Testing 1-2-3</div>",
-		},
-		{
-			id: "digidugout",
-			name: "DigiDugout",
-			imgSrc: "digidugout",
-			projectHTML: "<div>Testing 1-2-3</div>",
-		},
-		{
-			id: "twobarrels",
-			name: "Two Barrels, LLC",
-			imgSrc: "twobarrels",
-			projectHTML: "<div>Testing 1-2-3</div>",
-		},
-	];
-
 	projectItems.forEach((projectItem, index) => {
 		projectItem.addEventListener("click", (event) => {
 			event.preventDefault();
-
-			console.log(projects[index].imgSrc);
 
 			document.body.style.overflow = "hidden";
 
