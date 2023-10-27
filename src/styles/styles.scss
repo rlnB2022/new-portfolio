@@ -606,6 +606,8 @@ body {
 			#project-modal-contents {
 				height: 100%;
 				text-align: center;
+				display: flex;
+				flex-direction: column;
 
 				h2 {
 					margin-bottom: 0.4rem;
@@ -636,9 +638,9 @@ body {
 					padding: 1rem 0;
 					font-size: 1.25rem;
 					display: flex;
-					justify-content: center;
 					align-items: center;
 					border-bottom: 1px solid #eee;
+					margin-left: 1rem;
 
 					i {
 						color: $orange;

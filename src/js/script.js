@@ -119,19 +119,18 @@ const addShowProjectModalListeners = () => {
 	projectItems.forEach((projectItem, index) => {
 		projectItem.addEventListener("click", (event) => {
 			// destructure data from projects
-			const {
-				imgSrc,
-				name,
-				tech,
-				description,
-				techUsed,
-				problemsFaced,
-				whatILearned,
-				takeaways,
-				projecttHTML,
-			} = projects[index];
+			const { imgSrc, name, tech, projectLink, githubLink, description } =
+				projects[index];
 
 			event.preventDefault();
+
+			const projectHeaders = [
+				"PROJECT DESCRIPTION",
+				"TECH USED",
+				"PROBLEMS FACED",
+				"WHAT I LEARNED",
+				"TAKEAWAYS",
+			];
 
 			document.body.style.overflow = "hidden";
 
@@ -175,49 +174,24 @@ const addShowProjectModalListeners = () => {
 
 			projectModalContents.appendChild(h3);
 
-			// add description
-			const projectDescriptionHeader = createNewProjectHeader(
-				"PROJECT DESCRIPTION"
-			);
+			const projectContainer = document.createElement("div");
+			projectContainer.id = "project-container";
+			projectContainer.style.padding = "0 2.25rem";
+			projectContainer.style.overflow = "auto";
 
-			const projectDescriptionElement =
-				createProjectDescriptionElement(description);
+			// add each section
+			projectHeaders.map((header, index) => {
+				const headerElement = createNewProjectHeader(header);
+				projectContainer.appendChild(headerElement);
 
-			const projectTechUsedHeader = createNewProjectHeader("TECH USED");
-			const projectTechUsedElement = createTechUsedElements(techUsed);
-			// <div class='project-subtitle'><i class='fa-solid fa-diagram-project'></i><h3>
-			// const description = document.createElement("div");
-			// description.classList.add("project-subtitle");
+				const descElement = document.createElement("div");
+				descElement.innerHTML = description[index];
+				projectContainer.appendChild(descElement);
+			});
 
-			// description.style.padding = "0 2.25rem";
-			// description.style.height = "100%";
-			// description.style.overflow = "auto";
-			// description.innerHTML = projectHTML;
-
-			projectModalContents.appendChild(projectDescriptionHeader);
-			projectModalContents.appendChild(projectDescriptionElement);
-			projectModalContents.appendChild(projectTechUsedHeader);
-			projectModalContents.appendChild(projectTechUsedElement);
+			projectModalContents.appendChild(projectContainer);
 		});
 	});
-};
-
-const createProjectDescriptionElement = (desc) => {
-	const para = document.createElement("p");
-	para.textContent = desc;
-
-	return para;
-};
-
-const createTechUsedElements = (techUsed) => {
-	// techUsed is an array of strings
-	const ul = document.createElement("ul");
-	const ulItems = techUsed.map((tech) => {
-		const li = document.createElement("li");
-		li.textContent = tech;
-		ul.appendChild(li);
-	});
-	return ul;
 };
 
 const createNewProjectHeader = (headerName) => {
