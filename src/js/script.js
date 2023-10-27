@@ -189,11 +189,11 @@ closeModalElem.addEventListener("click", () => {
 });
 
 /* Filter Projects */
-// assign event listeners to each filter item
 const filterItems = document.querySelectorAll(".filter-item");
 const filterAnchor = document.querySelectorAll(".filter-item a");
 const projectContainers = document.querySelectorAll(".project-container");
 
+// assign event listeners to each filter item
 filterItems.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		event.preventDefault();
@@ -227,14 +227,19 @@ filterItems.forEach((item) => {
 		}
 
 		// loop through each project
+		// add or remove classes depending on whether the
+		// project belongs to the group selected or not
 		projectContainers.forEach((container) => {
+			// if already visible, do nothing
 			if (
 				container.dataset.group === targetGroup &&
 				container.classList.contains("hide-project")
 			) {
 				container.classList.remove("hide-project");
 				container.classList.add("show-project");
-			} else if (
+			}
+			// if matches the filter, add show-project class
+			else if (
 				container.dataset.group !== targetGroup &&
 				container.classList.contains("show-project")
 			) {
@@ -242,8 +247,6 @@ filterItems.forEach((item) => {
 				container.classList.add("hide-project");
 			}
 		});
-		// if already visible, do nothing
-		// if matches the filter, add show-project class
 	});
 });
 
