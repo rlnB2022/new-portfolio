@@ -175,7 +175,7 @@ const addShowProjectModalListeners = () => {
 			const projectContainer = document.createElement("div");
 			projectContainer.id = "project-container";
 			projectContainer.style.padding = "0 2.25rem";
-			projectContainer.style.overflow = "auto";
+			projectContainer.style.overflow = "scroll";
 
 			// add each section
 			projectHeaders.map((header, index) => {
@@ -192,8 +192,9 @@ const addShowProjectModalListeners = () => {
 
 			const projectButtons = document.createElement("div");
 			projectButtons.style.borderTop = "1px solid #eee";
-			projectButtons.style.padding = "1rem";
+			projectButtons.style.padding = "1.5rem 1.5rem 1rem";
 			projectButtons.style.display = "flex";
+			projectButtons.style.marginBottom = ".5rem";
 
 			const btnLive = document.createElement("button");
 			const btnCode = document.createElement("button");
