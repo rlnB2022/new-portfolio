@@ -9,6 +9,8 @@ export const projects = [
 		description: [
 			"<p>To strengthen my knowledge of React and understand how to use a database with a React app, I created this app. I have updated the app to utilize Redux for state management.</p>",
 			"<ul><li>React</li><li>useState / UseEffect Hooks</li><li>Firebase</li><li>HTML</li><li>CSS</li><li>Javascript</li></ul>",
+			"<p>Having never used Firebase/Firestorm before, I took it as a challenge. (I love learning new things!) Reading through the Firestorm docs and walking through the setup process on their website wasn't too difficult.</p><p>I had an issue with too many renderings when I implement the Timer component from App.js. Instead of counting down from 30 when the game starts and the question is revealed, it began immediately. I moved the logic to the Timer component and that helped tremendously.</p><p>I used SVG images for each question/answer. I ran into a problem where the SVGs wouldn't resize to fit the grid. I replaced the SVGs with simple borders/border-radius styles applied. I understand that the viewbox setting in the SVG might be the culprit. I'll have to learn more about using SVGs to understand how to implement something like this in the future.</p>",
+			"<p>I learned that React is the library that was just made for me. I love it! Firestore databases are amazing. Coming from a SQL background, a noSQL database with documents wasn't as difficult as I thought it would be. Implementing React Redux to manage the state of the app was also not as difficult as I expected, either. At my current job, we used Flux, so it was easy to adapt and learn.</p>",
 		],
 	},
 	{

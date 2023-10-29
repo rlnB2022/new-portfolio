@@ -129,7 +129,6 @@ const addShowProjectModalListeners = () => {
 				"TECH USED",
 				"PROBLEMS FACED",
 				"WHAT I LEARNED",
-				"TAKEAWAYS",
 			];
 
 			document.body.style.overflow = "hidden";
@@ -190,6 +189,26 @@ const addShowProjectModalListeners = () => {
 			});
 
 			projectModalContents.appendChild(projectContainer);
+
+			const projectButtons = document.createElement("div");
+			projectButtons.style.padding = "1rem";
+			projectButtons.style.display = "flex";
+
+			const btnLive = document.createElement("button");
+			const btnCode = document.createElement("button");
+
+			btnLive.style.flex = "1";
+			btnCode.style.flex = "1";
+
+			btnLive.textContent = "View Live";
+			btnCode.textContent = "View Code";
+
+			btnLive.style.padding = ".5rem 1rem";
+
+			projectButtons.appendChild(btnLive);
+			projectButtons.appendChild(btnCode);
+
+			projectModalContents.appendChild(projectButtons);
 		});
 	});
 };
