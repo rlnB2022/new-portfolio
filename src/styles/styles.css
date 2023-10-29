@@ -41,9 +41,11 @@ body {
   z-index: 100;
 }
 .container header .mobile-header {
-  display: block;
-  padding: 10px 62px 10px 18px;
+  padding: 10px 18px 10px 18px;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .container header .mobile-header .title {
   font-size: 15px;
@@ -55,6 +57,14 @@ body {
   color: #f59e0b;
   height: 14px;
   line-height: 14px;
+}
+.container header .mobile-header .mode-button {
+  border-radius: 50%;
+  background-color: #eee;
+  padding: 0.25rem;
+  height: 43px;
+  width: 43px;
+  text-align: center;
 }
 .container header .menu {
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
