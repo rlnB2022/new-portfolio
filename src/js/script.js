@@ -127,7 +127,7 @@ const addShowProjectModalListeners = () => {
 			const projectHeaders = [
 				"PROJECT DESCRIPTION",
 				"TECH USED",
-				"PROBLEMS FACED",
+				"PROCESS",
 				"WHAT I LEARNED",
 			];
 
@@ -150,7 +150,6 @@ const addShowProjectModalListeners = () => {
 			const src = imgSrc;
 			img.src = `./images/${src}.jpg`;
 			img.style.width = "100%";
-			img.style.maxWidth = "400px";
 			img.style.height = "auto";
 			img.style.marginBottom = "1rem";
 
@@ -180,10 +179,11 @@ const addShowProjectModalListeners = () => {
 
 			// add each section
 			projectHeaders.map((header, index) => {
-				const headerElement = createNewProjectHeader(header);
+				const headerElement = createNewProjectHeader(header, index);
 				projectContainer.appendChild(headerElement);
 
 				const descElement = document.createElement("div");
+				descElement.style.marginBottom = "1rem";
 				descElement.innerHTML = description[index];
 				projectContainer.appendChild(descElement);
 			});
@@ -191,19 +191,39 @@ const addShowProjectModalListeners = () => {
 			projectModalContents.appendChild(projectContainer);
 
 			const projectButtons = document.createElement("div");
+			projectButtons.style.borderTop = "1px solid #eee";
 			projectButtons.style.padding = "1rem";
 			projectButtons.style.display = "flex";
 
 			const btnLive = document.createElement("button");
 			const btnCode = document.createElement("button");
 
-			btnLive.style.flex = "1";
-			btnCode.style.flex = "1";
+			btnLive.style.width = "50%";
+			btnCode.style.width = "50%";
 
 			btnLive.textContent = "View Live";
 			btnCode.textContent = "View Code";
 
-			btnLive.style.padding = ".5rem 1rem";
+			btnLive.style.marginRight = "5px";
+			btnCode.style.marginLeft = "5px";
+
+			btnLive.style.border = "none";
+			btnCode.style.border = "1px solid #f59e0b";
+
+			btnLive.style.borderRadius = "5px";
+			btnCode.style.borderRadius = "5px";
+
+			btnLive.style.backgroundColor = "#f59e0b";
+			btnLive.style.color = "#fff";
+
+			btnCode.style.backgroundColor = "#fff";
+			btnCode.style.color = "#f59e0b";
+
+			btnLive.style.height = "50px";
+			btnCode.style.height = "50px";
+
+			btnLive.style.fontSize = "1rem";
+			btnCode.style.fontSize = "1rem";
 
 			projectButtons.appendChild(btnLive);
 			projectButtons.appendChild(btnCode);
@@ -213,12 +233,19 @@ const addShowProjectModalListeners = () => {
 	});
 };
 
-const createNewProjectHeader = (headerName) => {
+const createNewProjectHeader = (headerName, idx) => {
+	const icon = [
+		"fa-diagram-project",
+		"fa-microchip",
+		"fa-triangle-exclamation",
+		"fa-graduation-cap",
+	];
+
 	const subtitleElement = document.createElement("div");
 	subtitleElement.classList.add("project-subtitle");
 
 	const fontAwesomeElement = document.createElement("i");
-	fontAwesomeElement.classList.add("fa-solid", "fa-diagram-project");
+	fontAwesomeElement.classList.add("fa-solid", icon[idx]);
 
 	const subtitleHeader = document.createElement("h3");
 	subtitleHeader.textContent = headerName;

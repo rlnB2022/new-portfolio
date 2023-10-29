@@ -543,6 +543,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+.container #project-modal #project-modal-details #project-modal-contents #project-container ul {
+  text-align: left;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin: 0 1rem;
+}
 .container #project-modal #project-modal-details #project-modal-contents h2 {
   margin-bottom: 0.4rem;
   font-size: 1.5rem;
@@ -577,6 +583,7 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
   margin-left: 1rem;
 }
 .container #project-modal #project-modal-details #project-modal-contents .project-subtitle i {
