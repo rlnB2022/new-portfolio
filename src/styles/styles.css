@@ -29,6 +29,90 @@ body {
   background-color: #f59e0b;
 }
 
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ff8800 0%, #ffd280 100%) !important;
+  /* animated squares in BG */
+}
+.background-gradient ul.bg-squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.background-gradient ul.bg-squares li {
+  position: absolute;
+  list-style-type: none;
+  display: block;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  bottom: -320px;
+  animation: square 60s infinite;
+  transition-timing-function: linear;
+  border-radius: 5px;
+}
+.background-gradient ul.bg-squares li:nth-child(1) {
+  left: 10%;
+}
+.background-gradient ul.bg-squares li:nth-child(2) {
+  left: 20%;
+  width: 140px;
+  height: 140px;
+  animation-delay: 2s;
+  animation-duration: 40s;
+}
+.background-gradient ul.bg-squares li:nth-child(3) {
+  left: 25%;
+  animation-delay: 4s;
+}
+.background-gradient ul.bg-squares li:nth-child(4) {
+  left: 40%;
+  width: 130px;
+  height: 130px;
+  animation-duration: 48s;
+}
+.background-gradient ul.bg-squares li:nth-child(5) {
+  left: 70%;
+}
+.background-gradient ul.bg-squares li:nth-child(6) {
+  left: 80%;
+  width: 220px;
+  height: 220px;
+  animation-delay: 3s;
+}
+.background-gradient ul.bg-squares li:nth-child(7) {
+  left: 35%;
+  height: 340px;
+  width: 340px;
+  animation-delay: 8s;
+}
+.background-gradient ul.bg-squares li:nth-child(8) {
+  left: 55%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 12s;
+  animation-duration: 85s;
+}
+.background-gradient ul.bg-squares li:nth-child(9) {
+  left: 25%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 80s;
+}
+.background-gradient ul.bg-squares li:nth-child(10) {
+  left: 90%;
+  width: 300px;
+  height: 300px;
+  animation-delay: 20s;
+}
+
 .container {
   padding-top: 126px;
 }
@@ -608,7 +692,7 @@ body {
   display: block;
 }
 
-body {
+body.thank-you {
   background-color: #fff;
 }
 body.thank-you h1 {
@@ -651,5 +735,42 @@ body.thank-you .center-link a {
     max-height: 330px;
     visibility: visible;
     opacity: 1;
+  }
+}
+@keyframes square {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1500px) rotate(800deg);
+  }
+}
+/* ************************************************************************ */
+/*                             Media Queries                                */
+/* ************************************************************************ */
+@media screen and (min-width: 680px) {
+  .container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px 0 100px;
+    position: relative;
+    top: 20px;
+    left: 0;
+  }
+  .container header {
+    position: fixed;
+    left: auto;
+    top: 20px;
+    margin-left: -85px;
+    width: 72px;
+    right: auto;
+    z-index: 0;
+  }
+  .container header .mobile-header {
+    display: none;
+  }
+  .container header .menu ul {
+    flex-direction: column;
   }
 }
