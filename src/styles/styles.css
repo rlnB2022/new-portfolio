@@ -502,7 +502,7 @@ body {
   border: 2px solid #eee;
   margin-bottom: 30px;
 }
-.container .card#contact-card .contact-form-container form textarea {
+.container .card#contact-card .contact-form-container form input[type=textarea] {
   height: 100px;
   padding: 1rem;
 }
@@ -608,14 +608,27 @@ body {
   display: block;
 }
 
-@keyframes animate-in-project-modal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+body {
+  background-color: #fff;
 }
+body.thank-you h1 {
+  border: 1px solid #f59e0b;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 1rem;
+  padding: 1rem;
+}
+body.thank-you .center-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+body.thank-you .center-link a {
+  background-color: #f59e0b;
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 @keyframes hide-project {
   0% {
     max-height: 330px;

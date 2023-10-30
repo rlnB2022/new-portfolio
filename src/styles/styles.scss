@@ -559,11 +559,10 @@ body {
 						outline: 0;
 						border: 2px solid #eee;
 						margin-bottom: 30px;
-					}
-
-					textarea {
-						height: 100px;
-						padding: 1rem;
+						&[type="textarea"] {
+							height: 100px;
+							padding: 1rem;
+						}
 					}
 
 					button {
@@ -694,12 +693,27 @@ body {
 	}
 }
 
-@keyframes animate-in-project-modal {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
+body {
+	background-color: $white;
+	&.thank-you {
+		h1 {
+			border: 1px solid $orange;
+			font-size: 1.25rem;
+			font-weight: 400;
+			margin: 1rem;
+			padding: 1rem;
+		}
+
+		.center-link {
+			margin-top: 2rem;
+			text-align: center;
+			a {
+				background-color: $orange;
+				color: $white;
+				padding: 1rem;
+				cursor: pointer;
+			}
+		}
 	}
 }
 
