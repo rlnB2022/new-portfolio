@@ -449,15 +449,27 @@ body {
 							border: 1px solid rgb(238, 238, 238);
 						}
 					}
-					.resume-job-title {
-						font-weight: 500;
-						font-size: 1.1rem;
-					}
-					.resume-company {
-						font-size: 0.85rem;
-						font-weight: 400;
-						color: $medium-grey;
-						margin-bottom: 0.75rem;
+					.company-details-container {
+						display: flex;
+						justify-content: space-between;
+						.company-details {
+							.resume-job-title {
+								font-weight: 500;
+								font-size: 1.1rem;
+							}
+							.resume-company {
+								font-size: 0.85rem;
+								font-weight: 400;
+								color: $medium-grey;
+								margin-bottom: 0.75rem;
+								position: relative;
+							}
+							.company-logo {
+								position: absolute;
+								top: 0;
+								right: 0;
+							}
+						}
 					}
 					p {
 						line-height: 1.75rem;

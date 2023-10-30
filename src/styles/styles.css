@@ -402,15 +402,25 @@ body {
   color: #cccccc;
   border: 1px solid rgb(238, 238, 238);
 }
-.container .card#resume-card .resume-items .resume-item .resume-job-title {
+.container .card#resume-card .resume-items .resume-item .company-details-container {
+  display: flex;
+  justify-content: space-between;
+}
+.container .card#resume-card .resume-items .resume-item .company-details-container .company-details .resume-job-title {
   font-weight: 500;
   font-size: 1.1rem;
 }
-.container .card#resume-card .resume-items .resume-item .resume-company {
+.container .card#resume-card .resume-items .resume-item .company-details-container .company-details .resume-company {
   font-size: 0.85rem;
   font-weight: 400;
   color: #646464;
   margin-bottom: 0.75rem;
+  position: relative;
+}
+.container .card#resume-card .resume-items .resume-item .company-details-container .company-details .company-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .container .card#resume-card .resume-items .resume-item p {
   line-height: 1.75rem;
