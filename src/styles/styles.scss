@@ -181,6 +181,7 @@ body {
 				background-color: $white;
 				text-align: center;
 				box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+				border-radius: 4px;
 
 				li {
 					min-width: 20%;
@@ -535,6 +536,7 @@ body {
 				}
 			}
 			.projects {
+				min-height: 330px;
 				.project-container {
 					margin-top: 1.85rem;
 					max-height: 330px;
@@ -841,32 +843,33 @@ body {
 
 @keyframes hide-project {
 	0% {
-		// transform: scale(1);
-		max-height: 330px;
 		visibility: visible;
 		opacity: 1;
+		flex: 1;
 	}
 	100% {
-		// transform: scale(0);
-		max-height: 0;
-		// display: none;
-		visibility: hidden;
+		flex: 0;
 		opacity: 0;
+		visibility: hidden;
 		display: none;
 	}
 }
 
 @keyframes show-project {
 	0% {
-		max-height: 0;
-		// display: block;
+		flex: 0;
 		visibility: hidden;
 		opacity: 0;
+		// max-height: 0;
+	}
+	1% {
+		visibility: visible;
 	}
 	100% {
-		max-height: 330px;
+		// max-height: 330px;
 		visibility: visible;
 		opacity: 1;
+		flex: 1;
 	}
 }
 
@@ -914,9 +917,12 @@ body {
 		.projects {
 			display: flex;
 			flex-wrap: wrap;
-			.project-container {
-				width: 50%;
-				padding: 1rem;
+			.project-column {
+				flex-basis: 50%;
+				.project-container {
+					// width: 100%;
+					padding: 1rem;
+				}
 			}
 		}
 	}

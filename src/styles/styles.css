@@ -160,6 +160,7 @@ body {
   background-color: #fff;
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
 .container header .menu ul li {
   min-width: 20%;
@@ -469,6 +470,9 @@ body {
 .container .card#projects-card .filter-menu li a.active {
   color: #f59e0b;
 }
+.container .card#projects-card .projects {
+  min-height: 330px;
+}
 .container .card#projects-card .projects .project-container {
   margin-top: 1.85rem;
   max-height: 330px;
@@ -730,27 +734,30 @@ body.thank-you .center-link a {
 
 @keyframes hide-project {
   0% {
-    max-height: 330px;
     visibility: visible;
     opacity: 1;
+    flex: 1;
   }
   100% {
-    max-height: 0;
-    visibility: hidden;
+    flex: 0;
     opacity: 0;
+    visibility: hidden;
     display: none;
   }
 }
 @keyframes show-project {
   0% {
-    max-height: 0;
+    flex: 0;
     visibility: hidden;
     opacity: 0;
   }
+  1% {
+    visibility: visible;
+  }
   100% {
-    max-height: 330px;
     visibility: visible;
     opacity: 1;
+    flex: 1;
   }
 }
 @keyframes square {
@@ -793,8 +800,10 @@ body.thank-you .center-link a {
     display: flex;
     flex-wrap: wrap;
   }
-  .container .projects .project-container {
-    width: 50%;
+  .container .projects .project-column {
+    flex-basis: 50%;
+  }
+  .container .projects .project-column .project-container {
     padding: 1rem;
   }
 }
