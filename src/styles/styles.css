@@ -285,6 +285,9 @@ body {
   display: block;
   flex: 1;
 }
+.container .card#profile-card .profile-links a:link, .container .card#profile-card .profile-links a:visited {
+  color: #323232;
+}
 .container .card#about-card, .container .card#resume-card, .container .card#projects-card, .container .card#blog-card, .container .card#contact-card {
   padding: 1.85rem;
   margin-top: 15px;
@@ -471,6 +474,7 @@ body {
   max-height: 330px;
   transition: all 0.25s ease-in-out;
   opacity: 1;
+  overflow: hidden;
 }
 .container .card#projects-card .projects .project-container.show-project {
   animation: show-project 0.25s ease-in-out forwards;
@@ -734,6 +738,7 @@ body.thank-you .center-link a {
     max-height: 0;
     visibility: hidden;
     opacity: 0;
+    display: none;
   }
 }
 @keyframes show-project {
@@ -783,5 +788,13 @@ body.thank-you .center-link a {
   }
   .container header .menu ul {
     flex-direction: column;
+  }
+  .container .projects {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .projects .project-container {
+    width: 50%;
+    padding: 1rem;
   }
 }
