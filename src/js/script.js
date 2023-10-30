@@ -157,12 +157,7 @@ const addShowProjectModalListeners = () => {
 
 			// get the name of the project
 			const h2 = document.createElement("h2");
-			const h2_span = document.createElement("span");
-
-			h2_span.classList.add("text-orange");
-			h2_span.textContent = name.charAt(0);
-			h2.appendChild(h2_span);
-			h2.appendChild(document.createTextNode(name.slice(1)));
+			h2.textContent = name;
 
 			projectModalContents.appendChild(h2);
 

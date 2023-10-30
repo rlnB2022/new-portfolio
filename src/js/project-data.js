@@ -2,7 +2,7 @@ export const projects = [
 	{
 		id: "millionaire",
 		tech: "React • Redux • Firebase",
-		name: "Javascript Millionaire",
+		name: "Javascript Millionaire App",
 		imgSrc: "javascript-millionaire",
 		projectLink: "https://rlnb2022.github.io/Javascript-Millionaire/",
 		githubLink: "https://github.com/rlnB2022/Javascript-Millionaire",
@@ -16,7 +16,7 @@ export const projects = [
 	{
 		id: "digidugout",
 		tech: "PHP • Javascript • jQuery • AJAX",
-		name: "DigiDugout",
+		name: "DigiDugout Website",
 		imgSrc: "digidugout",
 		projectLink: "https://www.digidugout.com",
 		githubLink: "https://github.com/rlnB2022/digi-new-scoresheets",
@@ -30,7 +30,7 @@ export const projects = [
 	{
 		id: "twobarrels",
 		tech: "React • Redux • React Router",
-		name: "Two Barrels ",
+		name: "React Two Barrels Website",
 		imgSrc: "twobarrels",
 		projectLink: "https://rlnb2022.github.io/twobarrels/",
 		githubLink: "https://github.com/rlnB2022/twobarrels",

@@ -636,11 +636,6 @@ body {
 					color: $dark-grey;
 					font-weight: 600;
 					position: relative;
-
-					&:before {
-						@include blob;
-						left: 3rem;
-					}
 				}
 
 				h3 {
