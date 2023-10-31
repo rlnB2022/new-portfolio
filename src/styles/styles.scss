@@ -983,17 +983,24 @@ body {
 			&#resume-card {
 				.card-inner {
 					.experience-education {
-						.resume-left,
-						.resume-right {
-							padding-top: 30px;
-						}
-						.resume-right {
-							padding: 30px;
-						}
 						.resume-left {
 							.content-resume-experience {
 								.content-subtitle {
 									margin-top: 0;
+								}
+							}
+						}
+					}
+				}
+				.resume-skills {
+					.card-inner {
+						.content-resume-skills {
+							ul {
+								display: flex;
+								flex-wrap: wrap;
+
+								li {
+									width: 50%;
 								}
 							}
 						}

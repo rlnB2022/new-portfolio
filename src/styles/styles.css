@@ -851,15 +851,15 @@ body.thank-you .center-link a {
     width: auto;
     height: auto;
   }
-  .container .card#resume-card .card-inner .experience-education .resume-left,
-  .container .card#resume-card .card-inner .experience-education .resume-right {
-    padding-top: 30px;
-  }
-  .container .card#resume-card .card-inner .experience-education .resume-right {
-    padding: 30px;
-  }
   .container .card#resume-card .card-inner .experience-education .resume-left .content-resume-experience .content-subtitle {
     margin-top: 0;
+  }
+  .container .card#resume-card .resume-skills .card-inner .content-resume-skills ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .card#resume-card .resume-skills .card-inner .content-resume-skills ul li {
+    width: 50%;
   }
   .container .projects {
     display: flex;
