@@ -42,7 +42,7 @@ body {
 	background: linear-gradient(
 		to bottom right,
 		#ff8800 0%,
-		#ffd280 100%
+		#dfaf56 100%
 	) !important;
 
 	/* animated squares in BG */
@@ -230,6 +230,14 @@ body {
 
 	.card {
 		background-color: $white;
+		position: relative;
+		left: 0;
+		top: 0;
+		width: auto;
+		height: auto;
+		opacity: 0;
+		visibility: visible;
+		display: block;
 		.card-inner {
 			padding: 30px 30px 0;
 		}
@@ -239,6 +247,7 @@ body {
 			position: relative;
 			min-height: 560px;
 			max-height: 620px;
+			opacity: 1;
 
 			.profile-image {
 				position: absolute;
@@ -340,6 +349,7 @@ body {
 		&#contact-card {
 			margin-top: 15px;
 			scroll-margin-top: 126px;
+			padding-bottom: 30px;
 			h2 {
 				position: relative;
 				padding-bottom: 30px;
@@ -898,6 +908,16 @@ body {
 	}
 }
 
+@keyframes cardFadeOutLeft {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate3d(-70%, 0, 0);
+	}
+}
+
 /* ************************************************************************ */
 /*                             Media Queries                                */
 /* ************************************************************************ */
@@ -967,8 +987,23 @@ body {
 		}
 
 		.card {
-			overflow: hidden;
+			position: absolute;
+			top: 15px;
+			left: 580px;
+			overflow: auto;
+			bottom: 15px;
+			width: auto;
+			height: auto;
+			transform-origin: center left;
+			border-radius: 0 4px 4px 0;
+			transition: visibility 1s linear, opacity 0s linear;
+			z-index: 10;
+			overflow-x: hidden;
+			opacity: 0;
+			visibility: hidden;
 			&#profile-card {
+				position: relative;
+				left: 0;
 				height: 100%;
 				width: 480px;
 				min-height: auto;
@@ -976,21 +1011,13 @@ body {
 				z-index: 11;
 				border-radius: 4px;
 				box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+				opacity: 1;
+				visibility: visible;
 			}
 
 			&.active {
-				position: absolute;
-				top: 15px;
-				left: 580px;
-				overflow: scroll;
-				bottom: 15px;
-				width: auto;
-				height: auto;
-				transform-origin: center left;
-				border-radius: 0 4px 4px 0;
-				transition: visibility 1s linear, opacity 0s linear;
-				z-index: 10;
-				overflow-x: hidden;
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
