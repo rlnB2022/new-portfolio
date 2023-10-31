@@ -207,7 +207,7 @@ body {
   top: 0;
   width: auto;
   height: auto;
-  opacity: 0;
+  opacity: 1;
   visibility: visible;
   display: block;
 }
@@ -391,6 +391,9 @@ body {
 .container .card#resume-card {
   margin-top: 15px;
 }
+.container .card#resume-card p {
+  color: #646464;
+}
 .container .card#resume-card .content-subtitle {
   display: flex;
   align-items: center;
@@ -402,9 +405,6 @@ body {
 .container .card#resume-card .content-subtitle h3 {
   margin-left: 0.5rem;
   font-size: 17px;
-}
-.container .card#resume-card .resume-items .resume-item {
-  padding: 30px 0;
 }
 .container .card#resume-card .resume-items .resume-item .resume-date {
   display: inline-block;
@@ -430,7 +430,7 @@ body {
 .container .card#resume-card .resume-items .resume-item .company-details-container .company-details .resume-company {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #646464;
+  color: #999999;
   margin-bottom: 0.75rem;
   position: relative;
 }
@@ -446,7 +446,13 @@ body {
   padding-bottom: 1.85rem;
 }
 .container .card#resume-card .resume-left .content-resume-experience .content-subtitle {
-  margin-top: 1rem;
+  padding: 30px 0;
+}
+.container .card#resume-card .resume-right .content-resume-education .content-title {
+  padding-bottom: 1.85rem;
+}
+.container .card#resume-card .resume-right .content-resume-education .content-subtitle {
+  padding: 30px 0;
 }
 .container .card#resume-card .resume-skills {
   margin-top: 15px;
@@ -828,6 +834,33 @@ body.thank-you .center-link a {
   .container header .menu ul {
     flex-direction: column;
   }
+  .container .card {
+    position: relative;
+    left: 0;
+    height: 100%;
+    min-height: auto;
+    max-height: none;
+    z-index: 11;
+    border-radius: 4px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    opacity: 1;
+    visibility: visible;
+    grid-template-columns: auto;
+  }
+  .container .card#profile-card {
+    width: auto;
+    height: auto;
+  }
+  .container .card#resume-card .card-inner .experience-education .resume-left,
+  .container .card#resume-card .card-inner .experience-education .resume-right {
+    padding-top: 30px;
+  }
+  .container .card#resume-card .card-inner .experience-education .resume-right {
+    padding: 30px;
+  }
+  .container .card#resume-card .card-inner .experience-education .resume-left .content-resume-experience .content-subtitle {
+    margin-top: 0;
+  }
   .container .projects {
     display: flex;
     flex-wrap: wrap;
@@ -889,6 +922,13 @@ body.thank-you .center-link a {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
     opacity: 1;
     visibility: visible;
+  }
+  .container .card#resume-card .experience-education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .container .card#resume-card .company-logo img {
+    display: none;
   }
   .container .card.active {
     opacity: 1;

@@ -235,7 +235,7 @@ body {
 		top: 0;
 		width: auto;
 		height: auto;
-		opacity: 0;
+		opacity: 1;
 		visibility: visible;
 		display: block;
 		.card-inner {
@@ -442,6 +442,9 @@ body {
 
 		&#resume-card {
 			margin-top: 15px;
+			p {
+				color: $medium-grey;
+			}
 			.content-subtitle {
 				display: flex;
 				align-items: center;
@@ -457,7 +460,6 @@ body {
 			}
 			.resume-items {
 				.resume-item {
-					padding: 30px 0;
 					.resume-date {
 						@include title-border;
 
@@ -477,7 +479,7 @@ body {
 							.resume-company {
 								font-size: 0.85rem;
 								font-weight: 400;
-								color: $medium-grey;
+								color: $medium-light-grey;
 								margin-bottom: 0.75rem;
 								position: relative;
 							}
@@ -499,7 +501,17 @@ body {
 						padding-bottom: 1.85rem;
 					}
 					.content-subtitle {
-						margin-top: 1rem;
+						padding: 30px 0;
+					}
+				}
+			}
+			.resume-right {
+				.content-resume-education {
+					.content-title {
+						padding-bottom: 1.85rem;
+					}
+					.content-subtitle {
+						padding: 30px 0;
 					}
 				}
 			}
@@ -949,6 +961,46 @@ body {
 				}
 			}
 		}
+		.card {
+			position: relative;
+			left: 0;
+			height: 100%;
+			// width: 480px;
+			min-height: auto;
+			max-height: none;
+			z-index: 11;
+			border-radius: 4px;
+			box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+			opacity: 1;
+			visibility: visible;
+			grid-template-columns: auto;
+
+			&#profile-card {
+				width: auto;
+				height: auto;
+			}
+
+			&#resume-card {
+				.card-inner {
+					.experience-education {
+						.resume-left,
+						.resume-right {
+							padding-top: 30px;
+						}
+						.resume-right {
+							padding: 30px;
+						}
+						.resume-left {
+							.content-resume-experience {
+								.content-subtitle {
+									margin-top: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
 		.projects {
 			display: flex;
@@ -1013,6 +1065,18 @@ body {
 				box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 				opacity: 1;
 				visibility: visible;
+			}
+
+			&#resume-card {
+				.experience-education {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+				.company-logo {
+					img {
+						display: none;
+					}
+				}
 			}
 
 			&.active {
