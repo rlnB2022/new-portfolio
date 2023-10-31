@@ -847,10 +847,6 @@ body.thank-you .center-link a {
     visibility: visible;
     grid-template-columns: auto;
   }
-  .container .card#profile-card {
-    width: auto;
-    height: auto;
-  }
   .container .card#resume-card .card-inner .experience-education .resume-left .content-resume-experience .content-subtitle {
     margin-top: 0;
   }
