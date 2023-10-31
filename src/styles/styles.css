@@ -203,6 +203,9 @@ body {
 .container .card {
   background-color: #fff;
 }
+.container .card .card-inner {
+  padding: 30px 30px 0;
+}
 .container .card#profile-card {
   height: calc(100dvh - 126px);
   text-align: center;
@@ -290,7 +293,6 @@ body {
   color: #323232;
 }
 .container .card#about-card, .container .card#resume-card, .container .card#projects-card, .container .card#blog-card, .container .card#contact-card {
-  padding: 1.85rem;
   margin-top: 15px;
   scroll-margin-top: 126px;
 }
@@ -769,6 +771,16 @@ body.thank-you .center-link a {
     transform: translateY(-1500px) rotate(800deg);
   }
 }
+@keyframes cardFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-70%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 /* ************************************************************************ */
 /*                             Media Queries                                */
 /* ************************************************************************ */
@@ -810,4 +822,64 @@ body.thank-you .center-link a {
     max-width: 100%;
     padding: 1rem;
   }
+}
+@media screen and (min-width: 1120px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    height: 90vh;
+    margin: 5vh 3vw;
+    width: 100%;
+    max-height: 675px;
+    max-width: 1270px;
+  }
+  .container header {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    margin-left: 0;
+  }
+  .container .card {
+    overflow: hidden;
+  }
+  .container .card#profile-card {
+    height: 100%;
+    width: 480px;
+    min-height: auto;
+    max-height: none;
+    z-index: 11;
+    border-radius: 4px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  }
+  .container .card.active {
+    position: absolute;
+    top: 15px;
+    left: 580px;
+    overflow: scroll;
+    bottom: 15px;
+    width: auto;
+    height: auto;
+    transform-origin: center left;
+    border-radius: 0 4px 4px 0;
+    transition: visibility 1s linear, opacity 0s linear;
+    z-index: 10;
+    overflow-x: hidden;
+  }
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
 }
