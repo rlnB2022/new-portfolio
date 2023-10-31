@@ -78,6 +78,9 @@ async function typingCarousel(words, elem) {
 typingCarousel(typingWords, typingTextElemTop);
 typingCarousel(typingWords, typingTextElemBottom);
 
+// get all cards
+const cards = document.querySelectorAll(".card");
+
 /* ************************************************************************** */
 /**
  * Remove currently selected nav link color
@@ -89,6 +92,28 @@ const removeNavLinkColor = (event, index) => {
 
 	if (activeNavListItem) {
 		activeNavListItem.classList.remove("active");
+
+		// activeCard.classList.add("card-fade-out");
+
+		// if desktop view
+		if (window.innerWidth >= 1120) {
+			// find card that is active and animate it out
+			const activeCard = document.querySelector(".card.active");
+
+			const removeAnimationListener = () => {
+				activeCard.classList.remove("card-fade-out");
+				activeCard.addEventListener("animationend", removeAnimationListener);
+			};
+
+			activeCard.addEventListener("animationend", removeAnimationListener);
+
+			activeCard.classList.remove("card-fade-in");
+			activeCard.classList.add("card-fade-out");
+			activeCard.classList.remove("active");
+
+			cards[index + 1].classList.add("card-fade-in");
+			cards[index + 1].classList.add("active");
+		}
 	}
 };
 
@@ -100,7 +125,7 @@ const addNavListEventListeners = () => {
 
 	navListItems.forEach((a, index) => {
 		a.addEventListener("click", (event, idx) => {
-			removeNavLinkColor(event, idx);
+			removeNavLinkColor(event, index);
 			navListItems[index].classList.add("active");
 		});
 	});

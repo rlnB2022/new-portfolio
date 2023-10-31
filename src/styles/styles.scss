@@ -865,6 +865,14 @@ body {
 	}
 }
 
+.card-fade-in {
+	animation: cardFadeIn 1s ease-in-out forwards;
+}
+
+.card-fade-out {
+	animation: cardFadeOut 1s ease-in-out forwards;
+}
+
 @keyframes hide-project {
 	0% {
 		// visibility: visible;
@@ -909,7 +917,7 @@ body {
 	}
 }
 
-@keyframes cardFadeInLeft {
+@keyframes cardFadeIn {
 	0% {
 		opacity: 0;
 		transform: translate3d(-70%, 0, 0);
@@ -920,7 +928,7 @@ body {
 	}
 }
 
-@keyframes cardFadeOutLeft {
+@keyframes cardFadeOut {
 	0% {
 		opacity: 1;
 	}

@@ -751,6 +751,14 @@ body.thank-you .center-link a {
   cursor: pointer;
 }
 
+.card-fade-in {
+  animation: cardFadeIn 1s ease-in-out forwards;
+}
+
+.card-fade-out {
+  animation: cardFadeOut 1s ease-in-out forwards;
+}
+
 @keyframes hide-project {
   0% {
     opacity: 1;
@@ -787,7 +795,7 @@ body.thank-you .center-link a {
     transform: translateY(-1500px) rotate(800deg);
   }
 }
-@keyframes cardFadeInLeft {
+@keyframes cardFadeIn {
   0% {
     opacity: 0;
     transform: translate3d(-70%, 0, 0);
@@ -797,7 +805,7 @@ body.thank-you .center-link a {
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes cardFadeOutLeft {
+@keyframes cardFadeOut {
   0% {
     opacity: 1;
   }
