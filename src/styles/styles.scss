@@ -545,11 +545,11 @@ body {
 					overflow: hidden;
 
 					&.show-project {
-						animation: show-project 1s ease-in-out forwards;
+						animation: show-project 0.25s ease-in-out forwards;
 					}
 
 					&.hide-project {
-						animation: hide-project 1s ease-in-out forwards;
+						animation: hide-project 0.25s ease-in-out forwards;
 					}
 
 					a {
@@ -732,6 +732,7 @@ body {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				z-index: 999;
 
 				i {
 					color: $dark-grey;

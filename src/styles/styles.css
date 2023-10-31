@@ -481,10 +481,10 @@ body {
   overflow: hidden;
 }
 .container .card#projects-card .projects .project-container.show-project {
-  animation: show-project 1s ease-in-out forwards;
+  animation: show-project 0.25s ease-in-out forwards;
 }
 .container .card#projects-card .projects .project-container.hide-project {
-  animation: hide-project 1s ease-in-out forwards;
+  animation: hide-project 0.25s ease-in-out forwards;
 }
 .container .card#projects-card .projects .project-container a img {
   width: 100%;
@@ -646,6 +646,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 .container #project-modal #project-modal-details #close-modal i {
   color: #323232;
