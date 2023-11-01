@@ -315,7 +315,7 @@ const updateContainerPositions = (containers) => {
 
 	containers.forEach((container, index) => {
 		const row = Math.floor(index / 2);
-		const col = index % 2 === 0 ? 1 : 0;
+		const col = index % 2 === 0 ? 0 : 1;
 
 		container.style.top = row * 300 + "px";
 		container.style.left = (col * parentWidth) / 2 + "px";
@@ -350,7 +350,6 @@ filterItems.forEach((item) => {
 						container.classList.add("show-project");
 					}
 				});
-				console.log(projectContainers);
 				updateContainerPositions(projectContainers);
 			}
 
