@@ -1018,15 +1018,19 @@ body {
 					}
 				}
 			}
-		}
-
-		.projects {
-			display: flex;
-			flex-wrap: wrap;
-			position: relative;
-			.project-container {
-				padding: 1rem;
-				width: 50%;
+			&#projects-card {
+				right: 0;
+				.projects {
+					display: flex;
+					flex-wrap: wrap;
+					position: relative;
+					min-height: 560px;
+					.project-container {
+						padding: 1rem;
+						width: 50%;
+						position: absolute;
+					}
+				}
 			}
 		}
 	}

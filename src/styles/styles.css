@@ -871,14 +871,19 @@ body.thank-you .center-link a {
   .container .card#resume-card .resume-skills .card-inner .content-resume-skills ul li {
     width: 50%;
   }
-  .container .projects {
+  .container .card#projects-card {
+    right: 0;
+  }
+  .container .card#projects-card .projects {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    min-height: 560px;
   }
-  .container .projects .project-container {
+  .container .card#projects-card .projects .project-container {
     padding: 1rem;
     width: 50%;
+    position: absolute;
   }
 }
 @media screen and (min-width: 1120px) {

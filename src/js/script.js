@@ -308,6 +308,20 @@ const filterItems = document.querySelectorAll(".filter-item");
 const filterAnchor = document.querySelectorAll(".filter-item a");
 const projectContainers = document.querySelectorAll(".project-container");
 
+// Set positions of each projectContainer
+const updateContainerPositions = (containers) => {
+	// get width of projects parent
+	const parentWidth = document.querySelector(".projects").clientWidth;
+
+	containers.forEach((container, index) => {
+		const row = Math.floor(index / 2);
+		const col = index % 2 === 0 ? 1 : 0;
+
+		container.style.top = row * 300 + "px";
+		container.style.left = (col * parentWidth) / 2 + "px";
+	});
+};
+
 // assign event listeners to each filter item
 filterItems.forEach((item) => {
 	item.addEventListener("click", (event) => {
@@ -336,6 +350,8 @@ filterItems.forEach((item) => {
 						container.classList.add("show-project");
 					}
 				});
+				console.log(projectContainers);
+				updateContainerPositions(projectContainers);
 			}
 
 			return;
@@ -367,3 +383,4 @@ filterItems.forEach((item) => {
 
 addNavListEventListeners();
 addShowProjectModalListeners();
+updateContainerPositions(projectContainers);
