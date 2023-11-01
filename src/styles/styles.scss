@@ -547,15 +547,18 @@ body {
 		}
 
 		&#projects-card {
-			.filter-menu {
-				display: flex;
-				li {
-					a {
-						padding: 0.5rem;
-						display: block;
-						color: inherit;
-						&.active {
-							color: $orange;
+			.project-header {
+				.filter-menu {
+					display: flex;
+					li {
+						a {
+							padding: 0.5rem;
+							display: block;
+							color: $medium-grey;
+							font-size: 0.9rem;
+							&.active {
+								color: $orange;
+							}
 						}
 					}
 				}
@@ -568,6 +571,8 @@ body {
 					transition: all 0.25s ease-in-out;
 					opacity: 1;
 					overflow: hidden;
+					margin: 0 auto;
+					max-width: 400px;
 
 					&.show-project {
 						animation: show-project 0.25s ease-in-out forwards;
@@ -583,6 +588,7 @@ body {
 							height: auto;
 							transform: scale(1);
 							max-width: 100%;
+							max-height: 260px;
 						}
 					}
 					h3,
@@ -1017,14 +1023,10 @@ body {
 		.projects {
 			display: flex;
 			flex-wrap: wrap;
-			.project-column {
-				flex-basis: 50%;
-				display: flex;
-				flex-direction: column;
-				.project-container {
-					max-width: 100%;
-					padding: 1rem;
-				}
+			position: relative;
+			.project-container {
+				padding: 1rem;
+				width: 50%;
 			}
 		}
 	}
@@ -1079,6 +1081,22 @@ body {
 				box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 				opacity: 1;
 				visibility: visible;
+			}
+			&#projects-card {
+				.project-header {
+					display: flex;
+					justify-content: space-between;
+					position: relative;
+					&:after {
+						content: "";
+						position: absolute;
+						left: -20px;
+						right: -20px;
+						bottom: 0;
+						height: 1px;
+						background-color: #eee;
+					}
+				}
 			}
 
 			&#resume-card {

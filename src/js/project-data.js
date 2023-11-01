@@ -41,4 +41,18 @@ export const projects = [
 			"",
 		],
 	},
+	{
+		id: "amazon",
+		tech: "React • Redux • Firebase",
+		name: "Amazon Clone",
+		imgSrc: "amazon-clone",
+		projectLink: "https://clone-332d9.web.app/",
+		githubLink: "https://github.com/rlnB2022/amazon-clone",
+		description: [
+			"<p></p>",
+			"<ul><li>React</li><li>React Redux</li><li>React Router</li><li>Firebase (user authentication)</li><li>useState / UseEffect Hooks</li><li>HTML</li><li>CSS</li><li>Javascript</li></ul>",
+			"",
+			"",
+		],
+	},
 ];
