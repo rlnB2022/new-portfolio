@@ -315,7 +315,7 @@ body {
   padding-bottom: 30px;
 }
 .container .card#about-card .top-line, .container .card#resume-card .top-line, .container .card#projects-card .top-line, .container .card#blog-card .top-line, .container .card#contact-card .top-line {
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 .container .card#about-card h2, .container .card#resume-card h2, .container .card#projects-card h2, .container .card#blog-card h2, .container .card#contact-card h2 {
   position: relative;

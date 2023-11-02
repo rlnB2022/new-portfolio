@@ -80,6 +80,16 @@ typingCarousel(typingWords, typingTextElemBottom);
 
 // get all cards
 const cards = document.querySelectorAll(".card");
+cards.forEach((card, index) => {
+	// all cards except the profile card
+	if (index > 0) {
+		card.addEventListener("animationend", (evt) => {
+			if (evt.animationName === "cardFadeOut") {
+				card.classList.remove("active");
+			}
+		});
+	}
+});
 
 /* ************************************************************************** */
 /**
@@ -108,6 +118,13 @@ const removeNavLinkColor = (event, index) => {
 				}
 			});
 
+			cards.forEach((card, index) => {
+				// don't include the profile card
+				if (index > 0) {
+					card.classList.remove("card-fade-in");
+					card.classList.add("card-fade-out");
+				}
+			});
 			cards[index + 1].classList.remove("card-fade-out");
 			cards[index + 1].classList.add("card-fade-in");
 			cards[index + 1].classList.add("active");
