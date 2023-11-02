@@ -240,6 +240,12 @@ body {
 		opacity: 1;
 		visibility: visible;
 		display: block;
+		transition: 2s ease-in-out;
+		&.active {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
 		.card-inner {
 			padding: 30px 30px 0;
 		}
@@ -939,6 +945,7 @@ body {
 @keyframes cardFadeOut {
 	0% {
 		opacity: 1;
+		transform: translate3d(0, 0, 0);
 	}
 	100% {
 		opacity: 0;
@@ -1068,11 +1075,22 @@ body {
 			height: auto;
 			transform-origin: center left;
 			border-radius: 0 4px 4px 0;
-			transition: visibility 1s linear, opacity 0s linear;
+			transition: visibility 1s linear, opacity 1s ease-in-out,
+				transform 1s ease-in-out;
 			z-index: 10;
 			overflow-x: hidden;
 			opacity: 0;
 			visibility: hidden;
+			display: none;
+			&.active {
+				// opacity: 1;
+				// visibility: visible;
+				display: block;
+			}
+			// &.hidden {
+			// 	opacity: 0;
+			// 	visibility: hidden;
+			// }
 			&#profile-card {
 				position: relative;
 				left: 0;
@@ -1085,6 +1103,7 @@ body {
 				box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 				opacity: 1;
 				visibility: visible;
+				display: block;
 			}
 			&#projects-card {
 				.project-header {
@@ -1161,11 +1180,6 @@ body {
 						display: none;
 					}
 				}
-			}
-
-			&.active {
-				opacity: 1;
-				visibility: visible;
 			}
 		}
 	}

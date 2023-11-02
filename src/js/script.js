@@ -100,19 +100,40 @@ const removeNavLinkColor = (event, index) => {
 			// find card that is active and animate it out
 			const activeCard = document.querySelector(".card.active");
 
-			const removeAnimationListener = () => {
-				activeCard.classList.remove("card-fade-out");
-				activeCard.addEventListener("animationend", removeAnimationListener);
-			};
-
-			activeCard.addEventListener("animationend", removeAnimationListener);
-
 			activeCard.classList.remove("card-fade-in");
 			activeCard.classList.add("card-fade-out");
-			activeCard.classList.remove("active");
+			activeCard.addEventListener("animationend", (evt) => {
+				if (evt.animationName === "cardFadeOut") {
+					activeCard.classList.remove("active");
+					// const compStyles = getComputedStyle(activeCard);
+					// if (compStyles.getPropertyValue("visibility") === "hidden") {
+					// 	activeCard.classList.remove("active");
+					// }
+				}
+			});
 
+			// add hidden to all other cards
+			// cards.forEach((card) => {
+			// 	if (!card.classList.contains("hidden")) {
+			// 		card.classList.add("hidden");
+			// 	}
+			// });
+
+			// cards[index + 1].style.transform = "translate3d(-70%, 0, 0)";
+			// cards[index + 1].style.opacity = 0;
+			// cards[index + 1].style.visibility = "hidden";
+			// cards[index + 1].classList.remove("hidden");
 			cards[index + 1].classList.add("card-fade-in");
 			cards[index + 1].classList.add("active");
+			// cards[index + 1].addEventListener("transitionend", (evt) => {
+			// 	console.log(evt);
+			// 	if (evt.propertyName === "visibility") {
+			// 		const compStyles = getComputedStyle(cards[index + 1]);
+			// 		if (compStyles.getPropertyValue("opacity") === "1") {
+			// 			cards[index + 1].classList.remove("card-fade-in");
+			// 		}
+			// 	}
+			// });
 		}
 	}
 };

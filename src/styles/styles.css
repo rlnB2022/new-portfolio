@@ -212,6 +212,12 @@ body {
   opacity: 1;
   visibility: visible;
   display: block;
+  transition: 2s ease-in-out;
+}
+.container .card.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 .container .card .card-inner {
   padding: 30px 30px 0;
@@ -810,6 +816,7 @@ body.thank-you .center-link a {
 @keyframes cardFadeOut {
   0% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   100% {
     opacity: 0;
@@ -913,11 +920,15 @@ body.thank-you .center-link a {
     height: auto;
     transform-origin: center left;
     border-radius: 0 4px 4px 0;
-    transition: visibility 1s linear, opacity 0s linear;
+    transition: visibility 1s linear, opacity 1s ease-in-out, transform 1s ease-in-out;
     z-index: 10;
     overflow-x: hidden;
     opacity: 0;
     visibility: hidden;
+    display: none;
+  }
+  .container .card.active {
+    display: block;
   }
   .container .card#profile-card {
     position: relative;
@@ -931,6 +942,7 @@ body.thank-you .center-link a {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
     opacity: 1;
     visibility: visible;
+    display: block;
   }
   .container .card#projects-card .project-header {
     display: flex;
@@ -1000,10 +1012,6 @@ body.thank-you .center-link a {
   }
   .container .card#resume-card .company-logo img {
     display: none;
-  }
-  .container .card.active {
-    opacity: 1;
-    visibility: visible;
   }
 }
 ::-webkit-scrollbar-track {
