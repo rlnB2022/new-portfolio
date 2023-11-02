@@ -533,6 +533,9 @@ body {
 						li {
 							text-align: center;
 							padding: 30px;
+							&:last-child {
+								margin: 0 auto;
+							}
 							i {
 								background-color: $orange;
 								padding: 0.9rem;

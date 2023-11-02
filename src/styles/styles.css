@@ -472,6 +472,9 @@ body {
   text-align: center;
   padding: 30px;
 }
+.container .card#resume-card .resume-skills .content-resume-skills ul li:last-child {
+  margin: 0 auto;
+}
 .container .card#resume-card .resume-skills .content-resume-skills ul li i {
   background-color: #f59e0b;
   padding: 0.9rem;
