@@ -314,14 +314,17 @@ body {
   scroll-margin-top: 126px;
   padding-bottom: 30px;
 }
+.container .card#about-card .top-line, .container .card#resume-card .top-line, .container .card#projects-card .top-line, .container .card#blog-card .top-line, .container .card#contact-card .top-line {
+  padding: 1rem 0;
+}
 .container .card#about-card h2, .container .card#resume-card h2, .container .card#projects-card h2, .container .card#blog-card h2, .container .card#contact-card h2 {
   position: relative;
   padding-bottom: 30px;
 }
-.container .card#about-card h2.content-title, .container .card#resume-card h2.content-title, .container .card#projects-card h2.content-title, .container .card#blog-card h2.content-title, .container .card#contact-card h2.content-title {
+.container .card#about-card h2.content-title:not(.no-line), .container .card#resume-card h2.content-title:not(.no-line), .container .card#projects-card h2.content-title:not(.no-line), .container .card#blog-card h2.content-title:not(.no-line), .container .card#contact-card h2.content-title:not(.no-line) {
   font-size: 1.25rem;
 }
-.container .card#about-card h2.content-title:before, .container .card#resume-card h2.content-title:before, .container .card#projects-card h2.content-title:before, .container .card#blog-card h2.content-title:before, .container .card#contact-card h2.content-title:before {
+.container .card#about-card h2.content-title:not(.no-line):before, .container .card#resume-card h2.content-title:not(.no-line):before, .container .card#projects-card h2.content-title:not(.no-line):before, .container .card#blog-card h2.content-title:not(.no-line):before, .container .card#contact-card h2.content-title:not(.no-line):before {
   content: "";
   position: absolute;
   left: -0.85rem;
@@ -331,7 +334,7 @@ body {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.01) 100%);
   border-radius: 2.75rem;
 }
-.container .card#about-card h2.content-title:after, .container .card#resume-card h2.content-title:after, .container .card#projects-card h2.content-title:after, .container .card#blog-card h2.content-title:after, .container .card#contact-card h2.content-title:after {
+.container .card#about-card h2.content-title:not(.no-line):after, .container .card#resume-card h2.content-title:not(.no-line):after, .container .card#projects-card h2.content-title:not(.no-line):after, .container .card#blog-card h2.content-title:not(.no-line):after, .container .card#contact-card h2.content-title:not(.no-line):after {
   content: "";
   position: absolute;
   left: -20px;
@@ -887,6 +890,18 @@ body.thank-you .center-link a {
     padding: 1rem;
     width: 50%;
     position: absolute;
+  }
+  .container .card#contact-card {
+    right: 0;
+  }
+  .container .card#contact-card .top-line {
+    display: flex;
+  }
+  .container .card#contact-card .top-line input:first-child {
+    margin-right: 5px;
+  }
+  .container .card#contact-card .top-line input:nth-child(2) {
+    margin-left: 5px;
   }
 }
 @media screen and (min-width: 1120px) {

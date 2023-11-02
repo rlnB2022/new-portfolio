@@ -383,12 +383,14 @@
 						</div>
 					</div>
 					<div class="contact-form-container">
-						<h2 class="content-title">
+						<h2 class="content-title no-line">
 							<span class="text-orange">C</span>ontact Form
 						</h2>
-						<form class="contact-form-container" action="https://formsubmit.co/beyer.richard73@gmail.com" method="POST">
-							<input type="text" name="name" placeholder="Full Name" required>
-							<input type="email" name="email" placeholder="Email Address" required>
+						<form action="https://formsubmit.co/beyer.richard73@gmail.com" method="POST">
+							<div class="top-line">
+								<input type="text" name="name" placeholder="Full Name" required>
+								<input type="email" name="email" placeholder="Email Address" required>
+							</div>
 							<input type="textarea" name="message" placeholder="Your message" required>
 							<input type="hidden" name="_captcha" value="false">
 							<input type="hidden" name="_next" value="https://rickbeyer.dev/thankyou.html">

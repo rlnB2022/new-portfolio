@@ -358,10 +358,13 @@ body {
 			margin-top: 15px;
 			scroll-margin-top: 126px;
 			padding-bottom: 30px;
+			.top-line {
+				padding: 1rem 0;
+			}
 			h2 {
 				position: relative;
 				padding-bottom: 30px;
-				&.content-title {
+				&.content-title:not(.no-line) {
 					font-size: 1.25rem;
 					&:before {
 						@include blob;
@@ -1036,6 +1039,20 @@ body {
 						padding: 1rem;
 						width: 50%;
 						position: absolute;
+					}
+				}
+			}
+			&#contact-card {
+				right: 0;
+				.top-line {
+					display: flex;
+					input {
+						&:first-child {
+							margin-right: 5px;
+						}
+						&:nth-child(2) {
+							margin-left: 5px;
+						}
 					}
 				}
 			}
