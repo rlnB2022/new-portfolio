@@ -334,7 +334,6 @@ const projectContainers = document.querySelectorAll(".project-container");
 const updateContainerPositions = (containers) => {
 	// get width of projects parent
 	const parentWidth = document.querySelector(".projects").clientWidth;
-	console.log(parentWidth);
 
 	containers.forEach((container, index) => {
 		const row = Math.floor(index / 2);
@@ -400,6 +399,12 @@ filterItems.forEach((item) => {
 				container.classList.add("hide-project");
 			}
 		});
+
+		const visibleContainers = document.querySelectorAll(
+			".project-container:not(.hide-project)"
+		);
+
+		updateContainerPositions(visibleContainers);
 	});
 });
 

@@ -873,6 +873,7 @@ body.thank-you .center-link a {
     padding: 1rem;
     width: 50%;
     position: absolute;
+    left: -500px;
   }
   .container .card#contact-card {
     right: 0;
