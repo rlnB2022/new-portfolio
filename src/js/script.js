@@ -131,36 +131,10 @@ const removeNavLinkColor = (event, index) => {
 					}
 				});
 				cards[index].classList.remove("fade-out");
+				if (index === 2) {
+					updateContainerPositions(projectContainers);
+				}
 			});
-			// add fade-out to all other cards
-
-			// when fade-out cards reach opacity: 0, remove active class
-			// find card that is active and animate it out
-			// const activeCard = document.querySelector(".card.active");
-			// activeCard.addEventListener("transitionend", (evt) => {
-			// 	if (evt.propertyName === "opacity") {
-			// 		const compStyles = getComputedStyle(activeCard);
-			// 		if (compStyles.opacity === "0") {
-			// 			activeCard.classList.remove("active");
-			// 		}
-			// 	}
-			// });
-			// activeCard.classList.remove("fade-in");
-			// activeCard.classList.remove("card-fade-in");
-			// activeCard.classList.add("fade-out");
-			// activeCard.classList.add("card-fade-out");
-			// cards.forEach((card, index) => {
-			// don't include the profile card
-			// if (index > 0) {
-			// card.classList.remove("card-fade-in");
-			// card.classList.add("fade-out");
-			// card.classList.add("card-fade-out");
-			// 	}
-			// });
-			// cards[index + 1].classList.remove("card-fade-out");
-			// cards[index + 1].classList.add("fade-in");
-			// cards[index + 1].classList.add("card-fade-in");
-			// cards[index + 1].classList.add("active");
 		}
 	}
 };
@@ -360,6 +334,7 @@ const projectContainers = document.querySelectorAll(".project-container");
 const updateContainerPositions = (containers) => {
 	// get width of projects parent
 	const parentWidth = document.querySelector(".projects").clientWidth;
+	console.log(parentWidth);
 
 	containers.forEach((container, index) => {
 		const row = Math.floor(index / 2);
