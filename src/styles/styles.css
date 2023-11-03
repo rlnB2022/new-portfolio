@@ -1040,9 +1040,11 @@ body.thank-you .center-link a {
   .container .card#resume-card .company-logo img {
     display: none;
   }
-  #project-modal {
-    width: 50%;
+  .container #project-modal {
     margin: 0 auto;
+  }
+  .container #project-modal .card-inner {
+    width: 720px;
   }
 }
 ::-webkit-scrollbar-track {
