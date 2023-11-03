@@ -323,6 +323,7 @@ closeModalElem.addEventListener("click", () => {
 
 	projectModal.classList.remove("show-project-modal");
 	document.body.removeAttribute("style");
+	projectModalBG.classList.remove("active");
 });
 
 /* Filter Projects */

@@ -775,14 +775,22 @@ body {
 				justify-content: center;
 				align-items: center;
 				z-index: 999;
+				cursor: pointer;
 
 				i {
 					color: $dark-grey;
+					transition: 0.25s ease;
+				}
+
+				&:hover i {
+					color: $orange;
+					font-size: 2.25rem;
+					transform: rotate(180deg);
 				}
 			}
 
 			#project-modal-contents {
-				height: 100%;
+				height: 100vh;
 				text-align: center;
 				display: flex;
 				flex-direction: column;
@@ -1038,6 +1046,24 @@ body {
 				}
 			}
 		}
+		#project-modal {
+			width: 75%;
+			margin: 0 auto;
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.75);
+			z-index: 100;
+
+			.card-inner {
+				margin: 0 auto;
+				width: 75%;
+				position: relative;
+			}
+		}
 	}
 }
 
@@ -1177,6 +1203,10 @@ body {
 				}
 			}
 		}
+	}
+	#project-modal {
+		width: 50%;
+		margin: 0 auto;
 	}
 }
 
