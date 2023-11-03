@@ -78,8 +78,8 @@ async function typingCarousel(words, elem) {
 typingCarousel(typingWords, typingTextElemTop);
 typingCarousel(typingWords, typingTextElemBottom);
 
-// get all cards
-const cards = document.querySelectorAll(".card");
+// get all cards except the profile card
+const cards = document.querySelectorAll(".card:not(#profile-card)");
 cards.forEach((card, index) => {
 	// all cards except the profile card
 	if (index > 0) {
@@ -107,27 +107,60 @@ const removeNavLinkColor = (event, index) => {
 
 		// if desktop view
 		if (window.innerWidth >= 1120) {
+			// add event listeners to each card
+			cards.forEach((card, idx) => {
+				card.addEventListener("transitionend", (evt) => {
+					if (evt.propertyName === "opacity") {
+						const compStyles = getComputedStyle(card);
+						if (compStyles.opacity === "0") {
+							card.classList.remove("active");
+						} else if (compStyles.opacity === "1") {
+							card.classList.add("active");
+						}
+					}
+				});
+			});
+			// add fade-in, active classes to card selected
+			cards[index].classList.add("active");
+			// have to use a setTimeout so the card doesn't just appear in place without transitioning
+			setTimeout(() => {
+				// add fade-out class from all cards
+				cards.forEach((card, idx) => {
+					if (idx !== index) {
+						card.classList.add("fade-out");
+					}
+				});
+				cards[index].classList.remove("fade-out");
+			});
+			// add fade-out to all other cards
+
+			// when fade-out cards reach opacity: 0, remove active class
 			// find card that is active and animate it out
-			const activeCard = document.querySelector(".card.active");
-
-			activeCard.classList.remove("card-fade-in");
-			activeCard.classList.add("card-fade-out");
-			activeCard.addEventListener("animationend", (evt) => {
-				if (evt.animationName === "cardFadeOut") {
-					activeCard.classList.remove("active");
-				}
-			});
-
-			cards.forEach((card, index) => {
-				// don't include the profile card
-				if (index > 0) {
-					card.classList.remove("card-fade-in");
-					card.classList.add("card-fade-out");
-				}
-			});
-			cards[index + 1].classList.remove("card-fade-out");
-			cards[index + 1].classList.add("card-fade-in");
-			cards[index + 1].classList.add("active");
+			// const activeCard = document.querySelector(".card.active");
+			// activeCard.addEventListener("transitionend", (evt) => {
+			// 	if (evt.propertyName === "opacity") {
+			// 		const compStyles = getComputedStyle(activeCard);
+			// 		if (compStyles.opacity === "0") {
+			// 			activeCard.classList.remove("active");
+			// 		}
+			// 	}
+			// });
+			// activeCard.classList.remove("fade-in");
+			// activeCard.classList.remove("card-fade-in");
+			// activeCard.classList.add("fade-out");
+			// activeCard.classList.add("card-fade-out");
+			// cards.forEach((card, index) => {
+			// don't include the profile card
+			// if (index > 0) {
+			// card.classList.remove("card-fade-in");
+			// card.classList.add("fade-out");
+			// card.classList.add("card-fade-out");
+			// 	}
+			// });
+			// cards[index + 1].classList.remove("card-fade-out");
+			// cards[index + 1].classList.add("fade-in");
+			// cards[index + 1].classList.add("card-fade-in");
+			// cards[index + 1].classList.add("active");
 		}
 	}
 };

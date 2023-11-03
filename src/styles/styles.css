@@ -516,10 +516,10 @@ body {
   max-width: 400px;
 }
 .container .card#projects-card .projects .project-container.show-project {
-  animation: show-project 0.25s ease-in-out forwards;
+  animation: show-project 0.25s ease-in-out both;
 }
 .container .card#projects-card .projects .project-container.hide-project {
-  animation: hide-project 0.25s ease-in-out forwards;
+  animation: hide-project 0.25s ease-in-out both;
 }
 .container .card#projects-card .projects .project-container a img {
   width: 100%;
@@ -769,12 +769,12 @@ body.thank-you .center-link a {
   cursor: pointer;
 }
 
-.card-fade-in {
-  animation: cardFadeIn 1s ease-in-out forwards;
+.card-fade-out {
+  animation: cardFadeOut 10s ease-in-out both;
 }
 
-.card-fade-out {
-  animation: cardFadeOut 1s ease-in-out forwards;
+.card-fade-in {
+  animation: cardFadeIn 10s ease-in-out both;
 }
 
 @keyframes hide-project {
@@ -947,6 +947,10 @@ body.thank-you .center-link a {
   }
   .container .card.active {
     display: block;
+  }
+  .container .card.fade-out {
+    opacity: 0;
+    transform: translate3d(-70%, 0, 0);
   }
   .container .card#profile-card {
     position: relative;

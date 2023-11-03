@@ -587,11 +587,11 @@ body {
 					max-width: 400px;
 
 					&.show-project {
-						animation: show-project 0.25s ease-in-out forwards;
+						animation: show-project 0.25s ease-in-out both;
 					}
 
 					&.hide-project {
-						animation: hide-project 0.25s ease-in-out forwards;
+						animation: hide-project 0.25s ease-in-out both;
 					}
 
 					a {
@@ -885,12 +885,12 @@ body {
 	}
 }
 
-.card-fade-in {
-	animation: cardFadeIn 1s ease-in-out forwards;
+.card-fade-out {
+	animation: cardFadeOut 10s ease-in-out both;
 }
 
-.card-fade-out {
-	animation: cardFadeOut 1s ease-in-out forwards;
+.card-fade-in {
+	animation: cardFadeIn 10s ease-in-out both;
 }
 
 @keyframes hide-project {
@@ -1107,6 +1107,15 @@ body {
 				// visibility: visible;
 				display: block;
 			}
+			&.fade-out {
+				opacity: 0;
+				transform: translate3d(-70%, 0, 0);
+			}
+
+			// &.fade-in {
+			// 	opacity: 1;
+			// 	transform: translate3d(0, 0, 0);
+			// }
 			// &.hidden {
 			// 	opacity: 0;
 			// 	visibility: hidden;
