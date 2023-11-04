@@ -268,6 +268,9 @@ const addShowProjectModalListeners = () => {
 			btnLive.style.fontSize = "1rem";
 			btnCode.style.fontSize = "1rem";
 
+			btnLive.id = "btn-live";
+			btnCode.id = "btn-code";
+
 			btnLive.addEventListener("click", () => {
 				window.location = projectLink;
 			});

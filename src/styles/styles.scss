@@ -594,12 +594,19 @@ body {
 					}
 
 					a {
+						overflow: hidden;
+						display: block;
 						img {
 							width: 100%;
 							height: auto;
 							transform: scale(1);
 							max-width: 100%;
 							max-height: 260px;
+							transition: 0.5s ease;
+
+							&:hover {
+								transform: scale(1.05);
+							}
 						}
 					}
 					h3,
@@ -627,11 +634,16 @@ body {
 				li {
 					text-align: center;
 					a {
+						display: block;
+						overflow: hidden;
 						img {
 							width: 100%;
 							height: auto;
-							transform: scale(1);
 							max-width: 100%;
+							transition: 0.5s ease;
+							&:hover {
+								transform: scale(1.1);
+							}
 						}
 					}
 
@@ -802,6 +814,10 @@ body {
 						list-style-position: inside;
 						margin: 0 1rem;
 					}
+				}
+
+				button {
+					cursor: pointer;
 				}
 
 				h2 {
@@ -1208,6 +1224,13 @@ body {
 			margin: 0 auto;
 			.card-inner {
 				width: 720px;
+				#project-modal-contents {
+					img {
+						height: 50% !important;
+						margin: 0 auto;
+						border-radius: 0 0 0.5rem 0.5rem;
+					}
+				}
 			}
 		}
 	}

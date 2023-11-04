@@ -521,12 +521,20 @@ body {
 .container .card#projects-card .projects .project-container.hide-project {
   animation: hide-project 0.25s ease-in-out both;
 }
+.container .card#projects-card .projects .project-container a {
+  overflow: hidden;
+  display: block;
+}
 .container .card#projects-card .projects .project-container a img {
   width: 100%;
   height: auto;
   transform: scale(1);
   max-width: 100%;
   max-height: 260px;
+  transition: 0.5s ease;
+}
+.container .card#projects-card .projects .project-container a img:hover {
+  transform: scale(1.05);
 }
 .container .card#projects-card .projects .project-container h3,
 .container .card#projects-card .projects .project-container p {
@@ -547,11 +555,18 @@ body {
 .container .card#blog-card ul li {
   text-align: center;
 }
+.container .card#blog-card ul li a {
+  display: block;
+  overflow: hidden;
+}
 .container .card#blog-card ul li a img {
   width: 100%;
   height: auto;
-  transform: scale(1);
   max-width: 100%;
+  transition: 0.5s ease;
+}
+.container .card#blog-card ul li a img:hover {
+  transform: scale(1.1);
 }
 .container .card#blog-card ul li .blog-date {
   display: inline-block;
@@ -705,6 +720,9 @@ body {
   list-style-type: disc;
   list-style-position: inside;
   margin: 0 1rem;
+}
+.container #project-modal #project-modal-details #project-modal-contents button {
+  cursor: pointer;
 }
 .container #project-modal #project-modal-details #project-modal-contents h2 {
   margin-bottom: 0.4rem;
@@ -1045,6 +1063,11 @@ body.thank-you .center-link a {
   }
   .container #project-modal .card-inner {
     width: 720px;
+  }
+  .container #project-modal .card-inner #project-modal-contents img {
+    height: 50% !important;
+    margin: 0 auto;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 }
 ::-webkit-scrollbar-track {
