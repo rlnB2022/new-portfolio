@@ -313,6 +313,11 @@ const projectContainers = document.querySelectorAll(".project-container");
 const updateContainerPositions = (containers) => {
 	// get width of projects parent
 	const parentWidth = document.querySelector(".projects").clientWidth;
+	const totalRows = Math.ceil(containers.length / 2);
+
+	// set height of projects
+	const projectsElem = document.querySelector(".projects");
+	projectsElem.style.minHeight = 280 * totalRows + "px";
 
 	containers.forEach((container, index) => {
 		const row = Math.floor(index / 2);

@@ -484,6 +484,7 @@ body {
 						&.inactive {
 							color: $lighter-grey;
 							border: 1px solid rgb(238, 238, 238);
+							margin-top: 2rem;
 						}
 					}
 					.company-details-container {
@@ -587,18 +588,19 @@ body {
 				.project-container {
 					margin-top: 1.85rem;
 					max-height: 330px;
-					transition: all 0.25s ease-in-out;
+					transition: all 0.3s ease-in-out;
 					opacity: 1;
 					overflow: hidden;
 					margin: 0 auto;
 					max-width: 400px;
+					margin-bottom: 1rem;
 
 					&.show-project {
-						animation: show-project 0.25s ease-in-out both;
+						animation: show-project 0.5s ease-in-out both;
 					}
 
 					&.hide-project {
-						animation: hide-project 0.25s ease-in-out both;
+						animation: hide-project 0.5s ease-in-out both;
 					}
 
 					a {
@@ -958,11 +960,15 @@ body {
 		visibility: visible;
 		opacity: 1;
 		max-height: 330px;
+		max-width: 330px;
+		transform: scale(1);
 	}
 	100% {
 		visibility: hidden;
 		max-height: 0;
+		max-width: 0;
 		opacity: 0;
+		transform: scale(0);
 	}
 }
 
@@ -971,11 +977,15 @@ body {
 		visibility: hidden;
 		opacity: 0;
 		max-height: 0;
+		max-width: 0;
+		transform: scale(0);
 	}
 	100% {
 		max-height: 330px;
+		max-width: 330px;
 		visibility: visible;
 		opacity: 1;
+		transform: scale(1);
 	}
 }
 
