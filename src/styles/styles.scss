@@ -18,10 +18,10 @@
 
 @mixin title-border {
 	display: inline-block;
-	border: 1px solid orange;
+	border: 1px solid $orange;
 	padding: 0 0.25rem;
 	margin-bottom: 0.75rem;
-	color: orange;
+	color: $orange;
 	font-size: 0.75rem;
 	border-radius: 4px;
 }
@@ -41,8 +41,8 @@ body {
 
 	background: linear-gradient(
 		to bottom right,
-		#ff8800 0%,
-		#dfaf56 100%
+		$background-start 0%,
+		$background-end 100%
 	) !important;
 
 	/* animated squares in BG */
@@ -69,30 +69,35 @@ body {
 				&:nth-child(1) {
 					left: 10%;
 					top: 10%;
+					width: 300px;
+					height: 300px;
 				}
 
 				&:nth-child(2) {
 					left: 20%;
 					width: 140px;
 					height: 140px;
-					animation-delay: 2s;
+					animation-delay: 1s;
 					animation-duration: 40s;
 				}
 
 				&:nth-child(3) {
 					left: 25%;
-					animation-delay: 4s;
+					animation-delay: 3s;
+					animation-duration: 50s;
 				}
 
 				&:nth-child(4) {
 					left: 40%;
-					width: 130px;
-					height: 130px;
-					animation-duration: 48s;
+					width: 140px;
+					height: 140px;
+					top: 100%;
+					animation-duration: 40s;
 				}
 
 				&:nth-child(5) {
 					left: 70%;
+					animation-duration: 37s;
 				}
 
 				&:nth-child(6) {
@@ -100,6 +105,7 @@ body {
 					width: 220px;
 					height: 220px;
 					animation-delay: 3s;
+					animation-duration: 52s;
 				}
 
 				&:nth-child(7) {
@@ -108,20 +114,21 @@ body {
 					height: 340px;
 					width: 340px;
 					animation-delay: 8s;
+					animation-duration: 110s;
 				}
 
 				&:nth-child(8) {
 					left: 55%;
-					width: 50px;
-					height: 50px;
+					width: 100px;
+					height: 100px;
 					animation-delay: 12s;
 					animation-duration: 85s;
 				}
 
 				&:nth-child(9) {
 					left: 25%;
-					width: 20px;
-					height: 20px;
+					width: 80px;
+					height: 80px;
 					animation-delay: 2s;
 					animation-duration: 80s;
 				}
@@ -131,6 +138,7 @@ body {
 					width: 300px;
 					height: 300px;
 					animation-delay: 20s;
+					animation-duration: 70s;
 				}
 			}
 		}
@@ -637,9 +645,9 @@ body {
 						display: block;
 						overflow: hidden;
 						img {
-							width: 100%;
+							// width: 100%;
 							height: auto;
-							max-width: 100%;
+							max-width: 75%;
 							transition: 0.5s ease;
 							&:hover {
 								transform: scale(1.1);
@@ -677,16 +685,21 @@ body {
 					display: flex;
 					li {
 						a {
+							&.read-more {
+								display: inline;
+							}
 							img {
 								width: 100%;
 								height: auto;
 								transform: scale(1);
-								max-width: 100%;
+								max-width: 75%;
 							}
 						}
 						h3,
 						p {
-							text-align: center;
+							text-align: justify;
+							width: 80%;
+							margin: 0 auto;
 						}
 
 						h3 {
@@ -921,16 +934,11 @@ body {
 		visibility: visible;
 		opacity: 1;
 		max-height: 330px;
-		// margin-top: 1.85rem;
-		// padding: 0 1rem;
 	}
 	100% {
 		visibility: hidden;
-		// // display: none;
 		max-height: 0;
-		// padding: 0 1rem;
 		opacity: 0;
-		// margin-top: 0;
 	}
 }
 
@@ -939,15 +947,11 @@ body {
 		visibility: hidden;
 		opacity: 0;
 		max-height: 0;
-		// padding: 0 1rem;
-		// margin-top: 0;
 	}
 	100% {
 		max-height: 330px;
 		visibility: visible;
 		opacity: 1;
-		// margin-top: 1.85rem;
-		// padding: 0 1rem;
 	}
 }
 
@@ -1229,6 +1233,32 @@ body {
 						height: 50% !important;
 						margin: 0 auto;
 						border-radius: 0 0 0.5rem 0.5rem;
+					}
+					button {
+						transition: 0.25s ease;
+						font-size: 1rem;
+						height: 50px;
+						border-radius: 5px;
+						width: 50%;
+						background-color: $white;
+						color: $orange;
+						border: 1px solid $orange;
+						&#btn-live {
+							margin-right: 5px;
+							&:hover {
+								color: $white;
+								background-color: $orange;
+							}
+						}
+						&#btn-code {
+							margin-left: 5px;
+							border: 1px solid $blue;
+							color: $blue;
+							&:hover {
+								color: $white;
+								background-color: $blue;
+							}
+						}
 					}
 				}
 			}

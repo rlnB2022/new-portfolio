@@ -241,32 +241,8 @@ const addShowProjectModalListeners = () => {
 			const btnLive = document.createElement("button");
 			const btnCode = document.createElement("button");
 
-			btnLive.style.width = "50%";
-			btnCode.style.width = "50%";
-
 			btnLive.textContent = "View Live";
 			btnCode.textContent = "View Code";
-
-			btnLive.style.marginRight = "5px";
-			btnCode.style.marginLeft = "5px";
-
-			btnLive.style.border = "none";
-			btnCode.style.border = "1px solid #f59e0b";
-
-			btnLive.style.borderRadius = "5px";
-			btnCode.style.borderRadius = "5px";
-
-			btnLive.style.backgroundColor = "#f59e0b";
-			btnLive.style.color = "#fff";
-
-			btnCode.style.backgroundColor = "#fff";
-			btnCode.style.color = "#f59e0b";
-
-			btnLive.style.height = "50px";
-			btnCode.style.height = "50px";
-
-			btnLive.style.fontSize = "1rem";
-			btnCode.style.fontSize = "1rem";
 
 			btnLive.id = "btn-live";
 			btnCode.id = "btn-code";
