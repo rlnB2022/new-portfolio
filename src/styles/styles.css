@@ -542,6 +542,7 @@ body {
   max-width: 100%;
   max-height: 260px;
   transition: 0.5s ease;
+  position: relative;
 }
 .container .card#projects-card .projects .project-container a img:hover {
   transform: scale(1.05);
