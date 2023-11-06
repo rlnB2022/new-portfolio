@@ -990,6 +990,7 @@ body.thank-you .center-link a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
   }
   body.thank-you h1 {
     max-width: 50%;
