@@ -940,6 +940,7 @@ body.thank-you .center-link a {
     flex-wrap: wrap;
     position: relative;
     min-height: 560px;
+    transition: 0.25s ease 0.25s;
   }
   .container .card#projects-card .projects .project-container {
     padding: 1rem;
