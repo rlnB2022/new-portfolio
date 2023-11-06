@@ -398,8 +398,36 @@ contactMe.addEventListener("click", (evt) => {
 	const navItems = document.querySelectorAll("header .menu ul li");
 	const activeNavItem = document.querySelector("header .menu ul li.active");
 
-	activeNavItem.classList.remove("active");
-	navItems[4].classList.add("active");
+	if (window.innerWidth >= 1120) {
+		// add event listeners to each card
+		cards.forEach((card, idx) => {
+			card.addEventListener("transitionend", (evt) => {
+				if (evt.propertyName === "opacity") {
+					const compStyles = getComputedStyle(card);
+					if (compStyles.opacity === "0") {
+						card.classList.remove("active");
+					} else if (compStyles.opacity === "1") {
+						card.classList.add("active");
+					}
+				}
+			});
+		});
+		// add fade-in, active classes to card selected
+		cards[4].classList.add("active");
+		// have to use a setTimeout so the card doesn't just appear in place without transitioning
+		setTimeout(() => {
+			// add fade-out class from all cards
+			cards.forEach((card, idx) => {
+				if (idx !== 4) {
+					card.classList.add("fade-out");
+				}
+			});
+			cards[4].classList.remove("fade-out");
+		});
+	} else {
+		activeNavItem.classList.remove("active");
+		navItems[4].classList.add("active");
+	}
 });
 
 addNavListEventListeners();

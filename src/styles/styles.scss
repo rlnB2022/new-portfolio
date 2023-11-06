@@ -935,6 +935,9 @@ body {
 		}
 
 		.center-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin-top: 2rem;
 			text-align: center;
 			a {
@@ -1140,9 +1143,15 @@ body {
 @media screen and (min-width: 1120px) {
 	body {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		// height: 100vh;
+		&.thank-you {
+			h1 {
+				max-width: 50%;
+			}
+		}
 	}
 	.container {
 		height: 90vh;
@@ -1287,6 +1296,10 @@ body {
 				}
 			}
 		}
+	}
+
+	.center-link {
+		max-width: 50%;
 	}
 }
 

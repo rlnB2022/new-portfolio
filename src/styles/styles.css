@@ -823,6 +823,9 @@ body.thank-you h1 {
   padding: 1rem;
 }
 body.thank-you .center-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 2rem;
   text-align: center;
 }
@@ -984,9 +987,12 @@ body.thank-you .center-link a {
 @media screen and (min-width: 1120px) {
   body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+  }
+  body.thank-you h1 {
+    max-width: 50%;
   }
   .container {
     height: 90vh;
@@ -1119,6 +1125,9 @@ body.thank-you .center-link a {
     height: 50% !important;
     margin: 0 auto;
     border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .center-link {
+    max-width: 50%;
   }
 }
 ::-webkit-scrollbar-track {
