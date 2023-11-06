@@ -212,10 +212,14 @@ body {
 						font-weight: 500;
 						padding: 1rem 0.75rem;
 						display: block;
+						transition: 0.25s ease;
 
 						&:link,
 						&:visited {
 							color: $black;
+						}
+						&:hover {
+							color: $orange;
 						}
 
 						i {
@@ -1163,17 +1167,17 @@ body {
 
 		header {
 			position: absolute;
-			top: 15px;
-			left: 0;
+			top: 1rem;
+			left: 1rem;
 			margin-left: 0;
 		}
 
 		.card {
 			position: absolute;
-			top: 15px;
+			top: 1rem;
 			left: 580px;
 			overflow: auto;
-			bottom: 15px;
+			bottom: 1rem;
 			width: auto;
 			height: auto;
 			transform-origin: center left;

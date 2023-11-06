@@ -197,9 +197,13 @@ body {
   font-weight: 500;
   padding: 1rem 0.75rem;
   display: block;
+  transition: 0.25s ease;
 }
 .container header .menu ul li a:link, .container header .menu ul li a:visited {
   color: #323232;
+}
+.container header .menu ul li a:hover {
+  color: #ff8018;
 }
 .container header .menu ul li a i {
   font-size: 1.1rem;
@@ -1005,16 +1009,16 @@ body.thank-you .center-link a {
   }
   .container header {
     position: absolute;
-    top: 15px;
-    left: 0;
+    top: 1rem;
+    left: 1rem;
     margin-left: 0;
   }
   .container .card {
     position: absolute;
-    top: 15px;
+    top: 1rem;
     left: 580px;
     overflow: auto;
-    bottom: 15px;
+    bottom: 1rem;
     width: auto;
     height: auto;
     transform-origin: center left;
