@@ -330,11 +330,16 @@ body {
 					align-items: center;
 					justify-content: center;
 
+					&:hover i {
+						color: $orange;
+					}
+
 					&:nth-child(2) {
 						margin-left: 5px;
 					}
 
 					i {
+						transition: 0.25s ease;
 						color: $black;
 					}
 				}

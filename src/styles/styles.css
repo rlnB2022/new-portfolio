@@ -298,10 +298,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+.container .card#profile-card .socials a:hover i {
+  color: #ff8018;
+}
 .container .card#profile-card .socials a:nth-child(2) {
   margin-left: 5px;
 }
 .container .card#profile-card .socials a i {
+  transition: 0.25s ease;
   color: #323232;
 }
 .container .card#profile-card .profile-links {
