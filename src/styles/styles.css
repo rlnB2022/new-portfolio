@@ -321,9 +321,13 @@ body {
 .container .card#profile-card .profile-links a {
   display: block;
   flex: 1;
+  transition: 0.25s ease;
 }
 .container .card#profile-card .profile-links a:link, .container .card#profile-card .profile-links a:visited {
   color: #323232;
+}
+.container .card#profile-card .profile-links a:hover {
+  color: #ff8018;
 }
 .container .card#about-card, .container .card#resume-card, .container .card#projects-card, .container .card#blog-card, .container .card#contact-card {
   margin-top: 15px;
@@ -552,9 +556,6 @@ body {
   transition: 0.5s ease;
   position: relative;
 }
-.container .card#projects-card .projects .project-container a img:hover {
-  transform: scale(1.05);
-}
 .container .card#projects-card .projects .project-container h3,
 .container .card#projects-card .projects .project-container p {
   text-align: center;
@@ -573,18 +574,18 @@ body {
 }
 .container .card#blog-card ul li {
   text-align: center;
+  overflow: hidden;
 }
 .container .card#blog-card ul li a {
   display: block;
-  overflow: hidden;
 }
-.container .card#blog-card ul li a img {
-  height: auto;
+.container .card#blog-card ul li a .blog-image-container {
   max-width: 75%;
-  transition: 0.5s ease;
 }
-.container .card#blog-card ul li a img:hover {
-  transform: scale(1.1);
+.container .card#blog-card ul li a .blog-image-container img {
+  height: auto;
+  max-width: 100%;
+  transition: 0.5s ease;
 }
 .container .card#blog-card ul li .blog-date {
   display: inline-block;
@@ -617,12 +618,6 @@ body {
 }
 .container .card#blog-card .blog-container ul li a.read-more {
   display: inline;
-}
-.container .card#blog-card .blog-container ul li a img {
-  width: 100%;
-  height: auto;
-  transform: scale(1);
-  max-width: 100%;
 }
 .container .card#blog-card .blog-container ul li h3,
 .container .card#blog-card .blog-container ul li p {
@@ -959,6 +954,19 @@ body.thank-you .center-link a {
     position: absolute;
     left: -500px;
   }
+  .container .card#projects-card .projects .project-container a {
+    display: flex;
+  }
+  .container .card#projects-card .projects .project-container a .project-img-container {
+    overflow: hidden;
+  }
+  .container .card#projects-card .projects .project-container a .project-img-container img {
+    height: 100%;
+    width: 100%;
+  }
+  .container .card#projects-card .projects .project-container a .project-img-container img:hover {
+    transform: scale(1.05);
+  }
   .container .card#contact-card {
     right: 0;
   }
@@ -971,8 +979,21 @@ body.thank-you .center-link a {
   .container .card#contact-card .top-line input:nth-child(2) {
     margin-left: 5px;
   }
-  .container .card#blog-card .card-inner .blog-container ul li a img {
-    max-width: 75%;
+  .container .card#blog-card .card-inner .blog-container ul li a {
+    display: flex;
+    justify-content: center;
+    transition: 0.25s ease;
+  }
+  .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container {
+    width: 75%;
+  }
+  .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+  }
+  .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container img:hover {
+    transform: scale(1.05);
   }
   .container #project-modal {
     width: 75%;
