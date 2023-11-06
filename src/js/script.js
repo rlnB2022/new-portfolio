@@ -392,6 +392,16 @@ filterItems.forEach((item) => {
 	});
 });
 
+const contactMe = document.querySelector(".change-contact-menu-item");
+
+contactMe.addEventListener("click", (evt) => {
+	const navItems = document.querySelectorAll("header .menu ul li");
+	const activeNavItem = document.querySelector("header .menu ul li.active");
+
+	activeNavItem.classList.remove("active");
+	navItems[4].classList.add("active");
+});
+
 addNavListEventListeners();
 addShowProjectModalListeners();
 updateContainerPositions(projectContainers);
