@@ -466,10 +466,9 @@ body {
   margin-bottom: 0.75rem;
   position: relative;
 }
-.container .card#resume-card .resume-items .resume-item .company-details-container .company-details .company-logo {
-  position: absolute;
-  top: 0;
-  right: 0;
+.container .card#resume-card .resume-items .resume-item .company-details-container .company-logo img {
+  position: relative;
+  top: -7px;
 }
 .container .card#resume-card .resume-items .resume-item p {
   line-height: 1.75rem;
@@ -581,6 +580,7 @@ body {
 }
 .container .card#blog-card ul li a .blog-image-container {
   max-width: 75%;
+  margin: 0 auto;
 }
 .container .card#blog-card ul li a .blog-image-container img {
   height: auto;
@@ -986,6 +986,7 @@ body.thank-you .center-link a {
   }
   .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container {
     width: 75%;
+    overflow: hidden;
   }
   .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container img {
     width: 100%;
