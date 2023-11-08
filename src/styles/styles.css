@@ -754,6 +754,9 @@ body {
   list-style-position: inside;
   margin: 0 1rem;
 }
+.container #project-modal #project-modal-details #project-modal-contents #project-container p {
+  text-align: left;
+}
 .container #project-modal #project-modal-details #project-modal-contents button {
   transition: 0.25s ease;
   font-size: 1rem;

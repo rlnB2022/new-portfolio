@@ -248,11 +248,11 @@ const addShowProjectModalListeners = () => {
 			btnCode.id = "btn-code";
 
 			btnLive.addEventListener("click", () => {
-				window.location = projectLink;
+				window.open(projectLink, "_blank");
 			});
 
 			btnCode.addEventListener("click", () => {
-				window.location = githubLink;
+				window.open(githubLink, "_blank");
 			});
 
 			projectButtons.appendChild(btnLive);

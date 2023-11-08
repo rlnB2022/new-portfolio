@@ -857,6 +857,9 @@ body {
 						list-style-position: inside;
 						margin: 0 1rem;
 					}
+					p {
+						text-align: left;
+					}
 				}
 
 				button {
@@ -1355,7 +1358,6 @@ body {
 			}
 		}
 		#project-modal {
-			// width: 50%;
 			margin: 0 auto;
 			.card-inner {
 				width: 720px;
