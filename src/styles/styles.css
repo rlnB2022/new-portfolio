@@ -1161,6 +1161,9 @@ body.thank-you .center-link a {
   .container .card#resume-card .company-logo img {
     display: none;
   }
+  .container .card#blog-card .card-inner .blog-container ul li a.read-more {
+    display: inline;
+  }
   .container #project-modal {
     margin: 0 auto;
   }

@@ -1335,6 +1335,21 @@ body {
 					}
 				}
 			}
+			&#blog-card {
+				.card-inner {
+					.blog-container {
+						ul {
+							li {
+								a {
+									&.read-more {
+										display: inline;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		#project-modal {
 			// width: 50%;
