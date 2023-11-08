@@ -574,6 +574,22 @@ body {
 							p {
 								line-height: 1.75em;
 							}
+							.img-container {
+								width: 60px;
+								height: 60px;
+								background-color: $orange;
+								border-radius: 50%;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								margin: 0 auto;
+
+								img {
+									width: 60%;
+									height: 60%;
+									border-radius: 5px;
+								}
+							}
 						}
 					}
 				}
