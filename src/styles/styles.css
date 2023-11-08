@@ -1011,6 +1011,9 @@ body.thank-you .center-link a {
   .container .card#blog-card .card-inner .blog-container ul li a .blog-image-container img:hover {
     transform: scale(1.05);
   }
+  .container .card#blog-card .card-inner .blog-container ul li a.read-more {
+    display: inline;
+  }
   .container #project-modal {
     width: 75%;
     margin: 0 auto;
