@@ -743,7 +743,7 @@ body {
   transform: rotate(180deg);
 }
 .container #project-modal #project-modal-details #project-modal-contents {
-  height: 100vh;
+  height: 100dvh;
   text-align: center;
   display: flex;
   flex-direction: column;

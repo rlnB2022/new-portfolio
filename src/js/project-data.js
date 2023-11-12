@@ -55,4 +55,18 @@ export const projects = [
 			"<p>This was a really fun project to learn about Firebase Auth and shopping carts using React Redux. One day I'll get back to it and finish the mobile/tablet design. I'm not happy that I skipped this part of development and in fact, developed this backwards.</p><p>Creating a user is currently not working. I'll need to take a look at this when I have time.</p><p>Overall, I happy with how the website turned out!</p>",
 		],
 	},
+	{
+		id: "visualizer",
+		tech: "Javascript • Canvas • Audio",
+		name: "Audio Visualizer",
+		imgSrc: "audio-visualizer",
+		projectLink: "https://rlnb2022.github.io/audio-visualizer/index.html",
+		githubLink: "https://github.com/rlnB2022/audio-visualizer",
+		description: [
+			"<h3 style='margin-top: .5rem'><strong>NOT OPTIMIZED FOR MOBILE (yet)</strong></h3><p>I created this fun project to learn about the canvas and the HTML audio element. I've seen visualizers before and wanted to challenge myself to make one myself. To depict audio playing, I chose a spinning record. To show the audio visualizations, I wanted them to go completely around the record showing different colors as the frequencies changed. Adding a nice background color effect completed the challenge for me. Click the Choose a Song button to find a mp3 to load. Once loaded, click anywhere on the canvas to spin the record and listen to the song.</p>",
+			"<ul><li>Javascript</li><li>Canvas</li><li>HTML Audio Element</li><li>HTML</li><li>CSS</li><li>jsMediaTags Library</li></ul>",
+			"<p>I had to figure out how to draw each item I wanted on the screen, this included arcs, lines and text.</p><p>Some of the lines were not as 'strong' as others and would not display from behind the record. So, I had to create a minimum/maximum line length so that they would display properly.</p><p>I was getting errors when trying to play the song selected before it loaded, until I understood that I needed to resume the context, then toggle the Audio to play.</p>",
+			"<p>I think I'd like to learn more about canvas and what else I can do with it. I'd love to create options for other audio visualizations, like graphics and effects that remain on screen then within a few seconds - fade away.</p><p>I learned about saving and restoring the canvas so that I can make rotational changes, then put the canvas back to its original orientation so that other drawing methods will render correctly.</p><p>This project brought out my creative side. Adding the BG effect was something I thought would be interesting to see. I had to figure out how to change the background color dynamically, so I chose to add RGB based on the audio frequency.</p>",
+		],
+	},
 ];
