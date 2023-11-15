@@ -8,7 +8,7 @@ const typingWords = [
 	"React Software Engineer",
 	"Freelancer",
 	"Air Force Veteran",
-	"Ready to work. Hire me!",
+	"Avid learner",
 ];
 
 /**
