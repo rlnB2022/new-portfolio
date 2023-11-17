@@ -422,7 +422,9 @@ contactMe.addEventListener("click", (evt) => {
 					card.classList.add("fade-out");
 				}
 			});
+			activeNavItem.classList.remove("active");
 			cards[4].classList.remove("fade-out");
+			navItems[4].classList.add("active");
 		});
 	} else {
 		activeNavItem.classList.remove("active");
