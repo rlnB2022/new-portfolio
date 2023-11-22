@@ -247,9 +247,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-image: url("https://placehold.co/960x640");
+  background-image: url(../images/headshot.jpg);
   background-color: rgba(120, 204, 109, 0.1);
-  background-position: center center;
+  background-position: center 25%;
   background-size: cover;
   background-repeat: no-repeat;
   height: 55%;
