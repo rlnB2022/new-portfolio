@@ -23,6 +23,7 @@
 	--mode-bg: #eeeeee;
 	--mode-color: #121212;
 	--modal-background: #000000cc;
+	--scrollbar-color: #333;
 }
 
 .theme-dark {
@@ -47,6 +48,7 @@
 	--mode-bg: #444444;
 	--mode-color: #eeeeee;
 	--modal-background: #000000cc;
+	--scrollbar-color: #ff8018;
 }
 
 @mixin blob {
@@ -97,7 +99,7 @@ ul {
 
 body {
 	// This background color is a fallback in case an older browser doesn't support linear-gradient in the background-gradient class below
-	background-color: var(var(--primary-color));
+	background-color: var(--primary-color);
 }
 
 .background-gradient {
@@ -212,6 +214,21 @@ body {
 			}
 		}
 	}
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: none;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: transparent;
 }
 
 .container {
@@ -1296,7 +1313,7 @@ body {
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 100vh;
+			height: 100dvh;
 			background-color: var(--modal-background);
 			z-index: 100;
 
@@ -1315,7 +1332,7 @@ body {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		height: 100dvh;
 		&.thank-you {
 			h1 {
 				max-width: 50%;
@@ -1484,19 +1501,9 @@ body {
 	.center-link {
 		max-width: 50%;
 	}
-}
 
-::-webkit-scrollbar-track {
-	-webkit-box-shadow: none;
-	background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 6px;
-}
-
-::-webkit-scrollbar {
-	width: 6px;
-	background-color: transparent;
+	::-webkit-scrollbar-thumb {
+		background-color: var(--scrollbar-color);
+		border-radius: 6px;
+	}
 }

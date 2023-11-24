@@ -27,6 +27,7 @@
   --mode-bg: #eeeeee;
   --mode-color: #121212;
   --modal-background: #000000cc;
+  --scrollbar-color: #333;
 }
 
 .theme-dark {
@@ -51,6 +52,7 @@
   --mode-bg: #444444;
   --mode-color: #eeeeee;
   --modal-background: #000000cc;
+  --scrollbar-color: #ff8018;
 }
 
 html {
@@ -74,7 +76,7 @@ ul {
 }
 
 body {
-  background-color: var(var(--primary-color));
+  background-color: var(--primary-color);
 }
 
 .background-gradient {
@@ -170,6 +172,21 @@ body {
   height: 300px;
   animation-delay: 20s;
   animation-duration: 70s;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
 }
 
 .container {
@@ -1118,7 +1135,7 @@ body.thank-you .center-link a {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--modal-background);
     z-index: 100;
   }
@@ -1134,7 +1151,7 @@ body.thank-you .center-link a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100dvh;
   }
   body.thank-you h1 {
     max-width: 50%;
@@ -1277,18 +1294,8 @@ body.thank-you .center-link a {
   .center-link {
     max-width: 50%;
   }
-}
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: none;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  background-color: transparent;
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 6px;
+  }
 }
