@@ -47,7 +47,7 @@
   --project-button: #0066ff;
   --background-start: #111111;
   --background-end: #333333;
-  --square-outline: #ff801885;
+  --square-outline: #ff80183a;
   --square-background: transparent;
   --box-shadow-lines: #ffffff62;
   --blob-start: #ffb6188a;
@@ -246,8 +246,7 @@ body {
   font-size: 1.75rem;
 }
 .container header .menu {
-  box-shadow: 0 0px 5px var(--box-shadow-lines);
-  -webkit-box-shadow: 0 5px 10px var(--box-shadow-lines);
+  box-shadow: 0 0px 3px var(--primary-color);
   background-color: var(--primary-background);
 }
 .container header .menu ul {
@@ -633,8 +632,12 @@ body {
   display: block;
   color: var(--primary-text);
   font-size: 0.9rem;
+  transition: color 0.25s ease;
 }
 .container .card#projects-card .project-header .filter-menu li a.active {
+  color: var(--primary-color);
+}
+.container .card#projects-card .project-header .filter-menu li:hover a {
   color: var(--primary-color);
 }
 .container .card#projects-card .projects {
@@ -1174,6 +1177,7 @@ body.thank-you .center-link a {
     top: 1rem;
     left: 1rem;
     margin-left: 0;
+    box-shadow: 0 0px 3px var(--primary-color);
   }
   .container .card {
     position: absolute;
