@@ -1,5 +1,9 @@
-@use "reset";
-// @use "colors" as *; // doing it this way removes the namespace, so I can load variables without it
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
 
 .theme-light {
 	--primary-color: #ff8018;
@@ -902,7 +906,7 @@ body {
 						border: 2px solid #eee;
 						margin-bottom: 30px;
 						background-color: var(--input-bg);
-						ddd &[type="textarea"] {
+						&[name="message"] {
 							height: 100px;
 							padding: 1rem;
 						}

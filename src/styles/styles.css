@@ -795,7 +795,7 @@ body {
   margin-bottom: 30px;
   background-color: var(--input-bg);
 }
-ddd .container .card#contact-card .contact-form-container form input[type=textarea] {
+.container .card#contact-card .contact-form-container form input[name=message] {
   height: 100px;
   padding: 1rem;
 }
