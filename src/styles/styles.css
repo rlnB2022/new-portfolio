@@ -316,7 +316,6 @@ body {
   display: block;
   opacity: 1;
   visibility: visible;
-  background-color: var(--secondary-background);
 }
 .container .card .card-inner {
   padding: 30px 30px 0;
@@ -1067,6 +1066,9 @@ body.thank-you .center-link a {
     visibility: visible;
     grid-template-columns: auto;
   }
+  .container .card.active {
+    background-color: var(--primary-background);
+  }
   .container .card#resume-card .card-inner .experience-education .resume-left .content-resume-experience .content-subtitle {
     margin-top: 0;
   }
@@ -1201,6 +1203,7 @@ body.thank-you .center-link a {
   }
   .container .card.active {
     display: block;
+    background-color: var(--secondary-background);
   }
   .container .card.fade-out {
     opacity: 0;

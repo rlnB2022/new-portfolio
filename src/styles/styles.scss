@@ -365,7 +365,6 @@ body {
 			display: block;
 			opacity: 1;
 			visibility: visible;
-			background-color: var(--secondary-background);
 		}
 		.card-inner {
 			padding: 30px 30px 0;
@@ -1214,6 +1213,10 @@ body {
 			visibility: visible;
 			grid-template-columns: auto;
 
+			&.active {
+				background-color: var(--primary-background);
+			}
+
 			&#resume-card {
 				.card-inner {
 					.experience-education {
@@ -1384,6 +1387,7 @@ body {
 			display: none;
 			&.active {
 				display: block;
+				background-color: var(--secondary-background);
 			}
 			&.fade-out {
 				opacity: 0;
