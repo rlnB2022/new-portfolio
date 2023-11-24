@@ -9,6 +9,7 @@
   --primary-color: #ff8018;
   --secondary-color: #b17309;
   --primary-text: #323232;
+  --secondary-text: rgba(51, 51, 51, 0.87);
   --primary-background: #ffffff;
   --link-color: #323232;
   --lighter-grey: #cccccc;
@@ -22,12 +23,14 @@
   --box-shadow-lines: #0000000d;
   --blob-start: #ffb61826;
   --blob-end: #ffb23f03;
+  --input-bg: #ffffff;
 }
 
 .theme-dark {
   --primary-color: #ff8018;
   --secondary-color: #b17309;
   --primary-text: rgba(255, 255, 255, 0.87);
+  --secondary-text: rgba(255, 255, 255, 0.6);
   --primary-background: #121212;
   --link-color: #ffffff;
   --lighter-grey: #cccccc;
@@ -41,6 +44,7 @@
   --box-shadow-lines: #ffffff62;
   --blob-start: #ffb6188a;
   --blob-end: #ffb23f03;
+  --input-bg: rgba(255, 255, 255, 0.87);
 }
 
 html {
@@ -388,6 +392,7 @@ body {
 .container .card#about-card h2, .container .card#resume-card h2, .container .card#projects-card h2, .container .card#blog-card h2, .container .card#contact-card h2 {
   position: relative;
   padding-bottom: 30px;
+  color: var(--primary-text);
 }
 .container .card#about-card h2.content-title:not(.no-line), .container .card#resume-card h2.content-title:not(.no-line), .container .card#projects-card h2.content-title:not(.no-line), .container .card#blog-card h2.content-title:not(.no-line), .container .card#contact-card h2.content-title:not(.no-line) {
   font-size: 1.25rem;
@@ -435,6 +440,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
+  color: var(--primary-text);
 }
 .container .card#about-card .content-about-about .about-right .about-details:nth-child(2), .container .card#resume-card .content-about-about .about-right .about-details:nth-child(2), .container .card#projects-card .content-about-about .about-right .about-details:nth-child(2), .container .card#blog-card .content-about-about .about-right .about-details:nth-child(2), .container .card#contact-card .content-about-about .about-right .about-details:nth-child(2) {
   margin: 1.5rem 0;
@@ -442,7 +448,7 @@ body {
 .container .card#about-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#resume-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#projects-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#blog-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#contact-card .content-about-about .about-right .about-details .bg-highlighted {
   padding: 0 0.5rem;
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: var(--primary-text);
   font-weight: 400;
   border-radius: 2px;
 }
@@ -466,6 +472,10 @@ body {
 }
 .container .card#about-card .content-about-facts ul li h3, .container .card#resume-card .content-about-facts ul li h3, .container .card#projects-card .content-about-facts ul li h3, .container .card#blog-card .content-about-facts ul li h3, .container .card#contact-card .content-about-facts ul li h3 {
   font-size: 1rem;
+  color: var(--primary-text);
+}
+.container .card#about-card .content-about-facts ul li p, .container .card#resume-card .content-about-facts ul li p, .container .card#projects-card .content-about-facts ul li p, .container .card#blog-card .content-about-facts ul li p, .container .card#contact-card .content-about-facts ul li p {
+  color: var(--secondary-text);
 }
 .container .card#about-card .content-about-facts ul li p.small-text, .container .card#resume-card .content-about-facts ul li p.small-text, .container .card#projects-card .content-about-facts ul li p.small-text, .container .card#blog-card .content-about-facts ul li p.small-text, .container .card#contact-card .content-about-facts ul li p.small-text {
   font-size: 12px;
@@ -560,7 +570,7 @@ body {
 .container .card#resume-card .resume-skills .content-resume-skills ul li h3 {
   font-weight: 500;
   font-size: 1.1rem;
-  color: var(--dark-grey);
+  color: var(--primary-color);
   padding: 0.5rem 0 0.25rem;
 }
 .container .card#resume-card .resume-skills .content-resume-skills ul li p {
@@ -587,7 +597,7 @@ body {
 .container .card#projects-card .project-header .filter-menu li a {
   padding: 0.5rem;
   display: block;
-  color: var(--medium-grey);
+  color: var(--primary-text);
   font-size: 0.9rem;
 }
 .container .card#projects-card .project-header .filter-menu li a.active {
@@ -630,13 +640,13 @@ body {
   text-align: center;
 }
 .container .card#projects-card .projects .project-container h3 {
-  color: var(--dark-grey);
+  color: var(--primary-text);
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
 }
 .container .card#projects-card .projects .project-container p {
-  color: var(--medium-light-grey);
+  color: var(--secondary-text);
 }
 .container .card#blog-card ul {
   display: flex;
@@ -696,13 +706,13 @@ body {
   margin: 0 auto;
 }
 .container .card#blog-card .blog-container ul li h3 {
-  color: var(--dark-grey);
+  color: var(--primary-text);
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
 }
 .container .card#blog-card .blog-container ul li p {
-  color: var(--medium-light-grey);
+  color: var(--secondary-text);
 }
 .container .card#contact-card {
   padding-bottom: 40px;
@@ -715,6 +725,7 @@ body {
 .container .card#contact-card .contact-details .detail {
   display: flex;
   justify-content: space-between;
+  color: var(--primary-text);
 }
 .container .card#contact-card .contact-details .detail .contact-title {
   display: inline-block;
@@ -743,20 +754,21 @@ body {
   outline: 0;
   border: 2px solid #eee;
   margin-bottom: 30px;
+  background-color: var(--input-bg);
 }
-.container .card#contact-card .contact-form-container form input[type=textarea] {
+ddd .container .card#contact-card .contact-form-container form input[type=textarea] {
   height: 100px;
   padding: 1rem;
 }
 .container .card#contact-card .contact-form-container form button {
   width: 100%;
   padding: 1.5rem 2rem;
-  background: var(--light-grey);
+  background: var(--primary-color);
   border-radius: 5px;
   border: none;
   text-align: center;
   font-size: 0.85rem;
-  color: var(--dark-grey);
+  color: #ffffff;
   font-weight: 600;
   cursor: pointer;
 }
