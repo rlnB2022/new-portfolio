@@ -20,13 +20,15 @@
   --background-start: #ff8018;
   --background-end: #dbae48;
   --box-shadow-lines: #0000000d;
+  --blob-start: #ffb61826;
+  --blob-end: #ffb23f03;
 }
 
 .theme-dark {
   --primary-color: #ff8018;
   --secondary-color: #b17309;
-  --primary-text: #ffffff;
-  --primary-background: #323232;
+  --primary-text: rgba(255, 255, 255, 0.87);
+  --primary-background: #121212;
   --link-color: #ffffff;
   --lighter-grey: #cccccc;
   --light-grey: #eeeeee;
@@ -37,6 +39,8 @@
   --background-start: #ff8018;
   --background-end: #dbae48;
   --box-shadow-lines: #ffffff62;
+  --blob-start: #ffb6188a;
+  --blob-end: #ffb23f03;
 }
 
 html {
@@ -387,6 +391,7 @@ body {
 }
 .container .card#about-card h2.content-title:not(.no-line), .container .card#resume-card h2.content-title:not(.no-line), .container .card#projects-card h2.content-title:not(.no-line), .container .card#blog-card h2.content-title:not(.no-line), .container .card#contact-card h2.content-title:not(.no-line) {
   font-size: 1.25rem;
+  color: var(--primary-text);
 }
 .container .card#about-card h2.content-title:not(.no-line):before, .container .card#resume-card h2.content-title:not(.no-line):before, .container .card#projects-card h2.content-title:not(.no-line):before, .container .card#blog-card h2.content-title:not(.no-line):before, .container .card#contact-card h2.content-title:not(.no-line):before {
   content: "";
@@ -395,7 +400,7 @@ body {
   top: -0.2rem;
   width: 4rem;
   height: 2.6rem;
-  background: linear-gradient(135deg, rgba(24, 59, 255, 0.1490196078) 0%, rgba(63, 92, 255, 0.0117647059) 100%);
+  background: linear-gradient(135deg, var(--blob-start) 0%, var(--blob-end) 100%);
   border-radius: 2.75rem;
 }
 .container .card#about-card h2.content-title:not(.no-line):after, .container .card#resume-card h2.content-title:not(.no-line):after, .container .card#projects-card h2.content-title:not(.no-line):after, .container .card#blog-card h2.content-title:not(.no-line):after, .container .card#contact-card h2.content-title:not(.no-line):after {
@@ -418,10 +423,13 @@ body {
   margin-bottom: 3rem;
 }
 .container .card#about-card .content-about-about .about-left .greeting, .container .card#resume-card .content-about-about .about-left .greeting, .container .card#projects-card .content-about-about .about-left .greeting, .container .card#blog-card .content-about-about .about-left .greeting, .container .card#contact-card .content-about-about .about-left .greeting {
-  color: var(--medium-grey);
+  color: var(--primary-text);
   font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
+}
+.container .card#about-card .content-about-about .about-left p, .container .card#resume-card .content-about-about .about-left p, .container .card#projects-card .content-about-about .about-left p, .container .card#blog-card .content-about-about .about-left p, .container .card#contact-card .content-about-about .about-left p {
+  color: var(--primary-text);
 }
 .container .card#about-card .content-about-about .about-right .about-details, .container .card#resume-card .content-about-about .about-right .about-details, .container .card#projects-card .content-about-about .about-right .about-details, .container .card#blog-card .content-about-about .about-right .about-details, .container .card#contact-card .content-about-about .about-right .about-details {
   display: flex;
@@ -467,7 +475,7 @@ body {
   margin-top: 15px;
 }
 .container .card#resume-card p {
-  color: var(--medium-grey);
+  color: var(--primary-text);
 }
 .container .card#resume-card .content-subtitle {
   display: flex;
@@ -480,6 +488,7 @@ body {
 .container .card#resume-card .content-subtitle h3 {
   margin-left: 0.5rem;
   font-size: 17px;
+  color: var(--primary-text);
 }
 .container .card#resume-card .resume-items .resume-item .resume-date {
   display: inline-block;
@@ -502,6 +511,7 @@ body {
 .container .card#resume-card .resume-items .resume-item .company-details-container .company-details .resume-job-title {
   font-weight: 500;
   font-size: 1.1rem;
+  color: var(--primary-text);
 }
 .container .card#resume-card .resume-items .resume-item .company-details-container .company-details .resume-company {
   font-size: 0.85rem;
@@ -522,6 +532,7 @@ body {
 }
 .container .card#resume-card .resume-left .content-resume-experience .content-subtitle {
   padding: 30px 0;
+  color: var(--primary-text);
 }
 .container .card#resume-card .resume-right .content-resume-education .content-title {
   padding-bottom: 1.85rem;
