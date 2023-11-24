@@ -435,3 +435,47 @@ contactMe.addEventListener("click", (evt) => {
 addNavListEventListeners();
 addShowProjectModalListeners();
 updateContainerPositions(projectContainers);
+
+/* Theme methods and IIFE */
+const setTheme = (themeName) => {
+	localStorage.setItem("theme", themeName);
+	document.documentElement.className = themeName;
+};
+
+const changeThemeIcon = () => {
+	/* Change theme icon */
+	const themeIcon = document.querySelector(".mode-button .fa-solid");
+
+	if (themeIcon.classList.contains("fa-moon")) {
+		themeIcon.classList.remove("fa-moon");
+		themeIcon.classList.add("fa-sun");
+	} else {
+		themeIcon.classList.remove("fa-sun");
+		themeIcon.classList.add("fa-moon");
+	}
+};
+
+/* Toggle between themes */
+const toggleTheme = () => {
+	if (localStorage.getItem("theme") === "theme-light") {
+		setTheme("theme-dark");
+	} else {
+		setTheme("theme-light");
+	}
+	changeThemeIcon();
+};
+
+/* Set listener on mode button */
+const modeButton = document.querySelector(".mode-button");
+modeButton.addEventListener("click", () => {
+	toggleTheme();
+});
+
+(function getTheme() {
+	if (localStorage.getItem("theme") === "theme-dark") {
+		setTheme("theme-dark");
+		changeThemeIcon();
+	} else {
+		setTheme("theme-light");
+	}
+})();
