@@ -16,6 +16,8 @@
 	--project-button: #0066ff;
 	--background-start: #ff8018;
 	--background-end: #dbae48;
+	--square-background: rgba(255, 255, 255, 0.1);
+	--square-outline: transparent;
 	--box-shadow-lines: #0000000d;
 	--blob-start: #ffb61826;
 	--blob-end: #ffb23f03;
@@ -39,8 +41,10 @@
 	--dark-grey: #323232;
 	--medium-light-grey: #999999;
 	--project-button: #0066ff;
-	--background-start: #ff8018;
-	--background-end: #dbae48;
+	--background-start: #111111;
+	--background-end: #333333;
+	--square-outline: #ff801885;
+	--square-background: transparent;
 	--box-shadow-lines: #ffffff62;
 	--blob-start: #ffb6188a;
 	--blob-end: #ffb23f03;
@@ -48,7 +52,7 @@
 	--mode-bg: #444444;
 	--mode-color: #eeeeee;
 	--modal-background: #000000cc;
-	--scrollbar-color: #ff8018;
+	--scrollbar-color: #ff8018c0;
 }
 
 @mixin blob {
@@ -131,11 +135,12 @@ body {
 				display: block;
 				width: 70px;
 				height: 70px;
-				background-color: rgba(255, 255, 255, 0.1);
+				background-color: var(--square-background);
 				bottom: -320px;
 				animation: square 60s infinite;
 				transition-timing-function: linear;
 				border-radius: 5px;
+				border: 1px solid var(--square-outline);
 
 				&:nth-child(1) {
 					left: 10%;
