@@ -26,6 +26,7 @@
   --input-bg: #ffffff;
   --mode-bg: #eeeeee;
   --mode-color: #121212;
+  --modal-background: #000000cc;
 }
 
 .theme-dark {
@@ -49,6 +50,7 @@
   --input-bg: rgba(255, 255, 255, 0.87);
   --mode-bg: #444444;
   --mode-color: #eeeeee;
+  --modal-background: #000000cc;
 }
 
 html {
@@ -258,7 +260,7 @@ body {
   font-weight: 500;
   padding: 1rem 0.75rem;
   display: block;
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 .container header .menu ul li a:link, .container header .menu ul li a:visited {
   color: var(--link-color);
@@ -285,7 +287,7 @@ body {
   opacity: 1;
   visibility: visible;
   display: block;
-  transition: 2s ease-in-out;
+  transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
 }
 .container .card.active {
   display: block;
@@ -458,7 +460,7 @@ body {
 .container .card#about-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#resume-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#projects-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#blog-card .content-about-about .about-right .about-details .bg-highlighted, .container .card#contact-card .content-about-about .about-right .about-details .bg-highlighted {
   padding: 0 0.5rem;
   background-color: var(--primary-color);
-  color: var(--primary-text);
+  color: rgba(255, 255, 255, 0.87);
   font-weight: 400;
   border-radius: 2px;
 }
@@ -619,7 +621,7 @@ body {
 .container .card#projects-card .projects .project-container {
   margin-top: 1.85rem;
   max-height: 330px;
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: 1;
   overflow: hidden;
   margin: 0 auto;
@@ -787,7 +789,7 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
   position: fixed;
   inset: 0;
   opacity: 0;
-  background-color: var(--primary-background);
+  background-color: var(--modal-background);
   z-index: 9999;
   transition: opacity 0.25s ease-in-out;
 }
@@ -857,12 +859,12 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
 }
 .container #project-modal #project-modal-details #project-modal-contents button#btn-code {
   margin-left: 5px;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--project-button);
   color: var(--blue);
 }
 .container #project-modal #project-modal-details #project-modal-contents button#btn-code:hover {
   color: #ffffff;
-  background-color: var(--blue);
+  background-color: var(--project-button);
 }
 .container #project-modal #project-modal-details #project-modal-contents h2 {
   margin-bottom: 0.4rem;
@@ -1117,7 +1119,7 @@ body.thank-you .center-link a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--primary-background);
+    background-color: var(--modal-background);
     z-index: 100;
   }
   .container #project-modal .card-inner {
