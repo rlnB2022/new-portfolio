@@ -15,6 +15,7 @@
 	--project-button: #0066ff;
 	--background-start: #ff8018;
 	--background-end: #dbae48;
+	--box-shadow-lines: #0000000d;
 }
 
 .theme-dark {
@@ -32,8 +33,7 @@
 	--project-button: #0066ff;
 	--background-start: #ff8018;
 	--background-end: #dbae48;
-	// --background-start: #183bff;
-	// --background-end: #3f5cff;
+	--box-shadow-lines: #ffffff62;
 }
 
 @mixin blob {
@@ -232,11 +232,21 @@ body {
 				height: 43px;
 				width: 43px;
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.fa-solid {
+					font-size: 1.75rem;
+					&.fa-sun {
+						color: var(--primary-background);
+					}
+				}
 			}
 		}
 		.menu {
-			box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
-			-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+			box-shadow: 0 0px 5px var(--box-shadow-lines);
+			-webkit-box-shadow: 0 5px 10px var(--box-shadow-lines);
 			ul {
 				display: flex;
 				background-color: var(--primary-background);
@@ -394,7 +404,7 @@ body {
 
 					i {
 						transition: 0.25s ease;
-						color: var(--dark-grey);
+						color: var(--primary-text);
 					}
 				}
 			}
@@ -405,7 +415,7 @@ body {
 				left: 0;
 				right: 0;
 				height: 70px;
-				box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
+				box-shadow: 0 0px 5px var(--box-shadow-lines);
 				display: flex;
 				align-items: center;
 
@@ -415,7 +425,7 @@ body {
 					transition: 0.25s ease;
 					&:link,
 					&:visited {
-						color: var(--dark-grey);
+						color: var(--primary-text);
 					}
 					&:hover {
 						color: var(--primary-color);

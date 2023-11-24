@@ -19,6 +19,7 @@
   --project-button: #0066ff;
   --background-start: #ff8018;
   --background-end: #dbae48;
+  --box-shadow-lines: #0000000d;
 }
 
 .theme-dark {
@@ -35,6 +36,7 @@
   --project-button: #0066ff;
   --background-start: #ff8018;
   --background-end: #dbae48;
+  --box-shadow-lines: #ffffff62;
 }
 
 html {
@@ -192,10 +194,19 @@ body {
   height: 43px;
   width: 43px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container header .mobile-header .mode-button .fa-solid {
+  font-size: 1.75rem;
+}
+.container header .mobile-header .mode-button .fa-solid.fa-sun {
+  color: var(--primary-background);
 }
 .container header .menu {
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0px 5px var(--box-shadow-lines);
+  -webkit-box-shadow: 0 5px 10px var(--box-shadow-lines);
 }
 .container header .menu ul {
   display: flex;
@@ -339,7 +350,7 @@ body {
 }
 .container .card#profile-card .socials a i {
   transition: 0.25s ease;
-  color: var(--dark-grey);
+  color: var(--primary-text);
 }
 .container .card#profile-card .profile-links {
   position: absolute;
@@ -347,7 +358,7 @@ body {
   left: 0;
   right: 0;
   height: 70px;
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0px 5px var(--box-shadow-lines);
   display: flex;
   align-items: center;
 }
@@ -357,7 +368,7 @@ body {
   transition: 0.25s ease;
 }
 .container .card#profile-card .profile-links a:link, .container .card#profile-card .profile-links a:visited {
-  color: var(--dark-grey);
+  color: var(--primary-text);
 }
 .container .card#profile-card .profile-links a:hover {
   color: var(--primary-color);
