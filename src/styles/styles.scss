@@ -890,7 +890,7 @@ body {
 		position: fixed;
 		inset: 0;
 		opacity: 0;
-		background-color: rgba(0, 0, 0, 0.25);
+		background-color: var(--primary-background);
 		z-index: 9999;
 		transition: opacity 0.25s ease-in-out;
 
@@ -899,7 +899,7 @@ body {
 		}
 
 		#project-modal-details {
-			background-color: #ffffff;
+			background-color: var(--primary-background);
 			height: 100%;
 
 			#close-modal {
@@ -938,6 +938,10 @@ body {
 						list-style-type: disc;
 						list-style-position: outside;
 						margin: 0 3rem;
+
+						li {
+							color: var(--secondary-text);
+						}
 					}
 					p {
 						text-align: left;
@@ -975,20 +979,20 @@ body {
 				h2 {
 					margin-bottom: 0.4rem;
 					font-size: 1.5rem;
-					color: var(--dark-grey);
+					color: var(--primary-text);
 					font-weight: 600;
 					position: relative;
 				}
 
 				h3 {
-					color: var(--medium-light-grey);
+					color: var(--secondary-color);
 					font-size: 0.9rem;
 					padding-bottom: 1rem;
 					margin: 0 1rem;
 				}
 
 				p {
-					color: var(--medium-grey);
+					color: var(--secondary-text);
 					margin-top: 1rem;
 				}
 
@@ -997,8 +1001,8 @@ body {
 					font-size: 1.25rem;
 					display: flex;
 					align-items: center;
-					border-bottom: 1px solid #eee;
-					border-top: 1px solid #eee;
+					border-bottom: 1px solid var(--secondary-text);
+					border-top: 1px solid var(--secondary-text);
 					margin-left: 1rem;
 
 					i {
@@ -1270,7 +1274,7 @@ body {
 			left: 0;
 			width: 100vw;
 			height: 100vh;
-			background-color: rgba(0, 0, 0, 0.75);
+			background-color: var(--primary-background);
 			z-index: 100;
 
 			.card-inner {

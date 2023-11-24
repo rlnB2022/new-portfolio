@@ -777,7 +777,7 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
   position: fixed;
   inset: 0;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: var(--primary-background);
   z-index: 9999;
   transition: opacity 0.25s ease-in-out;
 }
@@ -785,7 +785,7 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
   opacity: 1;
 }
 .container #project-modal #project-modal-details {
-  background-color: #ffffff;
+  background-color: var(--primary-background);
   height: 100%;
 }
 .container #project-modal #project-modal-details #close-modal {
@@ -821,6 +821,9 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
   list-style-position: outside;
   margin: 0 3rem;
 }
+.container #project-modal #project-modal-details #project-modal-contents #project-container ul li {
+  color: var(--secondary-text);
+}
 .container #project-modal #project-modal-details #project-modal-contents #project-container p {
   text-align: left;
 }
@@ -854,18 +857,18 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
 .container #project-modal #project-modal-details #project-modal-contents h2 {
   margin-bottom: 0.4rem;
   font-size: 1.5rem;
-  color: var(--dark-grey);
+  color: var(--primary-text);
   font-weight: 600;
   position: relative;
 }
 .container #project-modal #project-modal-details #project-modal-contents h3 {
-  color: var(--medium-light-grey);
+  color: var(--secondary-color);
   font-size: 0.9rem;
   padding-bottom: 1rem;
   margin: 0 1rem;
 }
 .container #project-modal #project-modal-details #project-modal-contents p {
-  color: var(--medium-grey);
+  color: var(--secondary-text);
   margin-top: 1rem;
 }
 .container #project-modal #project-modal-details #project-modal-contents .project-subtitle {
@@ -873,8 +876,8 @@ ddd .container .card#contact-card .contact-form-container form input[type=textar
   font-size: 1.25rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #eee;
+  border-bottom: 1px solid var(--secondary-text);
+  border-top: 1px solid var(--secondary-text);
   margin-left: 1rem;
 }
 .container #project-modal #project-modal-details #project-modal-contents .project-subtitle i {
@@ -1093,7 +1096,7 @@ body.thank-you .center-link a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: var(--primary-background);
     z-index: 100;
   }
   .container #project-modal .card-inner {
