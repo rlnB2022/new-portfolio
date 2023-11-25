@@ -103,8 +103,6 @@ const removeNavLinkColor = (event, index) => {
 	if (activeNavListItem) {
 		activeNavListItem.classList.remove("active");
 
-		// activeCard.classList.add("card-fade-out");
-
 		// if desktop view
 		if (window.innerWidth >= 1120) {
 			// add event listeners to each card
@@ -120,10 +118,8 @@ const removeNavLinkColor = (event, index) => {
 					}
 				});
 			});
-			// add fade-in, active classes to card selected
+			// add active class to card selected
 			cards[index].classList.add("active");
-			// have to use a setTimeout so the card doesn't just appear in place without transitioning
-			// setTimeout(() => {
 
 			/* Need to request (force) a visual render (DOM render) before 
 			   adding more classes.
@@ -131,16 +127,20 @@ const removeNavLinkColor = (event, index) => {
 			   https://stackoverflow.com/a/25900694 */
 			let x = cards[0].clientHeight;
 
+			// fade out each card not selected
 			cards.forEach((card, idx) => {
 				if (idx !== index) {
 					card.classList.add("fade-out");
 				}
 			});
+
+			// show selected card
 			cards[index].classList.remove("fade-out");
+
+			// be sure to arrange the projects if this option is selected
 			if (index === 2) {
 				updateContainerPositions(projectContainers);
 			}
-			// });
 		}
 	}
 };
@@ -420,18 +420,18 @@ contactMe.addEventListener("click", (evt) => {
 		});
 		// add fade-in, active classes to card selected
 		cards[4].classList.add("active");
-		// have to use a setTimeout so the card doesn't just appear in place without transitioning
-		setTimeout(() => {
-			// add fade-out class from all cards
-			cards.forEach((card, idx) => {
-				if (idx !== 4) {
-					card.classList.add("fade-out");
-				}
-			});
-			activeNavItem.classList.remove("active");
-			cards[4].classList.remove("fade-out");
-			navItems[4].classList.add("active");
+
+		let x = cards[0].clientHeight;
+
+		// add fade-out class from all cards
+		cards.forEach((card, idx) => {
+			if (idx !== 4) {
+				card.classList.add("fade-out");
+			}
 		});
+		activeNavItem.classList.remove("active");
+		cards[4].classList.remove("fade-out");
+		navItems[4].classList.add("active");
 	} else {
 		activeNavItem.classList.remove("active");
 		navItems[4].classList.add("active");

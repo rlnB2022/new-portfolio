@@ -5,6 +5,11 @@
 	font-family: "Poppins", sans-serif;
 }
 
+/* static colors */
+:root {
+	--white: rgba(255, 255, 255, 0.87);
+}
+
 .theme-light {
 	--primary-color: #ff8018;
 	--secondary-color: #b17309;
@@ -569,7 +574,7 @@ body {
 						.bg-highlighted {
 							padding: 0 0.5rem;
 							background-color: var(--primary-color);
-							color: rgba(255, 255, 255, 0.87);
+							color: var(--white);
 							font-weight: 400;
 							border-radius: 2px;
 						}
@@ -706,7 +711,7 @@ body {
 								padding: 0.9rem;
 								border-radius: 50%;
 								font-size: 2rem;
-								color: var(--primary-text);
+								color: var(--white);
 							}
 							h3 {
 								font-weight: 500;
@@ -901,7 +906,7 @@ body {
 					color: var(--primary-text);
 					.contact-title {
 						@include title-border;
-						color: #ffffff;
+						color: --white;
 						background-color: var(--primary-color);
 					}
 				}
@@ -942,6 +947,9 @@ body {
 						font-weight: 600;
 						cursor: pointer;
 					}
+				}
+				h2 {
+					padding-bottom: 0;
 				}
 			}
 		}
