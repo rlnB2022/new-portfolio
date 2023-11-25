@@ -12,7 +12,7 @@
 
 .theme-light {
 	--primary-color: #ff8018;
-	--secondary-color: #b17309;
+	--secondary-color: #d48b0d;
 	--primary-text: #323232;
 	--secondary-text: rgba(51, 51, 51, 0.87);
 	--primary-background: #ffffff;
@@ -535,7 +535,7 @@ body {
 						right: -20px;
 						bottom: 0;
 						height: 1px;
-						background-color: #eee;
+						background-color: var(--light-grey);
 					}
 				}
 			}
@@ -1055,7 +1055,7 @@ body {
 				}
 
 				h3 {
-					color: var(--secondary-color);
+					color: var(--primary-color);
 					font-size: 0.9rem;
 					padding-bottom: 1rem;
 					margin: 0 1rem;
