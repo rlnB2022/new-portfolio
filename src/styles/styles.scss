@@ -130,13 +130,13 @@ h3 {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	transition: background-color 0.25s ease-in-out;
 
 	background: linear-gradient(
 		to bottom right,
 		var(--background-start) 0%,
 		var(--background-end) 100%
 	) !important;
+	transition: background 1s ease-in-out;
 
 	/* animated squares in BG */
 	ul {
@@ -433,10 +433,10 @@ h3 {
 					position: absolute;
 					bottom: -63%;
 					width: 100%;
-					background: var(--primary-background);
+					background-color: var(--primary-background);
 					height: 70%;
 					overflow: hidden;
-					transition: background-color 0.25s ease-in-out;
+					transition: background-color 1s ease;
 				}
 
 				&:before {
@@ -455,7 +455,7 @@ h3 {
 				font-size: 2.15rem;
 				margin-top: 10px;
 				color: var(--primary-text);
-				// transition: color 0.25s ease-in-out;
+				transition: color 0.25s ease-in-out;
 			}
 
 			.sub-title {
@@ -463,7 +463,7 @@ h3 {
 				color: var(--primary-color);
 				height: 1rem;
 				line-height: 1rem;
-				// transition: color 0.25s ease-in-out;
+				transition: color 0.25s ease-in-out;
 			}
 
 			.socials {
@@ -527,7 +527,6 @@ h3 {
 			margin-top: 15px;
 			scroll-margin-top: 126px;
 			padding-bottom: 30px;
-			transition: background-color 0.25s ease-in-out;
 			.top-line {
 				padding-top: 1rem;
 			}
@@ -919,7 +918,7 @@ h3 {
 					color: var(--primary-text);
 					.contact-title {
 						@include title-border;
-						color: --white;
+						color: var(--white);
 						background-color: var(--primary-color);
 					}
 				}
@@ -1455,7 +1454,8 @@ body {
 			height: auto;
 			transform-origin: center left;
 			border-radius: 0 4px 4px 0;
-			transition: visibility 1s linear, opacity 1s ease, transform 1s ease;
+			transition: visibility 1s linear, opacity 1s ease, transform 1s ease,
+				background-color 1s ease;
 			z-index: 10;
 			overflow-x: hidden;
 			opacity: 0;
@@ -1482,6 +1482,7 @@ body {
 				opacity: 1;
 				visibility: visible;
 				display: block;
+				transition: background-color 1s ease;
 			}
 			&#projects-card {
 				.project-header {
