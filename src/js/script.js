@@ -123,18 +123,24 @@ const removeNavLinkColor = (event, index) => {
 			// add fade-in, active classes to card selected
 			cards[index].classList.add("active");
 			// have to use a setTimeout so the card doesn't just appear in place without transitioning
-			setTimeout(() => {
-				// add fade-out class from all cards
-				cards.forEach((card, idx) => {
-					if (idx !== index) {
-						card.classList.add("fade-out");
-					}
-				});
-				cards[index].classList.remove("fade-out");
-				if (index === 2) {
-					updateContainerPositions(projectContainers);
+			// setTimeout(() => {
+
+			/* Need to request (force) a visual render (DOM render) before 
+			   adding more classes.
+			   See the StackOverflow solution here:
+			   https://stackoverflow.com/a/25900694 */
+			let x = cards[0].clientHeight;
+
+			cards.forEach((card, idx) => {
+				if (idx !== index) {
+					card.classList.add("fade-out");
 				}
-			}, 100);
+			});
+			cards[index].classList.remove("fade-out");
+			if (index === 2) {
+				updateContainerPositions(projectContainers);
+			}
+			// });
 		}
 	}
 };
