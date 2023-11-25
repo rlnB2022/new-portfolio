@@ -134,7 +134,7 @@ const removeNavLinkColor = (event, index) => {
 				if (index === 2) {
 					updateContainerPositions(projectContainers);
 				}
-			});
+			}, 100);
 		}
 	}
 };

@@ -82,6 +82,7 @@ ul {
 }
 
 body {
+  /* This background color is a fallback in case an older browser doesnt support linear-gradient in the background-gradient class below */
   background-color: var(--primary-color);
 }
 
@@ -333,6 +334,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  /* background-image: url("https://placehold.co/960x640"); */
   background-image: url(../images/headshot.jpg);
   background-color: rgba(120, 204, 109, 0.1);
   background-position: center 25%;
@@ -973,7 +975,6 @@ body.thank-you .center-link a {
 .card-fade-in {
   animation: cardFadeIn 10s ease-in-out both;
 }
-
 @keyframes hide-project {
   0% {
     visibility: visible;

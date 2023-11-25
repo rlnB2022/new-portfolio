@@ -108,7 +108,7 @@ ul {
 }
 
 body {
-	// This background color is a fallback in case an older browser doesn't support linear-gradient in the background-gradient class below
+	/* This background color is a fallback in case an older browser doesnt support linear-gradient in the background-gradient class below */
 	background-color: var(--primary-color);
 }
 
@@ -143,6 +143,7 @@ body {
 				height: 70px;
 				background-color: var(--square-background);
 				bottom: -320px;
+				-webkit-animation: square 60s infinite;
 				animation: square 60s infinite;
 				transition-timing-function: linear;
 				border-radius: 5px;
@@ -159,13 +160,17 @@ body {
 					left: 20%;
 					width: 140px;
 					height: 140px;
+					-webkit-animation-delay: 1s;
 					animation-delay: 1s;
+					-webkit-animation-duration: 40s;
 					animation-duration: 40s;
 				}
 
 				&:nth-child(3) {
 					left: 25%;
+					-webkit-animation-delay: 3s;
 					animation-delay: 3s;
+					-webkit-animation-duration: 50s;
 					animation-duration: 50s;
 				}
 
@@ -174,11 +179,13 @@ body {
 					width: 140px;
 					height: 140px;
 					top: 100%;
+					-webkit-animation-duration: 40s;
 					animation-duration: 40s;
 				}
 
 				&:nth-child(5) {
 					left: 70%;
+					-webkit-animation-duration: 37s;
 					animation-duration: 37s;
 				}
 
@@ -186,7 +193,9 @@ body {
 					left: 80%;
 					width: 220px;
 					height: 220px;
+					-webkit-animation-delay: 3s;
 					animation-delay: 3s;
+					-webkit-animation-duration: 52s;
 					animation-duration: 52s;
 				}
 
@@ -195,7 +204,9 @@ body {
 					top: 100%;
 					height: 340px;
 					width: 340px;
+					-webkit-animation-delay: 8s;
 					animation-delay: 8s;
+					-webkit-animation-duration: 110s;
 					animation-duration: 110s;
 				}
 
@@ -203,7 +214,9 @@ body {
 					left: 55%;
 					width: 100px;
 					height: 100px;
+					-webkit-animation-delay: 12s;
 					animation-delay: 12s;
+					-webkit-animation-duration: 85s;
 					animation-duration: 85s;
 				}
 
@@ -211,7 +224,9 @@ body {
 					left: 25%;
 					width: 80px;
 					height: 80px;
+					-webkit-animation-delay: 2s;
 					animation-delay: 2s;
+					-webkit-animation-duration: 80s;
 					animation-duration: 80s;
 				}
 
@@ -219,7 +234,9 @@ body {
 					left: 90%;
 					width: 300px;
 					height: 300px;
+					-webkit-animation-delay: 20s;
 					animation-delay: 20s;
+					-webkit-animation-duration: 70s;
 					animation-duration: 70s;
 				}
 			}
@@ -386,7 +403,7 @@ body {
 				top: 0;
 				left: 0;
 				width: 100%;
-				// background-image: url("https://placehold.co/960x640");
+				/* background-image: url("https://placehold.co/960x640"); */
 				background-image: url(../images/headshot.jpg);
 				background-color: rgba(120, 204, 109, 0.1);
 				background-position: center 25%;
@@ -756,10 +773,12 @@ body {
 					margin-bottom: 1rem;
 
 					&.show-project {
+						-webkit-animation: show-project 0.5s ease-in-out both;
 						animation: show-project 0.5s ease-in-out both;
 					}
 
 					&.hide-project {
+						-webkit-animation: hide-project 0.5s ease-in-out both;
 						animation: hide-project 0.5s ease-in-out both;
 					}
 
@@ -807,7 +826,6 @@ body {
 							max-width: 75%;
 							margin: 0 auto;
 							img {
-								// width: 100%;
 								height: auto;
 								max-width: 100%;
 								transition: 0.5s ease;
@@ -1111,12 +1129,21 @@ body {
 	}
 }
 
-.card-fade-out {
-	animation: cardFadeOut 10s ease-in-out both;
-}
-
-.card-fade-in {
-	animation: cardFadeIn 10s ease-in-out both;
+@-webkit-keyframes hide-project {
+	0% {
+		visibility: visible;
+		opacity: 1;
+		max-height: 330px;
+		max-width: 330px;
+		transform: scale(1);
+	}
+	100% {
+		visibility: hidden;
+		max-height: 0;
+		max-width: 0;
+		opacity: 0;
+		transform: scale(0);
+	}
 }
 
 @keyframes hide-project {
@@ -1136,6 +1163,23 @@ body {
 	}
 }
 
+@-webkit-keyframes show-project {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+		max-height: 0;
+		max-width: 0;
+		transform: scale(0);
+	}
+	100% {
+		max-height: 330px;
+		max-width: 330px;
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 @keyframes show-project {
 	0% {
 		visibility: hidden;
@@ -1150,6 +1194,15 @@ body {
 		visibility: visible;
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes square {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-1500px) rotate(800deg);
 	}
 }
 
@@ -1207,7 +1260,6 @@ body {
 			position: relative;
 			left: 0;
 			height: 100%;
-			// width: 480px;
 			min-height: auto;
 			max-height: none;
 			z-index: 11;
@@ -1306,7 +1358,6 @@ body {
 										img {
 											width: 100%;
 											height: 100%;
-											// max-width: 100%;
 											transition: 0.5s ease;
 											&:hover {
 												transform: scale(1.05);
