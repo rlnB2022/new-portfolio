@@ -2,6 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="This is the online portfolio for Rick Beyer, a Front End Web Developer / React Software Engineer"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="#" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -9,6 +13,8 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
 		/>
 		<link
 			rel="stylesheet"
@@ -16,6 +22,8 @@
 			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
+			media="print"
+			onload="this.media='all'"
 		/>
 		<link rel="stylesheet" href="./styles/styles.min.css" />
 		<title>Rick Beyer Portfolio</title>
@@ -86,19 +94,34 @@
 				<div class="title">Rick Beyer</div>
 				<div class="sub-title typing-anim-bottom"></div>
 				<div class="socials">
-					<a href="https://www.linkedin.com/in/rickwilliambeyer/">
+					<a
+						href="https://www.linkedin.com/in/rickwilliambeyer/"
+						aria-label="View my linkedin page"
+					>
 						<i class="fa-brands fa-linkedin"></i>
 					</a>
-					<a href="https://github.com/rlnB2022">
+					<a
+						href="https://github.com/rlnB2022"
+						aria-label="View my Github account"
+					>
 						<span><i class="fa-brands fa-github"></i></span>
 					</a>
 				</div>
 				<div class="profile-links">
-					<a href="./resume/RICKBEYERRESUME.pdf" class="link" download>
+					<a
+						href="./resume/RICKBEYERRESUME.pdf"
+						class="link"
+						download
+						aria-label="Download CV"
+					>
 						<span>DOWNLOAD CV</span>
 						<i class="fa-solid fa-download"></i>
 					</a>
-					<a href="#contact-card" class="link change-contact-menu-item">
+					<a
+						href="#contact-card"
+						class="link change-contact-menu-item"
+						aria-label="Contact me"
+					>
 						<span>CONTACT ME</span>
 						<i class="fa-solid fa-arrow-right"></i>
 					</a>
@@ -204,6 +227,7 @@
 												<img
 													alt="citizen developer logo"
 													height="40"
+													width="auto"
 													src="./images/citizen-developer-logo.png"
 												/>
 											</div>
@@ -394,7 +418,7 @@
 						<div class="project-container show-project" data-group="react">
 							<a href="#" class="project-link" data-projectimgsrc="3">
 								<div class="project-img-container">
-									<img src="./images/amazon-clone.jpg" alt="" />
+									<img src="./images/amazon-clone2.jpg" alt="" />
 								</div>
 							</a>
 							<h3>Amazon Clone</h3>
@@ -436,7 +460,7 @@
 											target="_blank"
 											href="https://blog.rickbeyer.dev/2023/10/11/embracing-passion-through-my-childhood/"
 										>
-											Read more</a
+											Continue reading</a
 										></span
 									>
 								</p>
